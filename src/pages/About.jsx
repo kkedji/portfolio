@@ -23,8 +23,12 @@ const About = () => {
             {/* Profile Image */}
             <div className="lg:col-span-1">
               <div className="card p-6 text-center sticky top-24">
-                <div className="w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden bg-gradient-to-br from-primary-400 to-primary-600 flex items-center justify-center">
-                  <span className="text-white text-6xl font-bold">SK</span>
+                <div className="w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden border-4 border-primary-200">
+                  <img 
+                    src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&fit=crop&q=80" 
+                    alt="Sename Kudjo Kedji"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <h2 className="text-2xl font-bold text-gray-900 mb-2">
                   Sename Kudjo Kedji
