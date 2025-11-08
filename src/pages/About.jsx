@@ -25,7 +25,7 @@ const About = () => {
               <div className="card p-6 text-center sticky top-24">
                 <div className="w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden border-4 border-primary-200">
                   <img 
-                    src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&fit=crop&q=80" 
+                    src="/images/profile.jpg" 
                     alt="Sename Kudjo Kedji"
                     className="w-full h-full object-cover"
                   />

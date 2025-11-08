@@ -49,7 +49,7 @@ export const projectsData = [
     title: "FIFA World Cup History",
     category: "Power BI",
     description: "Visualisation des insights clés de l'histoire du tournoi de la Coupe du Monde FIFA : buts, trophées, lieux de matchs, participation des équipes et résultats.",
-    image: "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=800&h=600&fit=crop&q=80",
+    image: "https://plus.unsplash.com/premium_photo-1663013274302-c7159d63e7e5?w=800&h=600&fit=crop&q=80",
     link: "https://app.powerbi.com/view?r=eyJrIjoiNmNiY2FkMjAtMWMyMC00YzMzLWJhZjEtMTE4NTY5NTcxZTcxIiwidCI6ImRmODY3OWNkLWE4MGUtNDVkOC05OWFjLWM4M2VkN2ZmOTVhMCJ9",
     tags: ["Power BI", "Sports Analytics", "FIFA"]
   },
@@ -67,7 +67,7 @@ export const projectsData = [
     title: "Climate Change in Sub-Saharan Africa",
     category: "Power BI",
     description: "Rapport Power BI mettant en évidence les causes et les effets du changement climatique dans les pays d'Afrique subsaharienne.",
-    image: "https://images.unsplash.com/photo-1569163139394-de4798aa62b6?w=800&h=600&fit=crop&q=80",
+    image: "https://plus.unsplash.com/premium_photo-1664302427357-40eb7c8fd3c0?w=800&h=600&fit=crop&q=80",
     link: "#",
     tags: ["Power BI", "Climate Change", "Africa"]
   },
