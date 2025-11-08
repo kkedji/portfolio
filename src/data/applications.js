@@ -1,47 +1,47 @@
 export const applicationsData = [
   {
     id: 1,
-    title: "Application Data Analytics 1",
-    description: "Description de votre première application. Cette application permet de...",
+    title: "CreditFlow - Plateforme de Gestion de Dossiers de Crédit",
+    description: "Application web complète de gestion du cycle de vie des demandes de crédit microfinance. Permet la collecte structurée des dossiers clients avec capture photo, l'analyse financière automatisée, l'évaluation des risques par IA, et la prise de décision collégiale avec signatures électroniques et traçabilité totale",
     features: [
-      "Fonctionnalité 1",
-      "Fonctionnalité 2",
-      "Fonctionnalité 3"
+      "Gestion multi-rôles avec workflow de validation en cascade (Collecteur → Superviseur → Analyste → Directeur → Comité)",
+      "Capture photo des CNI, de la position GPS,et des informations des cautions",
+      "Système de scoring et pondération des risques avec recommandations automatiques à l'aide de l'IA"
     ],
-    videoUrl: "", // URL de la vidéo YouTube ou autre
-    thumbnail: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format&fit=crop",
+    videoUrl: "https://youtu.be/edwbuN4VqSE?si=uGq7LcTD9y6KOIBu", // URL de la vidéo YouTube ou autre
+    thumbnail: "/images/creditflow-thumb.jpg",
     demoLink: "#",
     githubLink: "#",
-    tags: ["Python", "Flask", "Data Analytics"]
+    tags: ["React 18 + TypeScript + Vite", "Firebase (Firestore, Storage, Authentication)", "Tailwind CSS"]
   },
   {
     id: 2,
-    title: "Application Data Visualization",
-    description: "Description de votre deuxième application. Cette application permet de...",
+    title: "Application De Gestion des Opérations d'une Boutique",
+    description: "Application web complète de gestion commerciale pour petites et moyennes boutiques. Cette solution tout-en-un permet aux commerçants de digitaliser et optimiser l'ensemble de leurs opérations : ventes, stocks, clients, fournisseurs, production et finances. Accessible depuis n'importe quel appareil avec synchronisation en temps réel.",
     features: [
-      "Fonctionnalité 1",
-      "Fonctionnalité 2",
-      "Fonctionnalité 3"
+      "Gestion des produits avec ajout, modification et suppression",
+      "Suivi des ventes et des performances des produits",
+      "Tableau de bord avec statistiques et graphiques"
     ],
-    videoUrl: "", // URL de la vidéo YouTube ou autre
-    thumbnail: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop",
+    videoUrl: "https://youtu.be/35EAJ_HtsM0", // URL de la vidéo YouTube ou autre
+    thumbnail: "/images/boutique-thumb.jpg",
     demoLink: "#",
     githubLink: "#",
-    tags: ["React", "D3.js", "Visualization"]
+    tags: ["React", "TypeScript", "Firebase", "Tailwind CSS", "Netlify"]
   },
   {
     id: 3,
-    title: "Dashboard Application",
-    description: "Description de votre troisième application. Cette application permet de...",
+    title: "Application de Gestion des Finances d'une Association",
+    description: "Solution complète de gestion financière pour associations, clubs et organisations communautaires. Automatise le suivi des cotisations mensuelles, la gestion des contributions aux événements et la génération de rapports professionnels. Conçue pour simplifier la vie des trésoriers et améliorer la transparence financière",
     features: [
-      "Fonctionnalité 1",
-      "Fonctionnalité 2",
-      "Fonctionnalité 3"
+      "Gestion complète des membres avec fiches détaillées et import Excel",
+      "Suivi automatisé des cotisations mensuelles avec calendrier visuel",
+      "Génération de rapports financiers professionnels imprimables (PDF)"
     ],
-    videoUrl: "", // URL de la vidéo YouTube ou autre
-    thumbnail: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format&fit=crop",
+    videoUrl: "https://youtu.be/3an1o7WwG-U", // URL de la vidéo YouTube ou autre
+    thumbnail: "/images/association-thumb.jpg",
     demoLink: "#",
     githubLink: "#",
-    tags: ["Power BI", "Python", "Dashboard"]
+    tags: ["React", "TypeScript", "Firebase", "Tailwind CSS", "Netlify"]
   }
 ];

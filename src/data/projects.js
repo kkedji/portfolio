@@ -17,6 +17,16 @@ export const projectsData = [
     link: "https://app.powerbi.com/view?r=eyJrIjoiODZmOWI5NzctYzY4Mi00OGU4LWE4MjctM2U5NmIyOTczZTJiIiwidCI6ImRmODY3OWNkLWE4MGUtNDVkOC05OWFjLWM4M2VkN2ZmOTVhMCJ9",
     tags: ["Power BI", "Supply Chain", "KPIs"]
   },
+
+  {
+    id: 3,
+    title: "Indicateurs du developpement du Bénin",
+    category: "Power BI",
+    description: "Analyse de principaux indicateurs de developpement du Bénin sur plusieurs années à l'aide de Power BI. Le rapport couvre des domaines tels que l'économie, la santé, l'éducation et l'infrastructure, fournissant des insights clés pour les décideurs et les parties prenantes.",
+    image: "/images/projects/benin-indicateurs.jpg",
+    link: "https://app.powerbi.com/view?r=eyJrIjoiOTFhMmIyNTItYmFiMi00ZDM2LWJmNjYtYTNjMTVjYzNiNTgwIiwidCI6ImRmODY3OWNkLWE4MGUtNDVkOC05OWFjLWM4M2VkN2ZmOTVhMCJ9",
+    tags: ["Power BI", "Economie", "Developpement", "IDH"]
+  },
  
   {
     id: 4,
@@ -46,6 +56,7 @@ export const projectsData = [
     link: "https://app.powerbi.com/view?r=eyJrIjoiYjE4ZTBjMWUtZTg3MC00NGMzLTgzNWQtYzdjNzMyNDE1ZjNmIiwidCI6ImRmODY3OWNkLWE4MGUtNDVkOC05OWFjLWM4M2VkN2ZmOTVhMCJ9",
     tags: ["Power BI", "Climate Change", "Africa"]
   },
+
   {
     id: 9,
     title: "EDA of Tweets - Popular Hashtags in Togo",

@@ -118,16 +118,27 @@ const Applications = () => {
               </button>
             </div>
             <div className="aspect-video">
-              <iframe
-                width="100%"
-                height="100%"
-                src={selectedApp.videoUrl}
-                title={selectedApp.title}
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                className="rounded-lg"
-              ></iframe>
+              {selectedApp.videoUrl.includes('youtube.com') || selectedApp.videoUrl.includes('youtu.be') || selectedApp.videoUrl.includes('vimeo.com') ? (
+                <iframe
+                  width="100%"
+                  height="100%"
+                  src={selectedApp.videoUrl}
+                  title={selectedApp.title}
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="rounded-lg"
+                ></iframe>
+              ) : (
+                <video
+                  controls
+                  className="w-full h-full rounded-lg"
+                  poster={selectedApp.thumbnail}
+                >
+                  <source src={selectedApp.videoUrl} type="video/mp4" />
+                  Votre navigateur ne supporte pas la lecture de vidéos.
+                </video>
+              )}
             </div>
           </div>
         </div>
