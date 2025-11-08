@@ -49,7 +49,7 @@ export const projectsData = [
     title: "FIFA World Cup History",
     category: "Power BI",
     description: "Visualisation des insights clés de l'histoire du tournoi de la Coupe du Monde FIFA : buts, trophées, lieux de matchs, participation des équipes et résultats.",
-    image: "https://plus.unsplash.com/premium_photo-1663013274302-c7159d63e7e5?w=800&h=600&fit=crop&q=80",
+    image: "/images/projects/fifa.svg",
     link: "https://app.powerbi.com/view?r=eyJrIjoiNmNiY2FkMjAtMWMyMC00YzMzLWJhZjEtMTE4NTY5NTcxZTcxIiwidCI6ImRmODY3OWNkLWE4MGUtNDVkOC05OWFjLWM4M2VkN2ZmOTVhMCJ9",
     tags: ["Power BI", "Sports Analytics", "FIFA"]
   },
@@ -67,8 +67,8 @@ export const projectsData = [
     title: "Climate Change in Sub-Saharan Africa",
     category: "Power BI",
     description: "Rapport Power BI mettant en évidence les causes et les effets du changement climatique dans les pays d'Afrique subsaharienne.",
-    image: "https://plus.unsplash.com/premium_photo-1664302427357-40eb7c8fd3c0?w=800&h=600&fit=crop&q=80",
-    link: "#",
+    image: "/images/projects/climate.svg",
+    link: "https://app.powerbi.com/view?r=eyJrIjoiYjE4ZTBjMWUtZTg3MC00NGMzLTgzNWQtYzdjNzMyNDE1ZjNmIiwidCI6ImRmODY3OWNkLWE4MGUtNDVkOC05OWFjLWM4M2VkN2ZmOTVhMCJ9",
     tags: ["Power BI", "Climate Change", "Africa"]
   },
   {
@@ -94,8 +94,8 @@ export const projectsData = [
     title: "EDA of Titanic Passengers Dataset",
     category: "Python",
     description: "Découverte d'insights intéressants sur les passagers à bord du Titanic à travers une analyse exploratoire de données dans un Google Colab Notebook.",
-    image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=800&auto=format&fit=crop",
-    link: "#",
+    image: "/images/projects/titanic.svg",
+    link: "https://colab.research.google.com/drive/1LEVY2wPbMzpLiQH7S9y6GPFK0GPKwpnp",
     tags: ["Python", "EDA", "Historical Data"]
   },
   {
