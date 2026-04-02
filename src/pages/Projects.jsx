@@ -24,7 +24,7 @@ const Projects = () => {
     : projectsData.filter((project) => project.category === selectedCategory);
 
   return (
-    <div className="bg-background min-h-screen text-foreground">
+    <div className="bg-transparent min-h-screen text-foreground">
       {/* Header Section */}
       <ShapeLandingHero 
         badge="Data Analytics Portfolio"
@@ -34,10 +34,10 @@ const Projects = () => {
       />
 
       {/* Filter Section */}
-      <section className="py-8 bg-zinc-900/50 border-b border-zinc-800 shadow-sm backdrop-blur-md">
+      <section className="py-8 bg-white/80 border-b border-gray-100 shadow-sm backdrop-blur-md">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-4 flex-wrap">
-            <div className="flex items-center text-zinc-400 font-semibold">
+            <div className="flex items-center text-gray-700 font-semibold">
               <Filter size={20} className="mr-2" />
               {t('projects.filter_by', 'Filtrer par :')}
             </div>
@@ -47,7 +47,7 @@ const Projects = () => {
               onTabChange={(id) => setSelectedCategory(id)}
             />
           </div>
-          <div className="mt-4 text-zinc-500">
+          <div className="mt-4 text-gray-500">
             {filteredProjects.length} {t('projects.count_text', 'projet(s) trouvé(s)')}
           </div>
         </div>
@@ -66,30 +66,30 @@ const Projects = () => {
       />
 
       {/* Stats Section */}
-      <section className="py-16 bg-background">
+      <section className="py-16 bg-white/40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
             <div className="p-6">
-              <div className="text-4xl font-bold text-primary-500 mb-2">
+              <div className="text-4xl font-bold text-primary mb-2">
                 {projectsData.filter(p => p.category === 'Power BI').length}+
               </div>
-              <div className="text-zinc-400 font-semibold">
+              <div className="text-gray-600 font-semibold">
                 Projets Power BI
               </div>
             </div>
             <div className="p-6">
-              <div className="text-4xl font-bold text-primary-500 mb-2">
+              <div className="text-4xl font-bold text-primary mb-2">
                 {projectsData.filter(p => p.category === 'Python').length}+
               </div>
-              <div className="text-zinc-400 font-semibold">
+              <div className="text-gray-600 font-semibold">
                 Analyses Python
               </div>
             </div>
             <div className="p-6">
-              <div className="text-4xl font-bold text-primary-500 mb-2">
+              <div className="text-4xl font-bold text-primary mb-2">
                 {projectsData.filter(p => p.category === 'SQL').length}+
               </div>
-              <div className="text-zinc-400 font-semibold">
+              <div className="text-gray-600 font-semibold">
                 Projets SQL
               </div>
             </div>

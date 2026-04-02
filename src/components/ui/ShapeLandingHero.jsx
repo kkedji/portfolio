@@ -82,8 +82,8 @@ function ShapeLandingHero({
   };
 
   return (
-    <div className="relative py-20 w-full flex items-center justify-center overflow-hidden bg-primary-900 min-h-[500px]">
-      <div className="absolute inset-0 bg-gradient-to-br from-primary-500/[0.1] via-transparent to-primary-700/[0.1] blur-3xl" />
+    <div className="relative py-20 w-full flex items-center justify-center overflow-hidden bg-primary min-h-[500px]">
+      <div className="absolute inset-0 bg-gradient-to-br from-white/[0.05] via-transparent to-black/[0.05] blur-3xl" />
 
       <div className="absolute inset-0 overflow-hidden">
         <ElegantShape

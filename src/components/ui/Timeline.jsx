@@ -10,21 +10,21 @@ const getStatusConfig = (status) => {
   const configs = {
     completed: {
       progressColor: "bg-green-600",
-      borderColor: "border-green-600/30",
-      badgeBg: "bg-green-500",
-      badgeText: "text-black font-bold"
+      borderColor: "border-green-600/20",
+      badgeBg: "bg-green-100",
+      badgeText: "text-green-800"
     },
     current: {
       progressColor: "bg-blue-600",
-      borderColor: "border-blue-600/30",
-      badgeBg: "bg-blue-500",
-      badgeText: "text-white font-bold"
+      borderColor: "border-blue-600/20",
+      badgeBg: "bg-blue-100",
+      badgeText: "text-blue-800"
     },
     upcoming: {
-      progressColor: "bg-zinc-600",
-      borderColor: "border-zinc-600/30",
-      badgeBg: "bg-zinc-800",
-      badgeText: "text-zinc-300 font-bold"
+      progressColor: "bg-gray-400",
+      borderColor: "border-gray-200",
+      badgeBg: "bg-gray-100",
+      badgeText: "text-gray-600"
     }
   }
   
@@ -60,7 +60,7 @@ export function Timeline({ items, className }) {
     >
       <div className="relative">
         <div 
-          className="absolute left-4 sm:left-6 top-0 bottom-0 w-px bg-zinc-800" 
+          className="absolute left-4 sm:left-6 top-0 bottom-0 w-px bg-gray-200" 
           aria-hidden="true"
         />
         
@@ -140,9 +140,9 @@ export function Timeline({ items, className }) {
                   >
                     <Card className={cn(
                       "border transition-all duration-300 hover:shadow-lg relative",
-                      "bg-zinc-900/50 backdrop-blur-sm",
+                      "bg-white/90 backdrop-blur-sm",
                       config.borderColor,
-                      "group-hover:border-primary/50"
+                      "group-hover:border-primary/30"
                     )}>
                       <CardContent className="p-5 sm:p-6">
                         <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 sm:gap-4 mb-3">
@@ -190,7 +190,7 @@ export function Timeline({ items, className }) {
                         </motion.p>
 
                         <div 
-                          className="h-1.5 bg-zinc-800 rounded-full overflow-hidden"
+                          className="h-1.5 bg-gray-100 rounded-full overflow-hidden"
                           role="progressbar"
                           aria-valuenow={item.status === "completed" ? 100 : item.status === "current" ? 65 : 25}
                           aria-valuemin={0}

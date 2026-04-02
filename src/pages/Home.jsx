@@ -54,7 +54,7 @@ const Home = () => {
   ];
 
   return (
-    <div className="bg-background">
+    <div className="bg-transparent min-h-screen text-foreground">
       {/* Infinite Grid Hero Section */}
       <TheInfiniteGrid className="min-h-[85vh]">
         <motion.div
@@ -92,7 +92,7 @@ const Home = () => {
       <Casestudy5 />
 
       {/* Parcours / Timeline Section */}
-      <section className="py-20 bg-background border-t border-zinc-800">
+      <section className="py-20 bg-white/50 border-t border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8">
             <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
@@ -108,7 +108,7 @@ const Home = () => {
       </section>
 
       {/* Skills Section */}
-      <section className="py-20 bg-background">
+      <section className="py-20 bg-transparent">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
@@ -123,7 +123,7 @@ const Home = () => {
             {skillsData.map((skill, index) => (
               <div
                 key={index}
-                className="bg-zinc-800 text-zinc-100 px-6 py-3 rounded-full font-semibold hover:bg-zinc-700 transition-colors"
+                className="bg-primary-50 text-primary-700 px-6 py-3 rounded-full font-semibold hover:bg-primary-100 transition-colors"
               >
                 {skill}
               </div>
