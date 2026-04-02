@@ -19,14 +19,14 @@ const Applications = () => {
   }));
 
   return (
-    <div className="bg-gray-50 min-h-screen">
+    <div className="bg-background min-h-screen">
       {/* Header Section */}
-      <section className="gradient-bg text-white py-16">
+      <section className="bg-zinc-900 border-b border-zinc-800 text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-4xl lg:text-5xl font-bold mb-4">
             {t('apps.title')}
           </h1>
-          <p className="text-xl text-primary-50">
+          <p className="text-xl text-zinc-400">
             {t('apps.desc')}
           </p>
         </div>
@@ -40,12 +40,12 @@ const Applications = () => {
       </div>
 
       {/* Info Section */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-zinc-900/30">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl font-bold text-foreground mb-4">
             {t('apps.custom_cta_title', "Vous avez un projet d'application ?")}
           </h2>
-          <p className="text-xl text-gray-600 mb-8">
+          <p className="text-xl text-muted-foreground mb-8">
             {t('apps.custom_cta_desc', "Je peux vous aider à développer des applications personnalisées pour répondre à vos besoins spécifiques en analyse de données.")}
           </p>
           <a

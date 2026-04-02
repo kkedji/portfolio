@@ -48,10 +48,10 @@ export const Casestudy5 = () => {
           </p>
         </div>
 
-        <div className="border border-border rounded-xl shadow-sm overflow-hidden bg-white/50">
+        <div className="border border-zinc-800 rounded-xl shadow-sm overflow-hidden bg-zinc-900/40 backdrop-blur-md">
           <a
             href={featuredCasestudy.link || "#"}
-            className="group grid gap-4 overflow-hidden px-6 lg:px-12 transition-colors duration-500 ease-out hover:bg-muted/40 lg:grid-cols-2"
+            className="group grid gap-4 overflow-hidden px-6 lg:px-12 transition-colors duration-500 ease-out hover:bg-zinc-800/40 lg:grid-cols-2"
           >
             <div className="flex flex-col justify-between gap-4 pt-8 md:pt-16 lg:pb-16">
               <div className="flex items-center text-2xl font-bold text-foreground">
@@ -68,7 +68,7 @@ export const Casestudy5 = () => {
                     {featuredCasestudy.subtitle}
                   </span>
                 </h2>
-                <div className="flex items-center gap-2 font-bold text-primary">
+                <div className="flex items-center gap-2 font-bold text-primary-400">
                   {t('casestudies.cta')}
                   <MoveRight className="h-5 w-5 transition-transform duration-500 ease-out group-hover:translate-x-1" />
                 </div>
@@ -93,7 +93,7 @@ export const Casestudy5 = () => {
                 <a
                   key={item.company}
                   href={item.link || "#"}
-                  className={`group flex flex-col justify-between gap-12 border-border bg-background/50 px-6 lg:px-12 py-8 transition-colors duration-500 ease-out hover:bg-muted/40 md:py-12 lg:pb-12 xl:gap-16 ${
+                  className={`group flex flex-col justify-between gap-12 border-zinc-800 bg-zinc-900/20 px-6 lg:px-12 py-8 transition-colors duration-500 ease-out hover:bg-zinc-800/40 md:py-12 lg:pb-12 xl:gap-16 ${
                     idx === 0
                       ? ""
                       : "border-t lg:border-t-0 lg:border-l"
@@ -113,7 +113,7 @@ export const Casestudy5 = () => {
                         {item.subtitle}
                       </span>
                     </h2>
-                    <div className="flex items-center gap-2 font-bold text-primary">
+                    <div className="flex items-center gap-2 font-bold text-primary-400">
                       {t('casestudies.viewMore')} 
                       <MoveRight className="h-5 w-5 transition-transform duration-500 ease-out group-hover:translate-x-1" />
                     </div>

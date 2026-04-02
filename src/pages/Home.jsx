@@ -54,7 +54,7 @@ const Home = () => {
   ];
 
   return (
-    <div className="bg-white">
+    <div className="bg-background">
       {/* Infinite Grid Hero Section */}
       <TheInfiniteGrid className="min-h-[85vh]">
         <motion.div
@@ -92,13 +92,13 @@ const Home = () => {
       <Casestudy5 />
 
       {/* Parcours / Timeline Section */}
-      <section className="py-20 bg-white border-t border-gray-100">
+      <section className="py-20 bg-background border-t border-zinc-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
               {t('home.timelineTitle')}
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               {t('home.timelineDesc')}
             </p>
           </div>
@@ -108,13 +108,13 @@ const Home = () => {
       </section>
 
       {/* Skills Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
               {t('home.skillsTitle')}
             </h2>
-            <p className="text-xl text-gray-600">
+            <p className="text-xl text-muted-foreground">
               {t('home.skillsDesc')}
             </p>
           </div>
@@ -123,7 +123,7 @@ const Home = () => {
             {skillsData.map((skill, index) => (
               <div
                 key={index}
-                className="bg-primary-50 text-primary-700 px-6 py-3 rounded-full font-semibold hover:bg-primary-100 transition-colors"
+                className="bg-zinc-800 text-zinc-100 px-6 py-3 rounded-full font-semibold hover:bg-zinc-700 transition-colors"
               >
                 {skill}
               </div>
@@ -131,6 +131,7 @@ const Home = () => {
           </div>
         </div>
       </section>
+
 
       {/* CTA Section */}
       <section className="gradient-bg text-white py-20">

@@ -21,8 +21,13 @@
     --sidebar: #e3eaf2;
     --font-sans: Libre Baskerville, serif;
     --secondary: #f7c873;
-    --background: #f5f7fa;
-    --foreground: #1a2238;
+    --background: #09090b;
+    --foreground: #fafafa;
+    --card: #18181b;
+    --card-foreground: #fafafa;
+    --muted: #27272a;
+    --muted-foreground: #a1a1aa;
+    --border: #27272a;
     --destructive: #2d1e2f;
     --sidebar-ring: #f7c873;
     --sidebar-accent: #f7c873;
@@ -57,7 +62,7 @@
     --primary: #3a5ba0;
     --sidebar: #23243a;
     --secondary: #ffe066;
-    --background: #181a24;
+    --background: #09090b;
     --foreground: #e6eaf3;
     --destructive: #a04a6c;
     --sidebar-ring: #ffe066;
