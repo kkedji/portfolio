@@ -143,7 +143,7 @@ function ShapeLandingHero({
               <br />
               <span
                 className={cn(
-                  "bg-clip-text text-transparent bg-gradient-to-r from-primary-300 via-white/90 to-primary-100"
+                  "bg-clip-text text-transparent bg-gradient-to-r from-white via-white/90 to-white/80"
                 )}
               >
                 {title2}
