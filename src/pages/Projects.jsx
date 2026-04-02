@@ -26,9 +26,9 @@ const Projects = () => {
     <div className="bg-transparent min-h-screen text-foreground">
       {/* Header Section */}
       <ShapeLandingHero 
-        badge="Data Analytics Portfolio"
+        badge={t('projects.badge', 'Data Analytics Portfolio')}
         title1={t('projects.title')}
-        title2="Insights & Visualisations"
+        title2={t('projects.title2')}
         description={t('projects.desc')}
       />
 
@@ -73,7 +73,7 @@ const Projects = () => {
                 {projectsData.filter(p => p.category === 'Power BI').length}+
               </div>
               <div className="text-gray-600 font-semibold">
-                Projets Power BI
+                {t('projects.stats_powerbi')}
               </div>
             </div>
             <div className="p-6">
@@ -81,7 +81,7 @@ const Projects = () => {
                 {projectsData.filter(p => p.category === 'Python').length}+
               </div>
               <div className="text-gray-600 font-semibold">
-                Analyses Python
+                {t('projects.stats_python')}
               </div>
             </div>
             <div className="p-6">
@@ -89,7 +89,7 @@ const Projects = () => {
                 {projectsData.filter(p => p.category === 'SQL').length}+
               </div>
               <div className="text-gray-600 font-semibold">
-                Projets SQL
+                {t('projects.stats_sql')}
               </div>
             </div>
           </div>

@@ -161,12 +161,22 @@
   },
   "projects": {
     "title": "Mes Projets",
+    "title2": "Insights & Visualisations",
     "desc": "Découvrez une sélection de mes réalisations en analyse de données et Business Intelligence",
+    "stats_powerbi": "Projets Power BI",
+    "stats_python": "Analyses Python",
+    "stats_sql": "Projets SQL",
     "tab_all": "Tous",
     "tab_finance": "Finance",
     "tab_risk": "Risque",
     "tab_hr": "RH",
     "tab_market": "Marché",
+    "recent_heading": "Projets Récents",
+    "category_heading": "Projets",
+    "count_text": "projet(s) trouvé(s)",
+    "filter_by": "Filtrer par :",
+    "cta_title": "Vous avez un projet similaire ?",
+    "cta_desc": "Je peux vous aider à réaliser vos projets d'analyse de données et de visualisation",
     "btn": "Explorer le dashboard",
     "items": {
       "1": {

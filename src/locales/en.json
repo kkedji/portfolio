@@ -161,12 +161,22 @@
   },
   "projects": {
     "title": "My Projects",
+    "title2": "Insights & Visualisations",
     "desc": "Discover a selection of my accomplishments in data analysis and Business Intelligence",
+    "stats_powerbi": "Power BI Projects",
+    "stats_python": "Python Analyses",
+    "stats_sql": "SQL Projects",
     "tab_all": "All",
     "tab_finance": "Finance",
     "tab_risk": "Risk",
     "tab_hr": "HR",
     "tab_market": "Market",
+    "recent_heading": "Recent Projects",
+    "category_heading": "Projects",
+    "count_text": "project(s) found",
+    "filter_by": "Filter by:",
+    "cta_title": "Have a similar project?",
+    "cta_desc": "I can help you build your data analysis and visualization projects",
     "btn": "Explore Dashboard",
     "items": {
       "1": {
