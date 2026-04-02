@@ -2,6 +2,46 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, BarChart3, Database, TrendingUp } from 'lucide-react';
 import { servicesData, skillsData } from '../data/services';
+import AnimatedTextCycle from '../components/ui/AnimatedTextCycle';
+import { Timeline } from '../components/ui/Timeline';
+
+const timelineItems = [
+  {
+    title: "Début dans le Secteur Bancaire",
+    description: "Premières expériences en gestion des crédits. Acquisition des fondamentaux de l'analyse financière et du risque de contrepartie.",
+    date: "2008 - 2015",
+    category: "Banque",
+    status: "completed"
+  },
+  {
+    title: "Expertise Risque & Comités",
+    description: "Analyse approfondie de portefeuilles de crédits, modélisation financière et gestion des risques de marché. Présentation des dossiers institutionnels en comités de décision globaux.",
+    date: "2015 - 2019",
+    category: "Analyse",
+    status: "completed"
+  },
+  {
+    title: "Transition Data & BI",
+    description: "Intégration d'outils analytiques modernes pour l'automatisation des tableaux de bord de gestion. Exploitation de pipelines SQL et création de rapports de solvabilité Power BI.",
+    date: "2019 - 2022",
+    category: "Business Intelligence",
+    status: "completed"
+  },
+  {
+    title: "Développement Application & Python",
+    description: "Création d'applications Web via React (CreditFlow), automatisation avancée via scripts Python (Pandas/Scikit-Learn), et intégration de l'Intelligence Artificielle pour le diagnostic d'entreprise.",
+    date: "2022 - 2024",
+    category: "Ingénierie Logicielle",
+    status: "completed"
+  },
+  {
+    title: "Consultant Data Indépendant",
+    description: "Accompagnement de PME, associations et institutions dans la valorisation de leurs données, la modélisation de leurs KPIs et la digitalisation complète de leurs outils financiers.",
+    date: "Aujourd'hui",
+    category: "Data Analytics",
+    status: "current"
+  }
+];
 
 const Home = () => {
   return (
@@ -11,11 +51,17 @@ const Home = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h1 className="text-4xl lg:text-6xl font-bold mb-6">
-                Bienvenue, je suis Sename
+              <h1 className="text-4xl lg:text-6xl font-light mb-6 text-primary-100">
+                Transformez vos{" "}
+                <AnimatedTextCycle
+                  words={["données", "projets", "analyses", "risques", "décisions", "performances"]}
+                  interval={3000}
+                  className="text-white font-bold"
+                />{" "}
+                en leviers de croissance
               </h1>
               <p className="text-xl lg:text-2xl mb-4 text-primary-100">
-                Consultant Data Indépendant
+                Sename — Consultant Data Indépendant
               </p>
               <p className="text-lg mb-8 text-primary-50">
                 Avec plus de quinze ans d'expérience dans l'industrie bancaire, 
@@ -63,7 +109,7 @@ const Home = () => {
       </section>
 
       {/* Services Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-gray-50" id="services">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
@@ -87,6 +133,22 @@ const Home = () => {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Parcours / Timeline Section */}
+      <section className="py-20 bg-white border-t border-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-8">
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+              Mon Expérience Professionnelle
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              De l'expertise bancaire spécialisée vers l'analyse de données de pointe
+            </p>
+          </div>
+          
+          <Timeline items={timelineItems} />
         </div>
       </section>
 

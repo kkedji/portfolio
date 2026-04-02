@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { ExternalLink, Filter } from 'lucide-react';
 import { projectsData, categories } from '../data/projects';
+import { Tabs } from '../components/ui/VercelTabs';
+import { ShapeLandingHero } from '../components/ui/ShapeLandingHero';
+import GalleryHoverCarousel from '../components/ui/GalleryHoverCarousel';
 
 const Projects = () => {
   const [selectedCategory, setSelectedCategory] = useState('Tous');
@@ -12,17 +15,12 @@ const Projects = () => {
   return (
     <div className="bg-gray-50 min-h-screen">
       {/* Header Section */}
-      <section className="gradient-bg text-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl lg:text-5xl font-bold mb-4">
-            Mes Projets
-          </h1>
-          <p className="text-xl text-primary-50">
-            Explorez mon portfolio de projets en Data Analytics, visualisations Power BI, 
-            analyses Python et requêtes SQL
-          </p>
-        </div>
-      </section>
+      <ShapeLandingHero 
+        badge="Data Analytics Portfolio"
+        title1="Mes Projets"
+        title2="Insights & Visualisations"
+        description="Explorez mon portfolio de projets en Data Analytics, visualisations Power BI, analyses Python et requêtes SQL"
+      />
 
       {/* Filter Section */}
       <section className="py-8 bg-white shadow-sm">
@@ -32,19 +30,11 @@ const Projects = () => {
               <Filter size={20} className="mr-2" />
               Filtrer par :
             </div>
-            {categories.map((category) => (
-              <button
-                key={category}
-                onClick={() => setSelectedCategory(category)}
-                className={`px-6 py-2 rounded-lg font-semibold transition-colors ${
-                  selectedCategory === category
-                    ? 'bg-primary-600 text-white'
-                    : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
-                }`}
-              >
-                {category}
-              </button>
-            ))}
+            <Tabs 
+              tabs={categories.map(c => ({ id: c, label: c }))}
+              activeTab={selectedCategory}
+              onTabChange={(id) => setSelectedCategory(id)}
+            />
           </div>
           <div className="mt-4 text-gray-600">
             {filteredProjects.length} projet{filteredProjects.length > 1 ? 's' : ''} trouvé{filteredProjects.length > 1 ? 's' : ''}
@@ -52,61 +42,17 @@ const Projects = () => {
         </div>
       </section>
 
-      {/* Projects Grid */}
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredProjects.map((project) => (
-              <div key={project.id} className="card group">
-                <div className="relative overflow-hidden">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
-                  />
-                  <div className="absolute top-4 right-4">
-                    <span className="bg-primary-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                      {project.category}
-                    </span>
-                  </div>
-                </div>
-                
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-gray-900 mb-3 line-clamp-2">
-                    {project.title}
-                  </h3>
-                  <p className="text-gray-600 mb-4 line-clamp-3">
-                    {project.description}
-                  </p>
-                  
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {project.tags.slice(0, 3).map((tag, index) => (
-                      <span
-                        key={index}
-                        className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs font-semibold"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-
-                  {project.link && project.link !== '#' && (
-                    <a
-                      href={project.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="btn-primary w-full inline-flex items-center justify-center"
-                    >
-                      Voir le projet
-                      <ExternalLink size={18} className="ml-2" />
-                    </a>
-                  )}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Projects Carousel */}
+      <GalleryHoverCarousel 
+        heading={`Projets ${selectedCategory === 'Tous' ? 'Récents' : selectedCategory}`}
+        items={filteredProjects.map((p) => ({
+          id: p.id.toString(),
+          title: p.title,
+          summary: p.description,
+          url: p.link || "#",
+          image: p.image
+        }))}
+      />
 
       {/* Stats Section */}
       <section className="py-16 bg-white">

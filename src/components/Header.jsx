@@ -1,91 +1,295 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Home, Briefcase, FolderOpen, User } from 'lucide-react';
+import { Button } from './ui/Button';
+import { cn } from '../lib/utils';
+import { MenuToggleIcon } from './ui/MenuToggleIcon';
+import { createPortal } from 'react-dom';
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from './ui/NavigationMenu';
+import {
+  FolderOpen,
+  Briefcase,
+  User,
+  Star,
+  HelpCircle,
+  BarChart
+} from 'lucide-react';
 
-const Header = () => {
-  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+export default function Header() {
+  const [open, setOpen] = useState(false);
+  const scrolled = useScroll(10);
   const location = useLocation();
 
-  const navigation = [
-    { name: 'Accueil', path: '/', icon: Home },
-    { name: 'Applications', path: '/applications', icon: Briefcase },
-    { name: 'Projets', path: '/projets', icon: FolderOpen },
-    { name: 'À propos', path: '/about', icon: User },
-  ];
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [open]);
 
-  const isActive = (path) => location.pathname === path;
+  // Close menu on route change
+  useEffect(() => {
+    setOpen(false);
+  }, [location.pathname]);
 
   return (
-    <header className="bg-white shadow-md sticky top-0 z-50">
-      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-16">
-          <div className="flex items-center">
-            <Link to="/" className="flex items-center space-x-2">
-              <div className="w-10 h-10 bg-gradient-to-br from-primary-600 to-primary-900 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-xl">SK</span>
-              </div>
-              <span className="text-xl font-bold text-gray-900">SKK Analytics</span>
-            </Link>
-          </div>
+    <header
+      className={cn('sticky top-0 z-50 w-full border-b transition-colors duration-300', {
+        'bg-white/95 supports-[backdrop-filter]:bg-white/80 border-gray-200 backdrop-blur-lg shadow-sm':
+          scrolled,
+        'bg-white border-transparent': !scrolled
+      })}
+    >
+      <nav className="mx-auto flex h-16 w-full max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center gap-8">
+          <Link to="/" className="flex items-center space-x-2 mr-4 group">
+            <div className="w-10 h-10 bg-gradient-to-br from-primary-600 to-primary-900 rounded-lg flex items-center justify-center shadow-md group-hover:scale-105 transition-transform">
+              <span className="text-white font-bold text-xl">SK</span>
+            </div>
+            <span className="text-xl font-bold text-gray-900 hidden sm:block tracking-tight">SKK Analytics</span>
+          </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            {navigation.map((item) => {
-              const Icon = item.icon;
-              return (
-                <Link
-                  key={item.name}
-                  to={item.path}
-                  className={`flex items-center space-x-1 px-3 py-2 rounded-md text-sm font-medium transition-colors ${
-                    isActive(item.path)
-                      ? 'text-primary-600 bg-primary-50'
-                      : 'text-gray-700 hover:text-primary-600 hover:bg-gray-50'
-                  }`}
-                >
-                  <Icon size={18} />
-                  <span>{item.name}</span>
+          <NavigationMenu className="hidden md:flex">
+            <NavigationMenuList className="gap-2">
+              {/* Home */}
+              <NavigationMenuLink asChild>
+                <Link to="/" className="hover:bg-primary-50 text-gray-700 hover:text-primary-600 rounded-md py-2 px-4 transition-colors font-semibold text-sm">
+                  Accueil
                 </Link>
-              );
-            })}
-          </div>
+              </NavigationMenuLink>
 
-          {/* Mobile menu button */}
-          <div className="md:hidden flex items-center">
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-gray-700 hover:text-primary-600"
-            >
-              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
-          </div>
+              {/* Mes Solutions Dropdown */}
+              <NavigationMenuItem>
+                <NavigationMenuTrigger className="bg-transparent text-gray-700 hover:text-primary-600 hover:bg-primary-50 font-semibold px-4">
+                  Mes Solutions
+                </NavigationMenuTrigger>
+                <NavigationMenuContent className="p-2">
+                  <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] bg-white rounded-xl shadow-xl border border-gray-100">
+                    {solutionsLinks.map((item, i) => (
+                      <li key={i}>
+                        <ListItem {...item} />
+                      </li>
+                    ))}
+                  </ul>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+
+              {/* Mon Profil Dropdown */}
+              <NavigationMenuItem>
+                <NavigationMenuTrigger className="bg-transparent text-gray-700 hover:text-primary-600 hover:bg-primary-50 font-semibold px-4">
+                  Mon Profil
+                </NavigationMenuTrigger>
+                <NavigationMenuContent className="p-2 bg-white rounded-xl shadow-xl border border-gray-100">
+                  <div className="grid w-[250px] gap-1 p-2">
+                    <ul className="space-y-1">
+                      {profilLinks.map((item, i) => (
+                        <li key={i}>
+                          <NavigationMenuLink asChild>
+                            <Link
+                              to={item.href}
+                              className="flex p-3 hover:bg-primary-50 text-gray-700 hover:text-primary-600 flex-row rounded-lg items-center gap-x-3 transition-colors"
+                            >
+                              <item.icon className="size-5" />
+                              <span className="font-semibold">{item.title}</span>
+                            </Link>
+                          </NavigationMenuLink>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+            </NavigationMenuList>
+          </NavigationMenu>
         </div>
 
-        {/* Mobile Navigation */}
-        {isMenuOpen && (
-          <div className="md:hidden py-4">
-            {navigation.map((item) => {
-              const Icon = item.icon;
-              return (
-                <Link
-                  key={item.name}
-                  to={item.path}
-                  onClick={() => setIsMenuOpen(false)}
-                  className={`flex items-center space-x-2 px-3 py-2 rounded-md text-base font-medium ${
-                    isActive(item.path)
-                      ? 'text-primary-600 bg-primary-50'
-                      : 'text-gray-700 hover:text-primary-600 hover:bg-gray-50'
-                  }`}
-                >
-                  <Icon size={20} />
-                  <span>{item.name}</span>
-                </Link>
-              );
-            })}
-          </div>
-        )}
+        <div className="hidden items-center gap-3 md:flex">
+          <Button variant="outline" className="border-gray-200 shadow-sm hover:bg-gray-50">Contact</Button>
+          <Button className="shadow-sm">Démarrer un projet</Button>
+        </div>
+
+        <Button
+          size="icon"
+          variant="ghost"
+          onClick={() => setOpen(!open)}
+          className="md:hidden text-gray-700 hover:bg-gray-100 focus:bg-gray-100"
+          aria-expanded={open}
+          aria-label="Toggle menu"
+        >
+          <MenuToggleIcon open={open} className="size-6 text-gray-900" duration={300} />
+        </Button>
       </nav>
+
+      {/* Mobile Menu */}
+      <MobileMenu open={open} className="flex flex-col justify-between gap-4 overflow-y-auto pt-6 px-6">
+        <NavigationMenu className="max-w-full block">
+          <div className="flex w-full flex-col gap-y-6">
+            <Link to="/" onClick={() => setOpen(false)} className="font-bold text-2xl pb-4 border-b border-gray-100 text-gray-900 tracking-tight">Accueil</Link>
+            
+            <div>
+              <span className="text-sm font-bold text-gray-400 uppercase tracking-widest mb-3 block">Mes Solutions</span>
+              <div className="grid grid-cols-1 gap-2">
+                {solutionsLinks.map((link) => (
+                  <ListItem key={link.title} {...link} onClick={() => setOpen(false)} />
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <span className="text-sm font-bold text-gray-400 uppercase tracking-widest mb-3 block mt-2">Mon Profil</span>
+              <div className="grid grid-cols-1 gap-1">
+                {profilLinks.map((item, i) => (
+                  <Link
+                    key={i}
+                    to={item.href}
+                    onClick={() => setOpen(false)}
+                    className="flex py-3 px-4 hover:bg-primary-50 text-gray-700 hover:text-primary-600 flex-row rounded-lg items-center gap-x-4 transition-colors"
+                  >
+                    <item.icon className="size-6 text-primary-600" />
+                    <span className="font-bold text-lg">{item.title}</span>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
+        </NavigationMenu>
+        <div className="flex flex-col gap-3 mt-auto pb-10 pt-6">
+          <Button variant="outline" className="w-full bg-white border-2 border-gray-200 py-6 text-lg">
+            Contact
+          </Button>
+          <Button className="w-full py-6 text-lg shadow-md">Démarrer un projet</Button>
+        </div>
+      </MobileMenu>
     </header>
   );
-};
+}
 
-export default Header;
+function MobileMenu({ open, children, className, ...props }) {
+  if (!open || typeof window === 'undefined') return null;
+
+  return createPortal(
+    <div
+      id="mobile-menu"
+      className={cn(
+        'bg-white/95 supports-[backdrop-filter]:bg-white/90 backdrop-blur-2xl',
+        'fixed top-16 right-0 bottom-0 left-0 z-40 flex flex-col overflow-hidden border-t border-gray-100 md:hidden'
+      )}
+    >
+      <div
+        className={cn(
+          'animate-in slide-in-from-bottom-5 fade-in-0 duration-300 ease-out',
+          'size-full',
+          className
+        )}
+        {...props}
+      >
+        {children}
+      </div>
+    </div>,
+    document.body
+  );
+}
+
+function ListItem({
+  title,
+  description,
+  icon: Icon,
+  className,
+  href,
+  onClick,
+  ...props
+}) {
+  return (
+    <NavigationMenuLink asChild>
+      <Link 
+        to={href} 
+        onClick={onClick}
+        className={cn(
+          'block select-none space-y-1 rounded-xl p-3 leading-none no-underline outline-none transition-colors hover:bg-primary-50 hover:text-primary-600 focus:bg-primary-50 focus:text-primary-600 group w-full', 
+          className
+        )} 
+        {...props}
+      >
+        <div className="flex items-center gap-4">
+          <div className="bg-primary-100/50 flex aspect-square size-12 items-center justify-center rounded-lg group-hover:bg-primary-100 transition-colors shadow-sm shrink-0">
+            <Icon className="text-primary-600 size-6" />
+          </div>
+          <div className="flex flex-col justify-center text-left">
+            <div className="text-base font-bold text-gray-900 group-hover:text-primary-600">{title}</div>
+            <p className="line-clamp-2 text-sm leading-snug text-gray-500 mt-1">
+              {description}
+            </p>
+          </div>
+        </div>
+      </Link>
+    </NavigationMenuLink>
+  );
+}
+
+const solutionsLinks = [
+  {
+    title: 'Mes Projets',
+    href: '/projets',
+    description: 'Explorez mon portfolio de projets Data Analytics et Power BI',
+    icon: FolderOpen,
+  },
+  {
+    title: 'Mes Applications',
+    href: '/applications',
+    description: 'Découvrez des solutions applicatives interactives',
+    icon: Briefcase,
+  },
+  {
+    title: 'Cas d\'Usage SaaS',
+    href: '/applications',
+    description: 'Analyses de données avancées dans des environnements cloud',
+    icon: BarChart,
+  }
+];
+
+const profilLinks = [
+  {
+    title: 'À Propos',
+    href: '/about',
+    icon: User,
+  },
+  {
+    title: 'Services',
+    href: '/#services',
+    icon: Star,
+  },
+  {
+    title: 'Obtenir de l\'aide',
+    href: '#',
+    icon: HelpCircle,
+  }
+];
+
+function useScroll(threshold) {
+  const [scrolled, setScrolled] = useState(false);
+
+  const onScroll = React.useCallback(() => {
+    setScrolled(window.scrollY > threshold);
+  }, [threshold]);
+
+  useEffect(() => {
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, [onScroll]);
+
+  useEffect(() => {
+    onScroll();
+  }, [onScroll]);
+
+  return scrolled;
+}
