@@ -21,9 +21,49 @@
   },
   "home": {
     "welcome": "Bienvenue sur mon portfolio",
-    "intro_title": "Je suis Sename",
-    "intro_subtitle": "Consultant Data & Expert en solutions analytiques. J'aide les entreprises à transformer leurs données brutes en décisions stratégiques.",
-    "cta_explore": "Découvrir mes services",
+    "intro_title": "Je conçois des systèmes financiers et de données pour transformer vos opérations manuelles en flux évolutifs et contrôlés",
+    "intro_subtitle": "Des flux d'approbation de crédit au reporting financier automatisé, j'aide les organisations à remplacer l'utilisation de feuilles de calcul fragmentées par des systèmes structurés, fiables et conviviaux.",
+    "trust_boost": "Expertise éprouvée auprès du HCR, d'institutions financières et de PME dans plusieurs pays",
+    "cta_book": "Réserver une consultation",
+    "cta_cases": "Voir les études de cas",
+    "what_i_do_title": "Ce que je fais",
+    "what_i_do_desc": "Je conçois et mets en œuvre des systèmes pratiques qui combinent :",
+    "what_i_do_items": {
+      "1": "Opérations financières",
+      "2": "Flux de données",
+      "3": "Automatisation"
+    },
+    "what_i_do_goal": "L'objectif est simple : rendre vos opérations plus rapides, plus fiables et plus faciles à gérer.",
+    "offers_title": "3 Offres Claires",
+    "how_it_works_title": "Ma méthode de travail",
+    "how_it_works_steps": {
+      "1": {
+        "title": "Étape 1 – Comprendre et Cartographier",
+        "desc": "J'analyse vos flux de travail actuels et identifie les inefficacités."
+      },
+      "2": {
+        "title": "Étape 2 – Concevoir",
+        "desc": "Je structure un système adapté à vos opérations."
+      },
+      "3": {
+        "title": "Étape 3 – Construire et Déployer",
+        "desc": "Je déploie des outils pratiques (pas de systèmes sur-ingénierie)."
+      },
+      "4": {
+        "title": "Étape 4 – Former et Accompagner",
+        "desc": "Je m'assure que votre équipe peut utiliser et maintenir le système."
+      }
+    },
+    "assessment_title": "Commencez par une évaluation du système financier",
+    "assessment_desc": "J'offre une évaluation rapide de vos processus financiers et opérationnels actuels pour identifier les lacunes, les risques et les opportunités d'amélioration.",
+    "assessment_receive": "Vous recevez :",
+    "assessment_items": {
+      "1": "Un diagnostic clair",
+      "2": "Des recommandations pratiques",
+      "3": "Une feuille de route pour la mise en œuvre"
+    },
+    "final_cta_text": "Si votre organisation repose encore sur des feuilles de calcul ou des processus fragmentés, il est temps de passer à un système structuré.",
+    "final_cta_btn": "Discutons de vos besoins",
     "timelineTitle": "Mon Parcours Professionnel",
     "timelineDesc": "De l'expertise bancaire spécialisée vers l'analyse de données de pointe",
     "skillsTitle": "Compétences & Technologies",
@@ -56,34 +96,34 @@
     }
   },
   "casestudies": {
-    "sectionTitle": "Mes Services d'Expertise",
-    "sectionDesc": "Transformez vos données en leviers de performance et de réduction des risques",
-    "cta": "Mes Solutions Data",
-    "viewMore": "Voir plus",
+    "sectionTitle": "Mes Solutions d'Expertise",
+    "sectionDesc": "Remplacez les services génériques par des solutions structurées",
+    "cta": "Voir mes réalisations",
+    "viewMore": "En savoir plus",
     "featured": {
-      "company": "Data & Stratégie",
-      "tags": "ANALYSE DE DONNÉES / BUSINESS INTELLIGENCE",
-      "title": "Automatisation et Valorisation",
-      "desc": "Comment une donnée propre augmente la croissance."
+      "company": "Microfinance",
+      "tags": "AUTOMATISATION DES FLUX / WEB APP",
+      "title": "Système d'automatisation des flux de crédit",
+      "desc": "Transformation d'un processus manuel lent en un workflow web structuré et transparent."
     },
     "grid": {
       "1": {
-        "company": "Reporting",
-        "tags": "TABLEAUX DE BORD / POWER BI",
-        "title": "Tableaux de bord interactifs.",
-        "desc": "Gardez l'œil sur vos KPIs en temps réel."
+        "company": "Conception Financière",
+        "tags": "SYSTÈMES COMPTABLES / SUIVI PROJET",
+        "title": "Conception & Mise en œuvre de systèmes financiers",
+        "desc": "Plan comptable, configuration, suivi bailleurs et systèmes de reporting."
       },
       "2": {
-        "company": "Architecture",
-        "tags": "MIGRATION SQL / CLOUD",
-        "title": "Migration et robustesse cloud.",
-        "desc": "Rapatriez et sécurisez toutes vos données isolées."
+        "company": "Automatisation",
+        "tags": "WORKFLOWS / VALIDATION",
+        "title": "Systèmes d'automatisation des flux de travail",
+        "desc": "Approbation de crédit, validation des dépenses et systèmes d'approbation multiniveaux."
       },
       "3": {
-        "company": "Audit & Conseil",
-        "tags": "STRATÉGIE / GOUVERNANCE",
-        "title": "Audit & Conseil Stratégique",
-        "desc": "Analyse de la gouvernance des données existantes et recommandations techniques adaptées aux réalités des PME Africaines."
+        "company": "Data & Reporting",
+        "tags": "DASHBOARDS / POWER BI",
+        "title": "Systèmes de données et de reporting",
+        "desc": "Tableaux de bord interactifs, rapports automatisés et outils d'aide à la décision."
       }
     }
   },

@@ -11,28 +11,31 @@ export const Casestudy5 = () => {
     tags: t('casestudies.featured.tags'),
     title: t('casestudies.featured.title'),
     subtitle: t('casestudies.featured.desc'),
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&auto=format&fit=crop",
-    link: "#",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&auto=format&fit=crop",
+    link: "/projets",
   };
 
   const casestudies = [
     {
-      logo: "https://shadcnblocks.com/images/block/block-2.svg",
       company: t('casestudies.grid.1.company'),
       tags: t('casestudies.grid.1.tags'),
       title: t('casestudies.grid.1.title'),
       subtitle: t('casestudies.grid.1.desc'),
-      image: "",
-      link: "#",
+      link: "#services",
     },
     {
-      logo: "https://shadcnblocks.com/images/block/block-3.svg",
       company: t('casestudies.grid.2.company'),
       tags: t('casestudies.grid.2.tags'),
       title: t('casestudies.grid.2.title'),
       subtitle: t('casestudies.grid.2.desc'),
-      image: "",
-      link: "#",
+      link: "#services",
+    },
+    {
+      company: t('casestudies.grid.3.company'),
+      tags: t('casestudies.grid.3.tags'),
+      title: t('casestudies.grid.3.title'),
+      subtitle: t('casestudies.grid.3.desc'),
+      link: "#services",
     },
   ];
   return (
@@ -61,14 +64,28 @@ export const Casestudy5 = () => {
                 <span className="text-xs text-primary font-bold tracking-widest uppercase sm:text-sm">
                   {featuredCasestudy.tags}
                 </span>
-                <h2 className="mt-4 mb-5 text-3xl font-bold text-balance sm:text-4xl sm:leading-[1.1] text-foreground">
+                <h2 className="mt-4 mb-5 text-3xl font-bold text-balance sm:text-4xl sm:leading-[1.1] text-foreground leading-tight">
                   {featuredCasestudy.title}
-                  <span className="font-medium text-muted-foreground transition-colors duration-500 ease-out group-hover:text-primary/70">
-                    {" "}
-                    {featuredCasestudy.subtitle}
-                  </span>
                 </h2>
-                <div className="flex items-center gap-2 font-bold text-primary">
+                <div className="grid gap-6 mb-8">
+                  <div>
+                    <span className="text-sm font-bold text-primary uppercase tracking-wider">Problem:</span>
+                    <p className="text-muted-foreground mt-1">Manual credit approval process with multiple actors, delays, and lack of visibility.</p>
+                  </div>
+                  <div>
+                    <span className="text-sm font-bold text-primary uppercase tracking-wider">Solution:</span>
+                    <p className="text-muted-foreground mt-1">Built a full web-based system automating the entire credit lifecycle with role-based approvals.</p>
+                  </div>
+                  <div>
+                    <span className="text-sm font-bold text-primary uppercase tracking-wider">Impact:</span>
+                    <ul className="list-disc list-inside text-muted-foreground mt-1 space-y-1">
+                      <li>Faster approval cycles</li>
+                      <li>Full transparency across decision stages</li>
+                      <li>Reduced operational risk</li>
+                    </ul>
+                  </div>
+                </div>
+                <div className="flex items-center gap-2 font-bold text-primary pb-8">
                   {t('casestudies.cta')}
                   <MoveRight className="h-5 w-5 transition-transform duration-500 ease-out group-hover:translate-x-1" />
                 </div>
@@ -88,7 +105,7 @@ export const Casestudy5 = () => {
           </a>
           
           <div className="flex border-t border-border">
-            <div className="grid lg:grid-cols-2 w-full">
+            <div className="grid lg:grid-cols-3 w-full">
               {casestudies.map((item, idx) => (
                 <a
                   key={item.company}

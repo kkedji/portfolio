@@ -1,5 +1,25 @@
 export const projectsData = [
   {
+    id: "case-1",
+    title: "Credit Workflow Automation System",
+    category: "Automation",
+    description: "Credit approval process automation for a microfinance institution. Built a full web-based system automating the entire credit lifecycle with role-based approvals.",
+    image: "/images/projects/credit-workflow.jpg",
+    link: "#",
+    tags: ["React", "Workflow Automation", "Fintech"],
+    featured: true
+  },
+  {
+    id: "case-2",
+    title: "UNHCR Financial Reporting Automation",
+    category: "Data Systems",
+    description: "Reduced reporting time by 50% across 11 international markets by automating fragmented financial data collection and processing.",
+    image: "/images/projects/unhcr-reporting.jpg",
+    link: "#",
+    tags: ["Python", "Power BI", "Financial Reporting"],
+    featured: true
+  },
+  {
     id: 1,
     title: "Elections Législatives Togo Avril 2024",
     category: "Power BI",

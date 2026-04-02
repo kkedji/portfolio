@@ -67,6 +67,7 @@ function ShapeLandingHero({
   title1 = "Elevate Your Digital Vision",
   title2 = "Crafting Exceptional Websites",
   description = "Crafting exceptional digital experiences through innovative design and cutting-edge technology.",
+  trustText = "",
   children
 }) {
   const fadeUpVariants = {
@@ -160,6 +161,15 @@ function ShapeLandingHero({
             <p className="text-base sm:text-lg md:text-xl text-white/60 mb-8 max-w-2xl mx-auto px-4">
               {description}
             </p>
+            {trustText && (
+              <div className="flex items-center justify-center gap-2 mb-8 animate-pulse">
+                <div className="h-px w-8 bg-white/20" />
+                <span className="text-sm font-medium text-white/40 uppercase tracking-widest italic text-balance px-4">
+                  {trustText}
+                </span>
+                <div className="h-px w-8 bg-white/20" />
+              </div>
+            )}
           </motion.div>
 
           {children && (

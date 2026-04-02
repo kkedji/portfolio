@@ -21,9 +21,49 @@
   },
   "home": {
     "welcome": "Welcome to my portfolio",
-    "intro_title": "I am Sename",
-    "intro_subtitle": "Data Consultant & Expert in analytical solutions. I help companies transform raw data into strategic decisions.",
-    "cta_explore": "Explore my services",
+    "intro_title": "I Build Financial & Data Systems That Turn Manual Operations Into Scalable, Controlled Workflows",
+    "intro_subtitle": "From credit approval systems to automated financial reporting, I help organizations replace spreadsheets and fragmented processes with structured, reliable, and user-friendly systems.",
+    "trust_boost": "Worked with UNHCR, financial institutions, and SMEs across multiple countries",
+    "cta_book": "Book a Consultation",
+    "cta_cases": "View Case Studies",
+    "what_i_do_title": "What I Do",
+    "what_i_do_desc": "I design and implement practical systems that combine:",
+    "what_i_do_items": {
+      "1": "Financial operations",
+      "2": "Data workflows",
+      "3": "Automation"
+    },
+    "what_i_do_goal": "The goal is simple: make your operations faster, more reliable, and easier to manage.",
+    "offers_title": "3 Clear Offers",
+    "how_it_works_title": "How I Work",
+    "how_it_works_steps": {
+      "1": {
+        "title": "Step 1 – Understand & Map",
+        "desc": "I analyze your current workflows and identify inefficiencies."
+      },
+      "2": {
+        "title": "Step 2 – Design",
+        "desc": "I structure a system adapted to your operations."
+      },
+      "3": {
+        "title": "Step 3 – Build & Implement",
+        "desc": "I deploy practical tools (not over-engineered systems)."
+      },
+      "4": {
+        "title": "Step 4 – Train & Support",
+        "desc": "I ensure your team can use and maintain the system."
+      }
+    },
+    "assessment_title": "Start With a Financial System Assessment",
+    "assessment_desc": "I offer a rapid assessment of your current financial and operational processes to identify gaps, risks, and improvement opportunities.",
+    "assessment_receive": "You receive:",
+    "assessment_items": {
+      "1": "A clear diagnostic",
+      "2": "Practical recommendations",
+      "3": "A roadmap for implementation"
+    },
+    "final_cta_text": "If your organization is still relying on spreadsheets or fragmented processes, it’s time to move to a structured system.",
+    "final_cta_btn": "Let’s discuss your needs",
     "timelineTitle": "My Professional Journey",
     "timelineDesc": "From specialized banking expertise to cutting-edge data analytics",
     "skillsTitle": "Skills & Technologies",
@@ -56,34 +96,34 @@
     }
   },
   "casestudies": {
-    "sectionTitle": "My Expert Services",
-    "sectionDesc": "Transform your data into performance levers and reduce risks",
-    "cta": "My Data Solutions",
-    "viewMore": "View more",
+    "sectionTitle": "My Expert Solutions",
+    "sectionDesc": "Replace generic services with structured solutions",
+    "cta": "View my work",
+    "viewMore": "Learn more",
     "featured": {
-      "company": "Data & Strategy",
-      "tags": "DATA ANALYSIS / BUSINESS INTELLIGENCE",
-      "title": "Automation and Valorization",
-      "desc": "How clean data drives growth."
+      "company": "Microfinance",
+      "tags": "WORKFLOW AUTOMATION / WEB APP",
+      "title": "Credit Workflow Automation System",
+      "desc": "Transforming a slow manual process into a structured, transparent web workflow."
     },
     "grid": {
       "1": {
-        "company": "Reporting",
-        "tags": "DASHBOARDS / POWER BI",
-        "title": "Interactive Dashboards.",
-        "desc": "Keep an eye on your KPIs in real-time."
+        "company": "Financial Design",
+        "tags": "ACCOUNTING SYSTEMS / PROJECT TRACKING",
+        "title": "Financial System Design & Implementation",
+        "desc": "Chart of Accounts, system setup, donor tracking, and reporting systems."
       },
       "2": {
-        "company": "Architecture",
-        "tags": "SQL MIGRATION / CLOUD",
-        "title": "Cloud migration and robustness.",
-        "desc": "Repatriate and secure all your isolated data."
+        "company": "Automation",
+        "tags": "WORKFLOWS / VALIDATION",
+        "title": "Workflow Automation Systems",
+        "desc": "Credit approval workflows, expense validation, and multi-level approval systems."
       },
       "3": {
-        "company": "Audit & Consulting",
-        "tags": "STRATEGY / GOVERNANCE",
-        "title": "Audit & Strategic Consulting",
-        "desc": "Analysis of existing data governance and technical recommendations adapted to the reality of African SMEs."
+        "company": "Data & Reporting",
+        "tags": "DASHBOARDS / POWER BI",
+        "title": "Data & Reporting Systems",
+        "desc": "Interactive dashboards, automated reports, and decision-support tools."
       }
     }
   },
