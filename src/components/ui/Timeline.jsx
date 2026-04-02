@@ -4,6 +4,7 @@ import { cn } from "../../lib/utils"
 import { Card, CardContent } from "./Card"
 import { Badge } from "./Badge"
 import { CheckCircle, Clock, Circle } from "lucide-react"
+import { useTranslation } from "react-i18next"
 
 const getStatusConfig = (status) => {
   const configs = {
@@ -42,10 +43,11 @@ const getStatusIcon = (status) => {
 }
 
 export function Timeline({ items, className }) {
+  const { t } = useTranslation()
   if (!items || items.length === 0) {
     return (
       <div className={cn("w-full max-w-4xl mx-auto px-4 sm:px-6 py-8", className)}>
-        <p className="text-center text-gray-500">Aucun événement à afficher</p>
+        <p className="text-center text-gray-500">{t('timeline.empty', 'Aucun événement à afficher')}</p>
       </div>
     )
   }
@@ -175,7 +177,7 @@ export function Timeline({ items, className }) {
                             )}
                             aria-label={`Status: ${item.status || "upcoming"}`}
                           >
-                            {item.status === 'completed' ? 'Complété' : item.status === 'current' ? 'En cours' : 'À venir'}
+                            {item.status === 'completed' ? t('timeline.status_completed', 'Complété') : item.status === 'current' ? t('timeline.status_current', 'En cours') : t('timeline.status_upcoming', 'À venir')}
                           </Badge>
                         </div>
 

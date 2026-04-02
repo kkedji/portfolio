@@ -1,8 +1,9 @@
-import React, { useState } from "react";
 import { PlayCircle } from "lucide-react";
 import { Card, CardContent } from "./Card";
+import { useTranslation } from "react-i18next";
 
 export default function FeaturedAppDemo({ app }) {
+  const { t } = useTranslation();
   const [isPlaying, setIsPlaying] = useState(false);
 
   return (
@@ -65,7 +66,7 @@ export default function FeaturedAppDemo({ app }) {
                     {i + 1}
                   </div>
                   <h3 className="text-base font-semibold text-gray-900 line-clamp-1">
-                    Point Clé
+                    {t('apps.features')}
                   </h3>
                 </div>
                 <p className="text-sm text-gray-600 leading-relaxed pl-11">
@@ -87,7 +88,7 @@ export default function FeaturedAppDemo({ app }) {
                 {tag.substring(0, 3)}
               </div>
               <div>
-                <div className="font-semibold text-gray-900">Tech</div>
+                <div className="font-semibold text-gray-900">{t('apps.tech_label', 'Tech')}</div>
                 <div className="text-xs text-gray-500 line-clamp-1">{tag}</div>
               </div>
             </div>

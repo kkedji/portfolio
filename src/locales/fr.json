@@ -1,0 +1,198 @@
+{
+  "header": {
+    "home": "Accueil",
+    "solutions": "Mes Solutions",
+    "profile": "Mon Profil",
+    "projects": "Mes Projets",
+    "projects_desc": "Explorez mon portfolio de projets Data Analytics et Power BI",
+    "apps": "Mes Applications",
+    "apps_desc": "Découvrez des solutions applicatives interactives",
+    "about": "À Propos",
+    "services": "Services"
+  },
+  "footer": {
+    "desc": "Spécialiste en reporting stratégique, gestion des risques et automatisation de processus via Power BI et Python.",
+    "links": "Liens Utiles",
+    "contact": "Contact",
+    "projects": "Projets",
+    "apps": "Applications",
+    "about": "À propos",
+    "allRights": "Tous droits réservés."
+  },
+  "home": {
+    "timelineTitle": "Mon Expérience Professionnelle",
+    "timelineDesc": "De l'expertise bancaire spécialisée vers l'analyse de données de pointe",
+    "skillsTitle": "Compétences & Technologies",
+    "skillsDesc": "Outils et technologies que je maîtrise",
+    "ctaTitle": "Prêt à transformer vos données ?",
+    "ctaDesc": "Découvrez mes projets et applications pour voir comment je peux vous aider à exploiter la puissance de vos données.",
+    "ctaBtn1": "Voir les projets",
+    "ctaBtn2": "En savoir plus",
+    "timeline": {
+      "banque": {
+        "title": "Début dans le Secteur Bancaire",
+        "desc": "Premières expériences en gestion des crédits. Acquisition des fondamentaux de l'analyse financière et du risque de contrepartie."
+      },
+      "analyse": {
+        "title": "Expertise Risque & Comités",
+        "desc": "Analyse approfondie de portefeuilles de crédits, modélisation financière et gestion des risques de marché. Présentation des dossiers institutionnels en comités de décision globaux."
+      },
+      "bi": {
+        "title": "Transition Data & BI",
+        "desc": "Intégration d'outils analytiques modernes pour l'automatisation des tableaux de bord de gestion. Exploitation de pipelines SQL et création de rapports de solvabilité Power BI."
+      },
+      "software": {
+        "title": "Développement Application & Python",
+        "desc": "Création d'applications Web via React (CreditFlow), automatisation avancée via scripts Python (Pandas/Scikit-Learn), et intégration de l'Intelligence Artificielle pour le diagnostic d'entreprise."
+      },
+      "data": {
+        "title": "Consultant Data Indépendant",
+        "desc": "Accompagnement de PME, associations et institutions dans la valorisation de leurs données, la modélisation de leurs KPIs et la digitalisation complète de leurs outils financiers."
+      }
+    }
+  },
+  "casestudies": {
+    "sectionTitle": "Mes Services d'Expertise",
+    "sectionDesc": "Transformez vos données en leviers de performance et de réduction des risques",
+    "cta": "Mes Solutions Data",
+    "viewMore": "Voir plus",
+    "featured": {
+      "company": "Data & Stratégie",
+      "tags": "ANALYSE DE DONNÉES / BUSINESS INTELLIGENCE",
+      "title": "Automatisation et Valorisation",
+      "desc": "Comment une donnée propre augmente la croissance."
+    },
+    "grid": {
+      "1": {
+        "company": "Reporting",
+        "tags": "TABLEAUX DE BORD / POWER BI",
+        "title": "Tableaux de bord interactifs.",
+        "desc": "Gardez l'œil sur vos KPIs en temps réel."
+      },
+      "2": {
+        "company": "Architecture",
+        "tags": "MIGRATION SQL / CLOUD",
+        "title": "Migration et robustesse cloud.",
+        "desc": "Rapatriez et sécurisez toutes vos données isolées."
+      },
+      "3": {
+        "company": "Audit & Conseil",
+        "tags": "STRATÉGIE / GOUVERNANCE",
+        "title": "Audit & Conseil Stratégique",
+        "desc": "Analyse de la gouvernance des données existantes et recommandations techniques adaptées aux réalités des PME Africaines."
+      }
+    }
+  },
+  "glassmorphism": {
+    "badge": "Profil & Vision",
+    "subtitle": "Consultant Data Indépendant",
+    "desc1": "Avec plus de quinze ans d'expérience dans l'industrie bancaire, j'aide aujourd'hui les organisations à transformer leurs données en leviers de performance. Mon approche combine rigueur analytique, vision technologique et ingénierie logicielle.",
+    "highlights": {
+      "1": {
+        "title": "15+ années d'expertise",
+        "desc": "Industrie bancaire, analyse de données avancée, modélisation des risques et présentations en comités de direction."
+      },
+      "2": {
+        "title": "Domaines d'intervention",
+        "desc": "Business Intelligence, structuration de base de données SQL, reporting Power BI et web-apps fullstack."
+      },
+      "3": {
+        "title": "Stratégie d'Accompagnement",
+        "desc": "Conseil personnalisé pour les PME et institutions cherchant à transformer leurs données en réel levier décisionnel."
+      }
+    },
+    "cardSubtitle": "Expertise Bancaire · Développement Data",
+    "cardDesc": "Allier la rigueur institutionnelle à l'agilité des outils modernes pour créer des interfaces et tableaux de bord qui transforment la donnée complexe en évidence."
+  },
+  "projects": {
+    "title": "Mes Projets",
+    "desc": "Découvrez une sélection de mes réalisations en analyse de données et Business Intelligence",
+    "tab_all": "Tous",
+    "tab_finance": "Finance",
+    "tab_risk": "Risque",
+    "tab_hr": "RH",
+    "tab_market": "Marché",
+    "btn": "Explorer le dashboard",
+    "items": {
+      "1": {
+        "title": "Elections Législatives Togo Avril 2024",
+        "desc": "Rapport Power BI conçu à partir de la liste des candidats présentés par tous les partis politiques togolais participants aux élections législatives d'Avril 2024. Permet de visualiser les députés sortants, les candidats par circonscription, avec analyse par genre et parti politique."
+      },
+      "2": {
+        "title": "Supply Chain Activity Analysis",
+        "desc": "Analyse multi-dimensionnelle d'une entreprise de supply chain à travers les indicateurs de performance de l'industrie : Ventes, Clients, Fournisseurs, Logistique et performance d'entrepôt."
+      },
+      "3": {
+        "title": "Indicateurs du developpement du Bénin",
+        "desc": "Analyse de principaux indicateurs de developpement du Bénin sur plusieurs années à l'aide de Power BI. Le rapport couvre des domaines tels que l'économie, la santé, l'éducation et l'infrastructure, fournissant des insights clés pour les décideurs et les parties prenantes."
+      },
+      "4": {
+        "title": "Nigeria Agricultural Export Analysis",
+        "desc": "Analyse de trois années d'exportations agricoles du Nigeria à travers des métriques telles que la valeur d'exportation, les unités vendues, le nombre d'expéditions et les profits. Données segmentées par produits, entreprises, pays de destination et périodes."
+      },
+      "7": {
+        "title": "Togo's Economic Indicators Analysis",
+        "desc": "Visualisation des indicateurs économiques du Togo sur 60 ans avec des insights clés dans Power BI."
+      },
+      "8": {
+        "title": "Climate Change in Sub-Saharan Africa",
+        "desc": "Rapport Power BI mettant en évidence les causes et les effets du changement climatique dans les pays d'Afrique subsaharienne."
+      },
+      "9": {
+        "title": "EDA of Tweets - Popular Hashtags in Togo",
+        "desc": "Scraping et analyse des hashtags les plus populaires parmi les utilisateurs Twitter au Togo pour orienter les stratégies de marketing digital et l'optimisation à l'aide de Python dans un Jupyter Notebook."
+      },
+      "10": {
+        "title": "EDA of World Cup Results Since 1930",
+        "desc": "Analyse exploratoire des résultats des matchs de la Coupe du Monde et visualisation dans Jupyter Notebook en utilisant Python."
+      },
+      "11": {
+        "title": "EDA of Titanic Passengers Dataset",
+        "desc": "Découverte d'insights intéressants sur les passagers à bord du Titanic à travers une analyse exploratoire de données dans un Google Colab Notebook."
+      },
+      "12": {
+        "title": "Nettoyage de données avec SQL",
+        "desc": "Utilisation de diverses requêtes SQL pour nettoyer les données Nashville Housing provenant de Kaggle."
+      },
+      "13": {
+        "title": "Nettoyage de données avec Python",
+        "desc": "Utilisation de diverses fonctions Python pour nettoyer les données d'indicateurs économiques du Togo provenant du databank du Groupe de la Banque mondiale."
+      },
+      "14": {
+        "title": "Business Insights avec SQL",
+        "desc": "Utilisation de requêtes SQL pour répondre aux questions commerciales d'un investisseur potentiel dans une entreprise de location de films."
+      }
+    }
+  },
+  "apps": {
+    "title": "Mes Applications Web",
+    "desc": "Démonstrations des interfaces et solutions fullstack développées pour simplifier l'analyse métier.",
+    "featured": "En Vedette",
+    "features": "Fonctionnalités",
+    "watch": "Regarder la Démo",
+    "hide": "Cacher la Démo",
+    "items": {
+      "1": {
+        "title": "CreditFlow - Plateforme de Gestion de Dossiers de Crédit",
+        "desc": "Application web complète de gestion du cycle de vie des demandes de crédit microfinance. Permet la collecte structurée des données clients avec capture photo, l'analyse financière automatisée, l'évaluation des risques par scoring, synthèse et avis d'expert sur le dossier par une vue à 360° par l'IA et la prise de décision collégiale avec signatures électroniques et une traçabilité totale.",
+        "f1": "Gestion multi-rôles avec workflow de validation en cascade (Collecteur → Superviseur → Analyste → Directeur → Comité)",
+        "f2": "Capture photo des CNI, de la position GPS,et des informations des cautions",
+        "f3": "Système de scoring et pondération des risques avec recommandations automatiques à l'aide de l'IA"
+      },
+      "2": {
+        "title": "Application De Gestion des Opérations d'une Boutique",
+        "desc": "Application web complète de gestion commerciale pour petites et moyennes boutiques. Cette solution tout-en-un permet aux commerçants de digitaliser et optimiser l'ensemble de leurs opérations : ventes, stocks, clients, fournisseurs, production et finances. Accessible depuis n'importe quel appareil avec synchronisation en temps réel.",
+        "f1": "Gestion des produits avec ajout, modification et suppression",
+        "f2": "Suivi des ventes et des performances des produits",
+        "f3": "Tableau de bord avec statistiques et graphiques"
+      },
+      "3": {
+        "title": "Application de Gestion des Finances d'une Association",
+        "desc": "Solution complète de gestion financière pour associations, clubs et organisations communautaires. Automatise le suivi des cotisations mensuelles, la gestion des contributions aux événements et la génération de rapports professionnels. Conçue pour simplifier la vie des trésoriers et améliorer la transparence financière.",
+        "f1": "Gestion complète des membres avec fiches détaillées et import Excel",
+        "f2": "Suivi automatisé des cotisations mensuelles avec calendrier visuel",
+        "f3": "Génération de rapports financiers professionnels imprimables (PDF)"
+      }
+    }
+  }
+}

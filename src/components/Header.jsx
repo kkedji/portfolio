@@ -18,13 +18,19 @@ import {
   User,
   Star,
   HelpCircle,
-  BarChart
+  BarChart,
+  Globe
 } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 export default function Header() {
-  const [open, setOpen] = useState(false);
-  const scrolled = useScroll(10);
-  const location = useLocation();
+  const { t, i18n } = useTranslation();
+  const currentLanguage = i18n.language;
+
+  const toggleLanguage = () => {
+    const newLang = currentLanguage.startsWith('fr') ? 'en' : 'fr';
+    i18n.changeLanguage(newLang);
+  };
 
   useEffect(() => {
     if (open) {
@@ -64,18 +70,18 @@ export default function Header() {
               {/* Home */}
               <NavigationMenuLink asChild>
                 <Link to="/" className="hover:bg-primary-50 text-gray-700 hover:text-primary-600 rounded-md py-2 px-4 transition-colors font-semibold text-sm">
-                  Accueil
+                  {t('header.home')}
                 </Link>
               </NavigationMenuLink>
 
               {/* Mes Solutions Dropdown */}
               <NavigationMenuItem>
                 <NavigationMenuTrigger className="bg-transparent text-gray-700 hover:text-primary-600 hover:bg-primary-50 font-semibold px-4">
-                  Mes Solutions
+                  {t('header.solutions')}
                 </NavigationMenuTrigger>
                 <NavigationMenuContent className="p-2">
                   <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] bg-white rounded-xl shadow-xl border border-gray-100">
-                    {solutionsLinks.map((item, i) => (
+                    {getSolutionsLinks(t).map((item, i) => (
                       <li key={i}>
                         <ListItem {...item} />
                       </li>
@@ -87,12 +93,12 @@ export default function Header() {
               {/* Mon Profil Dropdown */}
               <NavigationMenuItem>
                 <NavigationMenuTrigger className="bg-transparent text-gray-700 hover:text-primary-600 hover:bg-primary-50 font-semibold px-4">
-                  Mon Profil
+                  {t('header.profile')}
                 </NavigationMenuTrigger>
                 <NavigationMenuContent className="p-2 bg-white rounded-xl shadow-xl border border-gray-100">
                   <div className="grid w-[250px] gap-1 p-2">
                     <ul className="space-y-1">
-                      {profilLinks.map((item, i) => (
+                      {getProfilLinks(t).map((item, i) => (
                         <li key={i}>
                           <NavigationMenuLink asChild>
                             <Link
@@ -114,40 +120,60 @@ export default function Header() {
         </div>
 
         <div className="hidden items-center gap-3 md:flex">
+          <Button 
+            variant="ghost" 
+            size="sm" 
+            onClick={toggleLanguage}
+            className="flex items-center gap-2 font-bold text-primary"
+          >
+            <Globe className="size-4" />
+            {currentLanguage.startsWith('fr') ? 'EN' : 'FR'}
+          </Button>
           {/* Removed CTA buttons per user request */}
         </div>
 
-        <Button
-          size="icon"
-          variant="ghost"
-          onClick={() => setOpen(!open)}
-          className="md:hidden text-gray-700 hover:bg-gray-100 focus:bg-gray-100"
-          aria-expanded={open}
-          aria-label="Toggle menu"
-        >
-          <MenuToggleIcon open={open} className="size-6 text-gray-900" duration={300} />
-        </Button>
+        <div className="flex items-center gap-2 md:hidden">
+          <Button 
+            variant="ghost" 
+            size="sm" 
+            onClick={toggleLanguage}
+            className="flex items-center gap-2 font-bold text-primary"
+          >
+            <Globe className="size-4" />
+            {currentLanguage.startsWith('fr') ? 'EN' : 'FR'}
+          </Button>
+          <Button
+            size="icon"
+            variant="ghost"
+            onClick={() => setOpen(!open)}
+            className="text-gray-700 hover:bg-gray-100 focus:bg-gray-100"
+            aria-expanded={open}
+            aria-label="Toggle menu"
+          >
+            <MenuToggleIcon open={open} className="size-6 text-gray-900" duration={300} />
+          </Button>
+        </div>
       </nav>
 
       {/* Mobile Menu */}
       <MobileMenu open={open} className="flex flex-col justify-between gap-4 overflow-y-auto pt-6 px-6">
         <NavigationMenu className="max-w-full block">
           <div className="flex w-full flex-col gap-y-6">
-            <Link to="/" onClick={() => setOpen(false)} className="font-bold text-2xl pb-4 border-b border-gray-100 text-gray-900 tracking-tight">Accueil</Link>
+            <Link to="/" onClick={() => setOpen(false)} className="font-bold text-2xl pb-4 border-b border-gray-100 text-gray-900 tracking-tight">{t('header.home')}</Link>
             
             <div>
-              <span className="text-sm font-bold text-gray-400 uppercase tracking-widest mb-3 block">Mes Solutions</span>
+              <span className="text-sm font-bold text-gray-400 uppercase tracking-widest mb-3 block">{t('header.solutions')}</span>
               <div className="grid grid-cols-1 gap-2">
-                {solutionsLinks.map((link) => (
+                {getSolutionsLinks(t).map((link) => (
                   <ListItem key={link.title} {...link} onClick={() => setOpen(false)} />
                 ))}
               </div>
             </div>
 
             <div>
-              <span className="text-sm font-bold text-gray-400 uppercase tracking-widest mb-3 block mt-2">Mon Profil</span>
+              <span className="text-sm font-bold text-gray-400 uppercase tracking-widest mb-3 block mt-2">{t('header.profile')}</span>
               <div className="grid grid-cols-1 gap-1">
-                {profilLinks.map((item, i) => (
+                {getProfilLinks(t).map((item, i) => (
                   <Link
                     key={i}
                     to={item.href}
@@ -232,29 +258,29 @@ function ListItem({
   );
 }
 
-const solutionsLinks = [
+const getSolutionsLinks = (t) => [
   {
-    title: 'Mes Projets',
+    title: t('header.projects'),
     href: '/projets',
-    description: 'Explorez mon portfolio de projets Data Analytics et Power BI',
+    description: t('header.projects_desc'),
     icon: FolderOpen,
   },
   {
-    title: 'Mes Applications',
+    title: t('header.apps'),
     href: '/applications',
-    description: 'Découvrez des solutions applicatives interactives',
+    description: t('header.apps_desc'),
     icon: Briefcase,
   }
 ];
 
-const profilLinks = [
+const getProfilLinks = (t) => [
   {
-    title: 'À Propos',
+    title: t('header.about'),
     href: '/about',
     icon: User,
   },
   {
-    title: 'Services',
+    title: t('header.services'),
     href: '/#services',
     icon: Star,
   }

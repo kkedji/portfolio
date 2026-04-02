@@ -1,51 +1,50 @@
 import { MoveRight } from "lucide-react";
 import React from "react";
+import { useTranslation } from "react-i18next";
 
-const defaultFeaturedCasestudy = {
-  logo: "https://shadcnblocks.com/images/block/block-1.svg",
-  company: "Data & Stratégie",
-  tags: "ANALYSE DE DONNÉES / BUSINESS INTELLIGENCE",
-  title: "Automatisation et Valorisation",
-  subtitle: "Comment une donnée propre augmente la croissance.",
-  image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&auto=format&fit=crop",
-  link: "#",
-};
+export const Casestudy5 = () => {
+  const { t } = useTranslation();
 
-const defaultCasestudies = [
-  {
-    logo: "https://shadcnblocks.com/images/block/block-2.svg",
-    company: "Reporting",
-    tags: "TABLEAUX DE BORD / POWER BI",
-    title: "Tableaux de bord interactifs.",
-    subtitle: "Gardez l'œil sur vos KPIs en temps réel.",
-    image: "",
+  const featuredCasestudy = {
+    logo: "https://shadcnblocks.com/images/block/block-1.svg",
+    company: t('casestudies.featured.company'),
+    tags: t('casestudies.featured.tags'),
+    title: t('casestudies.featured.title'),
+    subtitle: t('casestudies.featured.desc'),
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&auto=format&fit=crop",
     link: "#",
-  },
-  {
-    logo: "https://shadcnblocks.com/images/block/block-3.svg",
-    company: "Architecture",
-    tags: "MIGRATION SQL / CLOUD",
-    title: "Migration et robustesse cloud.",
-    subtitle: "Rapatriez et sécurisez toutes vos données isolées.",
-    image: "",
-    link: "#",
-  },
-];
+  };
 
-export const Casestudy5 = ({
-  featuredCasestudy = defaultFeaturedCasestudy,
-  casestudies = defaultCasestudies,
-}) => {
+  const casestudies = [
+    {
+      logo: "https://shadcnblocks.com/images/block/block-2.svg",
+      company: t('casestudies.grid.1.company'),
+      tags: t('casestudies.grid.1.tags'),
+      title: t('casestudies.grid.1.title'),
+      subtitle: t('casestudies.grid.1.desc'),
+      image: "",
+      link: "#",
+    },
+    {
+      logo: "https://shadcnblocks.com/images/block/block-3.svg",
+      company: t('casestudies.grid.2.company'),
+      tags: t('casestudies.grid.2.tags'),
+      title: t('casestudies.grid.2.title'),
+      subtitle: t('casestudies.grid.2.desc'),
+      image: "",
+      link: "#",
+    },
+  ];
   return (
     <section className="py-20 bg-background" id="services">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="text-center mb-16">
           <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
-            Mes Services d'Expertise
+            {t('casestudies.sectionTitle')}
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Transformez vos données en leviers de performance et de réduction des risques
+            {t('casestudies.sectionDesc')}
           </p>
         </div>
 
@@ -70,7 +69,7 @@ export const Casestudy5 = ({
                   </span>
                 </h2>
                 <div className="flex items-center gap-2 font-bold text-primary">
-                  Mes Solutions Data
+                  {t('casestudies.cta')}
                   <MoveRight className="h-5 w-5 transition-transform duration-500 ease-out group-hover:translate-x-1" />
                 </div>
               </div>
@@ -115,7 +114,7 @@ export const Casestudy5 = ({
                       </span>
                     </h2>
                     <div className="flex items-center gap-2 font-bold text-primary">
-                      Voir plus 
+                      {t('casestudies.viewMore')} 
                       <MoveRight className="h-5 w-5 transition-transform duration-500 ease-out group-hover:translate-x-1" />
                     </div>
                   </div>

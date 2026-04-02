@@ -1,14 +1,21 @@
-import React, { useState } from 'react';
-import { ExternalLink, Filter } from 'lucide-react';
-import { projectsData, categories } from '../data/projects';
-import { Tabs } from '../components/ui/VercelTabs';
 import { ShapeLandingHero } from '../components/ui/ShapeLandingHero';
 import GalleryHoverCarousel from '../components/ui/GalleryHoverCarousel';
+import { useTranslation } from 'react-i18next';
 
 const Projects = () => {
-  const [selectedCategory, setSelectedCategory] = useState('Tous');
+  const { t } = useTranslation();
+  
+  // Map categories to translated versions
+  const translatedCategories = [
+    t('projects.tab_all'),
+    "Power BI",
+    "Python",
+    "SQL"
+  ];
 
-  const filteredProjects = selectedCategory === 'Tous'
+  const [selectedCategory, setSelectedCategory] = useState(t('projects.tab_all'));
+
+  const filteredProjects = selectedCategory === t('projects.tab_all')
     ? projectsData
     : projectsData.filter((project) => project.category === selectedCategory);
 
@@ -17,9 +24,9 @@ const Projects = () => {
       {/* Header Section */}
       <ShapeLandingHero 
         badge="Data Analytics Portfolio"
-        title1="Mes Projets"
+        title1={t('projects.title')}
         title2="Insights & Visualisations"
-        description="Explorez mon portfolio de projets en Data Analytics, visualisations Power BI, analyses Python et requêtes SQL"
+        description={t('projects.desc')}
       />
 
       {/* Filter Section */}
@@ -28,27 +35,27 @@ const Projects = () => {
           <div className="flex items-center gap-4 flex-wrap">
             <div className="flex items-center text-gray-700 font-semibold">
               <Filter size={20} className="mr-2" />
-              Filtrer par :
+              {t('projects.filter_by', 'Filtrer par :')}
             </div>
             <Tabs 
-              tabs={categories.map(c => ({ id: c, label: c }))}
+              tabs={translatedCategories.map(c => ({ id: c, label: c }))}
               activeTab={selectedCategory}
               onTabChange={(id) => setSelectedCategory(id)}
             />
           </div>
           <div className="mt-4 text-gray-600">
-            {filteredProjects.length} projet{filteredProjects.length > 1 ? 's' : ''} trouvé{filteredProjects.length > 1 ? 's' : ''}
+            {filteredProjects.length} {t('projects.count_text', 'projet(s) trouvé(s)')}
           </div>
         </div>
       </section>
 
       {/* Projects Carousel */}
       <GalleryHoverCarousel 
-        heading={`Projets ${selectedCategory === 'Tous' ? 'Récents' : selectedCategory}`}
+        heading={selectedCategory === t('projects.tab_all') ? t('projects.recent_heading', 'Projets Récents') : `${t('projects.category_heading', 'Projets')} ${selectedCategory}`}
         items={filteredProjects.map((p) => ({
           id: p.id.toString(),
-          title: p.title,
-          summary: p.description,
+          title: t(`projects.items.${p.id}.title`),
+          summary: t(`projects.items.${p.id}.desc`),
           url: p.link || "#",
           image: p.image
         }))}
@@ -90,10 +97,10 @@ const Projects = () => {
       <section className="gradient-bg text-white py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold mb-4">
-            Vous avez un projet similaire ?
+            {t('projects.cta_title', 'Vous avez un projet similaire ?')}
           </h2>
           <p className="text-xl mb-8 text-primary-50">
-            Je peux vous aider à réaliser vos projets d'analyse de données et de visualisation
+            {t('projects.cta_desc', "Je peux vous aider à réaliser vos projets d'analyse de données et de visualisation")}
           </p>
           <a
             href="https://www.linkedin.com/in/sename-kudjo-kedji-bb849035/"
@@ -101,7 +108,7 @@ const Projects = () => {
             rel="noopener noreferrer"
             className="btn-primary inline-flex items-center bg-white text-primary-600 hover:bg-primary-50"
           >
-            Contactez-moi
+            {t('footer.contact')}
             <ExternalLink size={18} className="ml-2" />
           </a>
         </div>

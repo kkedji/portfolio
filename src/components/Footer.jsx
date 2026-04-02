@@ -8,6 +8,7 @@ import {
   Twitter,
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const data = {
   twitterLink: 'https://twitter.com/senameskk',
@@ -40,23 +41,24 @@ const socialLinks = [
   { icon: Github, label: 'GitHub', href: data.githubLink },
 ];
 
-const aboutLinks = [
-  { text: 'Accueil', href: data.about.home },
-  { text: 'Mon Profil', href: data.about.profil },
+const getAboutLinks = (t) => [
+  { text: t('header.home'), href: '/' },
+  { text: t('header.profile'), href: '/about' },
 ];
 
-const serviceLinks = [
-  { text: 'Applications Démo', href: data.services.apps },
-  { text: 'Projets Data', href: data.services.projets },
-  { text: 'Consulting', href: data.services.consulting },
+const getServiceLinks = (t) => [
+  { text: t('header.apps'), href: '/applications' },
+  { text: t('header.projects'), href: '/projets' },
+  { text: t('header.services'), href: '/#services' },
 ];
 
-const contactInfo = [
+const getContactInfo = (data) => [
   { icon: Mail, text: data.contact.email },
   { icon: MapPin, text: data.contact.address, isAddress: true },
 ];
 
 export default function Footer() {
+  const { t } = useTranslation();
   const currentYear = new Date().getFullYear();
 
   return (
@@ -74,7 +76,7 @@ export default function Footer() {
             </div>
 
             <p className="text-muted-foreground mt-6 max-w-md text-center leading-relaxed sm:max-w-xs sm:text-left text-sm">
-              {data.company.description}
+              {t('footer.desc')}
             </p>
 
             <ul className="mt-8 flex justify-center gap-6 sm:justify-start md:gap-8">
@@ -96,9 +98,9 @@ export default function Footer() {
 
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:col-span-2">
             <div className="text-center sm:text-left">
-              <p className="text-lg font-bold text-foreground">À Propos</p>
+              <p className="text-lg font-bold text-foreground">{t('footer.about')}</p>
               <ul className="mt-8 space-y-4 text-sm font-medium">
-                {aboutLinks.map(({ text, href }) => (
+                {getAboutLinks(t).map(({ text, href }) => (
                   <li key={text}>
                     <Link
                       className="text-muted-foreground hover:text-primary transition-colors"
@@ -112,9 +114,9 @@ export default function Footer() {
             </div>
 
             <div className="text-center sm:text-left">
-              <p className="text-lg font-bold text-foreground">Mes Solutions</p>
+              <p className="text-lg font-bold text-foreground">{t('header.solutions')}</p>
               <ul className="mt-8 space-y-4 text-sm font-medium">
-                {serviceLinks.map(({ text, href }) => (
+                {getServiceLinks(t).map(({ text, href }) => (
                   <li key={text}>
                     <Link
                       className="text-muted-foreground hover:text-primary transition-colors"
@@ -128,9 +130,9 @@ export default function Footer() {
             </div>
 
             <div className="text-center sm:text-left">
-              <p className="text-lg font-bold text-foreground">Contact</p>
+              <p className="text-lg font-bold text-foreground">{t('footer.contact')}</p>
               <ul className="mt-8 space-y-4 text-sm font-medium">
-                {contactInfo.map(({ icon: Icon, text, isAddress }, idx) => (
+                {getContactInfo(data).map(({ icon: Icon, text, isAddress }, idx) => (
                   <li key={idx}>
                     <div className="flex items-center justify-center gap-2 sm:justify-start">
                       <Icon className="text-primary size-5 shrink-0" />
@@ -158,7 +160,7 @@ export default function Footer() {
             </p>
 
             <p className="text-muted-foreground font-medium mt-4 text-sm transition sm:order-first sm:mt-0">
-              &copy; {currentYear} {data.company.name}. Tous droits réservés.
+              &copy; {currentYear} {data.company.name}. {t('footer.allRights')}
             </p>
           </div>
         </div>

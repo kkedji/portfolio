@@ -1,0 +1,198 @@
+{
+  "header": {
+    "home": "Home",
+    "solutions": "My Solutions",
+    "profile": "My Profile",
+    "projects": "My Projects",
+    "projects_desc": "Explore my Data Analytics and Power BI projects portfolio",
+    "apps": "My Web Apps",
+    "apps_desc": "Discover interactive web application solutions",
+    "about": "About Me",
+    "services": "Services"
+  },
+  "footer": {
+    "desc": "Specialized in strategic reporting, risk management, and process automation through Power BI and Python.",
+    "links": "Useful Links",
+    "contact": "Contact",
+    "projects": "Projects",
+    "apps": "Applications",
+    "about": "About",
+    "allRights": "All rights reserved."
+  },
+  "home": {
+    "timelineTitle": "My Professional Journey",
+    "timelineDesc": "From specialized banking expertise to cutting-edge data analytics",
+    "skillsTitle": "Skills & Technologies",
+    "skillsDesc": "Tools and technologies I have mastered",
+    "ctaTitle": "Ready to transform your data?",
+    "ctaDesc": "Discover my projects and applications to see how I can help you leverage the power of your data.",
+    "ctaBtn1": "View Projects",
+    "ctaBtn2": "Learn More",
+    "timeline": {
+      "banque": {
+        "title": "Beginnings in Banking",
+        "desc": "Early experiences in credit management. Acquired fundamentals of financial analysis and counterparty risk."
+      },
+      "analyse": {
+        "title": "Risk & Committee Expertise",
+        "desc": "In-depth analysis of credit portfolios, financial modeling, and market risk management. Presented institutional cases in global decision committees."
+      },
+      "bi": {
+        "title": "Data & BI Transition",
+        "desc": "Integrated modern analytical tools to automate management dashboards. Utilized SQL pipelines and created Power BI solvency reports."
+      },
+      "software": {
+        "title": "Web App & Python Development",
+        "desc": "Built Fullstack Web Apps with React (CreditFlow), advanced automation using Python scripts (Pandas/Scikit-Learn), and integrated AI for business diagnostics."
+      },
+      "data": {
+        "title": "Independent Data Consultant",
+        "desc": "Supporting SMEs, associations, and institutions in adding value to their data, modeling KPIs, and completely digitalizing their financial tools."
+      }
+    }
+  },
+  "casestudies": {
+    "sectionTitle": "My Expert Services",
+    "sectionDesc": "Transform your data into performance levers and reduce risks",
+    "cta": "My Data Solutions",
+    "viewMore": "View more",
+    "featured": {
+      "company": "Data & Strategy",
+      "tags": "DATA ANALYSIS / BUSINESS INTELLIGENCE",
+      "title": "Automation and Valorization",
+      "desc": "How clean data drives growth."
+    },
+    "grid": {
+      "1": {
+        "company": "Reporting",
+        "tags": "DASHBOARDS / POWER BI",
+        "title": "Interactive Dashboards.",
+        "desc": "Keep an eye on your KPIs in real-time."
+      },
+      "2": {
+        "company": "Architecture",
+        "tags": "SQL MIGRATION / CLOUD",
+        "title": "Cloud migration and robustness.",
+        "desc": "Repatriate and secure all your isolated data."
+      },
+      "3": {
+        "company": "Audit & Consulting",
+        "tags": "STRATEGY / GOVERNANCE",
+        "title": "Audit & Strategic Consulting",
+        "desc": "Analysis of existing data governance and technical recommendations adapted to the reality of African SMEs."
+      }
+    }
+  },
+  "glassmorphism": {
+    "badge": "Profile & Vision",
+    "subtitle": "Independent Data Consultant",
+    "desc1": "With over fifteen years of experience in the banking industry, I now help organizations transform their data into performance drivers. My approach combines analytical rigor, technological vision, and software engineering.",
+    "highlights": {
+      "1": {
+        "title": "15+ Years of Expertise",
+        "desc": "Banking industry, advanced data analysis, risk modeling, and presentations in executive committees."
+      },
+      "2": {
+        "title": "Areas of Intervention",
+        "desc": "Business Intelligence, SQL database structuring, Power BI reporting, and fullstack web apps."
+      },
+      "3": {
+        "title": "Support Strategy",
+        "desc": "Personalized consulting for SMEs and institutions seeking to transform their data into true actionable insights."
+      }
+    },
+    "cardSubtitle": "Banking Expertise · Data Development",
+    "cardDesc": "Merging institutional rigor with the agility of modern tools to build interfaces and dashboards that make complex data clear and obvious."
+  },
+  "projects": {
+    "title": "My Projects",
+    "desc": "Discover a selection of my accomplishments in data analysis and Business Intelligence",
+    "tab_all": "All",
+    "tab_finance": "Finance",
+    "tab_risk": "Risk",
+    "tab_hr": "HR",
+    "tab_market": "Market",
+    "btn": "Explore Dashboard",
+    "items": {
+      "1": {
+        "title": "Togo Legislative Elections April 2024",
+        "desc": "Power BI report designed from the list of candidates presented by all participating Togolese political parties for the April 2024 legislative elections. Visualizes outgoing deputies, candidates by constituency, with analysis by gender and political party."
+      },
+      "2": {
+        "title": "Supply Chain Activity Analysis",
+        "desc": "Multi-dimensional analysis of a supply chain company through industry performance indicators: Sales, Customers, Suppliers, Logistics, and warehouse performance."
+      },
+      "3": {
+        "title": "Benin Development Indicators",
+        "desc": "Analysis of key development indicators for Benin over several years using Power BI. The report covers areas such as economy, health, education, and infrastructure, providing key insights for decision-makers and stakeholders."
+      },
+      "4": {
+        "title": "Nigeria Agricultural Export Analysis",
+        "desc": "Analysis of three years of Nigerian agricultural exports through metrics such as export value, units sold, number of shipments, and profits. Data segmented by products, companies, destination countries, and periods."
+      },
+      "7": {
+        "title": "Togo's Economic Indicators Analysis",
+        "desc": "Visualization of Togo's economic indicators over 60 years with key insights in Power BI."
+      },
+      "8": {
+        "title": "Climate Change in Sub-Saharan Africa",
+        "desc": "Power BI report highlighting the causes and effects of climate change in sub-Saharan African countries."
+      },
+      "9": {
+        "title": "EDA of Tweets - Popular Hashtags in Togo",
+        "desc": "Scraping and analyzing the most popular hashtags among Twitter users in Togo to guide digital marketing strategies and optimization using Python in a Jupyter Notebook."
+      },
+      "10": {
+        "title": "EDA of World Cup Results Since 1930",
+        "desc": "Exploratory data analysis of World Cup match results and visualization in Jupyter Notebook using Python."
+      },
+      "11": {
+        "title": "EDA of Titanic Passengers Dataset",
+        "desc": "Discovering interesting insights about passengers aboard the Titanic through exploratory data analysis in a Google Colab Notebook."
+      },
+      "12": {
+        "title": "Data Cleaning with SQL",
+        "desc": "Using various SQL queries to cleanNashville Housing data from Kaggle."
+      },
+      "13": {
+        "title": "Data Cleaning with Python",
+        "desc": "Using various Python functions to clean Togo's economic indicators data from the World Bank Group databank."
+      },
+      "14": {
+        "title": "Business Insights with SQL",
+        "desc": "Using SQL queries to answer business questions from a potential investor in a movie rental company."
+      }
+    }
+  },
+  "apps": {
+    "title": "My Web Applications",
+    "desc": "Demonstrations of fullstack interfaces and solutions developed to simplify business analysis.",
+    "featured": "Featured",
+    "features": "Features",
+    "watch": "Watch Demo",
+    "hide": "Hide Demo",
+    "items": {
+      "1": {
+        "title": "CreditFlow - Credit Application Management Platform",
+        "desc": "Comprehensive web application for managing the lifecycle of microfinance credit applications. Allows structured collection of customer data with photo capture, automated financial analysis, risk assessment through scoring, expert synthesis and opinion on the case via a 360° AI view, and collegial decision-making with electronic signatures and total traceability.",
+        "f1": "Multi-role management with cascading validation workflow (Collector → Supervisor → Analyst → Director → Committee)",
+        "f2": "Photo capture of ID cards, GPS position, and guarantor information",
+        "f3": "Risk scoring and weighting system with automatic AI-based recommendations"
+      },
+      "2": {
+        "title": "Boutique Operations Management Application",
+        "desc": "Comprehensive commercial management web application for small and medium-sized shops. This all-in-one solution allows merchants to digitalize and optimize all their operations: sales, stocks, customers, suppliers, production, and finance. Accessible from any device with real-time synchronization.",
+        "f1": "Product management with add, edit, and delete functions",
+        "f2": "Sales tracking and product performance analysis",
+        "f3": "Dashboard with statistics and charts"
+      },
+      "3": {
+        "title": "Association Finance Management Application",
+        "desc": "Comprehensive financial management solution for associations, clubs, and community organizations. Automates tracking of monthly dues, management of event contributions, and generation of professional reports. Designed to simplify life for treasurers and improve financial transparency.",
+        "f1": "Complete member management with detailed profiles and Excel import",
+        "f2": "Automated tracking of monthly dues with a visual calendar",
+        "f3": "Generation of professional printable financial reports (PDF)"
+      }
+    }
+  }
+}
