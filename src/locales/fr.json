@@ -20,7 +20,11 @@
     "allRights": "Tous droits réservés."
   },
   "home": {
-    "timelineTitle": "Mon Expérience Professionnelle",
+    "welcome": "Bienvenue sur mon portfolio",
+    "intro_title": "Je suis Sename Kudjo Kedji",
+    "intro_subtitle": "Consultant Data & Expert en solutions analytiques. J'aide les entreprises à transformer leurs données brutes en décisions stratégiques.",
+    "cta_explore": "Découvrir mes services",
+    "timelineTitle": "Mon Parcours Professionnel",
     "timelineDesc": "De l'expertise bancaire spécialisée vers l'analyse de données de pointe",
     "skillsTitle": "Compétences & Technologies",
     "skillsDesc": "Outils et technologies que je maîtrise",
