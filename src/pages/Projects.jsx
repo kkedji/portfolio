@@ -1,3 +1,7 @@
+import React, { useState } from 'react';
+import { ExternalLink, Filter } from 'lucide-react';
+import { projectsData, categories } from '../data/projects';
+import { Tabs } from '../components/ui/VercelTabs';
 import { ShapeLandingHero } from '../components/ui/ShapeLandingHero';
 import GalleryHoverCarousel from '../components/ui/GalleryHoverCarousel';
 import { useTranslation } from 'react-i18next';

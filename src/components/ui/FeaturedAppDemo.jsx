@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import { PlayCircle } from "lucide-react";
 import { Card, CardContent } from "./Card";
 import { useTranslation } from "react-i18next";

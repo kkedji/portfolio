@@ -26,6 +26,9 @@ import { useTranslation } from 'react-i18next';
 export default function Header() {
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
+  const [open, setOpen] = useState(false);
+  const scrolled = useScroll(10);
+  const location = useLocation();
 
   const toggleLanguage = () => {
     const newLang = currentLanguage.startsWith('fr') ? 'en' : 'fr';

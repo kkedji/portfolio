@@ -1,3 +1,5 @@
+import React from 'react';
+import { ExternalLink } from 'lucide-react';
 import { applicationsData } from '../data/applications';
 import FeaturedAppDemo from '../components/ui/FeaturedAppDemo';
 import { useTranslation } from 'react-i18next';
