@@ -18,7 +18,7 @@ export const UNHCRHighlight = () => {
           >
              <div className="flex items-center gap-2 mb-4 text-primary font-bold tracking-widest uppercase text-sm">
               <Globe size={20} />
-              Featured Impact
+              {t('casestudies.featured_impact_badge')}
             </div>
             <h2 className="text-3xl lg:text-5xl font-bold text-foreground mb-8 leading-tight">
               {t('casestudies.featured_2_title', 'UNHCR Financial Reporting Automation')}

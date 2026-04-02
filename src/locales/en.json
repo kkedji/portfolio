@@ -96,6 +96,7 @@
     }
   },
   "casestudies": {
+    "featured_impact_badge": "Featured Impact",
     "sectionTitle": "My Expert Solutions",
     "sectionDesc": "Replace generic services with structured solutions",
     "cta": "View my work",
