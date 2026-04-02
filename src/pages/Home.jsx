@@ -5,7 +5,7 @@ import { servicesData, skillsData } from '../data/services';
 import AnimatedTextCycle from '../components/ui/AnimatedTextCycle';
 import { Timeline } from '../components/ui/Timeline';
 import { Casestudy5 } from '../components/ui/Casestudy5';
-import { TheInfiniteGrid } from '../components/ui/TheInfiniteGrid';
+import { ShapeLandingHero } from '../components/ui/ShapeLandingHero';
 import { Button } from '../components/ui/Button';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
@@ -55,38 +55,27 @@ const Home = () => {
 
   return (
     <div className="bg-transparent min-h-screen text-foreground">
-      {/* Infinite Grid Hero Section */}
-      <TheInfiniteGrid className="min-h-[85vh]">
-        <motion.div
-           initial={{ opacity: 0, y: 20 }}
-           animate={{ opacity: 1, y: 0 }}
-           transition={{ duration: 0.6 }}
-           className="space-y-6"
-        >
-          <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-primary backdrop-blur-sm">
-            {t('home.welcome')}
-          </div>
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-gray-900 leading-[1.1]">
-            {t('home.intro_title')}
-          </h1>
-          <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto font-medium leading-relaxed">
-            {t('home.intro_subtitle')}
-          </p>
-          <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
-            <Button size="lg" className="rounded-full px-8 h-12 shadow-lg" asChild>
-              <a href="#services">
-                {t('home.cta_explore')}
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </a>
-            </Button>
-            <Button size="lg" variant="outline" className="rounded-full px-8 h-12 bg-white/50 backdrop-blur-sm shadow-sm" asChild>
-              <Link to="/about">
-                {t('header.profile')}
-              </Link>
-            </Button>
-          </div>
-        </motion.div>
-      </TheInfiniteGrid>
+      {/* Unified Hero Section */}
+      <ShapeLandingHero 
+        badge={t('home.welcome')}
+        title1={t('home.intro_title').split(' ').slice(0, 2).join(' ')}
+        title2={t('home.intro_title').split(' ').slice(2).join(' ')}
+        description={t('home.intro_subtitle')}
+      >
+        <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
+          <Button size="lg" className="rounded-full px-8 h-12 shadow-lg" asChild>
+            <a href="#services">
+              {t('home.cta_explore')}
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </a>
+          </Button>
+          <Button size="lg" variant="outline" className="rounded-full px-8 h-12 bg-white/20 backdrop-blur-sm border-white/30 text-white hover:bg-white/30 transition-all shadow-sm" asChild>
+            <Link to="/about">
+              {t('header.profile')}
+            </Link>
+          </Button>
+        </div>
+      </ShapeLandingHero>
 
       {/* Services Section */}
       <Casestudy5 />

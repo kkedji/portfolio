@@ -66,7 +66,8 @@ function ShapeLandingHero({
   badge = "Design Collective",
   title1 = "Elevate Your Digital Vision",
   title2 = "Crafting Exceptional Websites",
-  description = "Crafting exceptional digital experiences through innovative design and cutting-edge technology."
+  description = "Crafting exceptional digital experiences through innovative design and cutting-edge technology.",
+  children
 }) {
   const fadeUpVariants = {
     hidden: { opacity: 0, y: 30 },
@@ -160,6 +161,17 @@ function ShapeLandingHero({
               {description}
             </p>
           </motion.div>
+
+          {children && (
+            <motion.div
+              custom={3}
+              variants={fadeUpVariants}
+              initial="hidden"
+              animate="visible"
+            >
+              {children}
+            </motion.div>
+          )}
         </div>
       </div>
 
