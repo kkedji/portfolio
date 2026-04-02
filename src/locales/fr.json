@@ -104,7 +104,17 @@
       "company": "Microfinance",
       "tags": "AUTOMATISATION DES FLUX / WEB APP",
       "title": "Système d'automatisation des flux de crédit",
-      "desc": "Transformation d'un processus manuel lent en un workflow web structuré et transparent."
+      "desc": "Transformation d'un processus manuel lent en un workflow web structuré et transparent.",
+      "problem_label": "Problème :",
+      "problem_desc": "Processus d'approbation manuel avec de multiples acteurs, des retards et un manque de visibilité.",
+      "solution_label": "Solution :",
+      "solution_desc": "Conception d'un système web complet automatisant tout le cycle de vie du crédit avec des approbations basées sur les rôles.",
+      "impact_label": "Impact :",
+      "impact_points": {
+        "1": "Cycles d'approbation plus rapides",
+        "2": "Transparence totale sur les étapes de décision",
+        "3": "Réduction du risque opérationnel"
+      }
     },
     "grid": {
       "1": {

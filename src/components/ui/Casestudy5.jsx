@@ -69,26 +69,23 @@ export const Casestudy5 = () => {
                 </h2>
                 <div className="grid gap-6 mb-8">
                   <div>
-                    <span className="text-sm font-bold text-primary uppercase tracking-wider">Problem:</span>
-                    <p className="text-muted-foreground mt-1">Manual credit approval process with multiple actors, delays, and lack of visibility.</p>
+                    <span className="text-sm font-bold text-primary uppercase tracking-wider">{t('casestudies.featured.problem_label')}</span>
+                    <p className="text-muted-foreground mt-1">{t('casestudies.featured.problem_desc')}</p>
                   </div>
                   <div>
-                    <span className="text-sm font-bold text-primary uppercase tracking-wider">Solution:</span>
-                    <p className="text-muted-foreground mt-1">Built a full web-based system automating the entire credit lifecycle with role-based approvals.</p>
+                    <span className="text-sm font-bold text-primary uppercase tracking-wider">{t('casestudies.featured.solution_label')}</span>
+                    <p className="text-muted-foreground mt-1">{t('casestudies.featured.solution_desc')}</p>
                   </div>
                   <div>
-                    <span className="text-sm font-bold text-primary uppercase tracking-wider">Impact:</span>
+                    <span className="text-sm font-bold text-primary uppercase tracking-wider">{t('casestudies.featured.impact_label')}</span>
                     <ul className="list-disc list-inside text-muted-foreground mt-1 space-y-1">
-                      <li>Faster approval cycles</li>
-                      <li>Full transparency across decision stages</li>
-                      <li>Reduced operational risk</li>
+                      {Object.values(t('casestudies.featured.impact_points', { returnObjects: true })).map((point, idx) => (
+                        <li key={idx}>{point}</li>
+                      ))}
                     </ul>
                   </div>
                 </div>
-                <div className="flex items-center gap-2 font-bold text-primary pb-8">
-                  {t('casestudies.cta')}
-                  <MoveRight className="h-5 w-5 transition-transform duration-500 ease-out group-hover:translate-x-1" />
-                </div>
+                {/* Removed CTA text as requested */}
               </div>
             </div>
             <div className="relative isolate py-8 lg:py-16">
@@ -130,10 +127,7 @@ export const Casestudy5 = () => {
                         {item.subtitle}
                       </span>
                     </h2>
-                    <div className="flex items-center gap-2 font-bold text-primary">
-                      {t('casestudies.viewMore')} 
-                      <MoveRight className="h-5 w-5 transition-transform duration-500 ease-out group-hover:translate-x-1" />
-                    </div>
+                    {/* Removed viewMore text as requested */}
                   </div>
                 </a>
               ))}

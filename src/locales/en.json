@@ -104,7 +104,17 @@
       "company": "Microfinance",
       "tags": "WORKFLOW AUTOMATION / WEB APP",
       "title": "Credit Workflow Automation System",
-      "desc": "Transforming a slow manual process into a structured, transparent web workflow."
+      "desc": "Transforming a slow manual process into a structured, transparent web workflow.",
+      "problem_label": "Problem:",
+      "problem_desc": "Manual credit approval process with multiple actors, delays, and lack of visibility.",
+      "solution_label": "Solution:",
+      "solution_desc": "Built a full web-based system automating the entire credit lifecycle with role-based approvals.",
+      "impact_label": "Impact:",
+      "impact_points": {
+        "1": "Faster approval cycles",
+        "2": "Full transparency across decision stages",
+        "3": "Reduced operational risk"
+      }
     },
     "grid": {
       "1": {
