@@ -7,6 +7,7 @@ import { Timeline } from '../components/ui/Timeline';
 import { Casestudy5 } from '../components/ui/Casestudy5';
 import { TheInfiniteGrid } from '../components/ui/TheInfiniteGrid';
 import { Button } from '../components/ui/Button';
+import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 
 
