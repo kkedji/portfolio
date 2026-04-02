@@ -244,12 +244,6 @@ const solutionsLinks = [
     href: '/applications',
     description: 'Découvrez des solutions applicatives interactives',
     icon: Briefcase,
-  },
-  {
-    title: 'Cas d\'Usage SaaS',
-    href: '/applications',
-    description: 'Analyses de données avancées dans des environnements cloud',
-    icon: BarChart,
   }
 ];
 
@@ -263,11 +257,6 @@ const profilLinks = [
     title: 'Services',
     href: '/#services',
     icon: Star,
-  },
-  {
-    title: 'Obtenir de l\'aide',
-    href: '#',
-    icon: HelpCircle,
   }
 ];
 

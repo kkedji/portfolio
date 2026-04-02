@@ -25,7 +25,7 @@ const data = {
   contact: {
     email: 'contact@skkanalytics.com', // Placeholder, adjust as needed
     phone: '', 
-    address: 'Paris, France & Lome, Togo',
+    address: 'Lome, Togo',
   },
   company: {
     name: 'SKK Analytics',
