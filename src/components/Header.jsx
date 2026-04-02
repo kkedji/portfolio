@@ -54,7 +54,7 @@ export default function Header() {
         <div className="flex items-center gap-8">
           <Link to="/" className="flex items-center space-x-2 mr-4 group">
             <div className="w-10 h-10 bg-gradient-to-br from-primary-600 to-primary-900 rounded-lg flex items-center justify-center shadow-md group-hover:scale-105 transition-transform">
-              <span className="text-white font-bold text-xl">SK</span>
+              <span className="text-white font-bold text-lg">SKK</span>
             </div>
             <span className="text-xl font-bold text-gray-900 hidden sm:block tracking-tight">SKK Analytics</span>
           </Link>
@@ -114,8 +114,7 @@ export default function Header() {
         </div>
 
         <div className="hidden items-center gap-3 md:flex">
-          <Button variant="outline" className="border-gray-200 shadow-sm hover:bg-gray-50">Contact</Button>
-          <Button className="shadow-sm">Démarrer un projet</Button>
+          {/* Removed CTA buttons per user request */}
         </div>
 
         <Button
@@ -164,10 +163,7 @@ export default function Header() {
           </div>
         </NavigationMenu>
         <div className="flex flex-col gap-3 mt-auto pb-10 pt-6">
-          <Button variant="outline" className="w-full bg-white border-2 border-gray-200 py-6 text-lg">
-            Contact
-          </Button>
-          <Button className="w-full py-6 text-lg shadow-md">Démarrer un projet</Button>
+          {/* Removed CTA buttons per user request */}
         </div>
       </MobileMenu>
     </header>

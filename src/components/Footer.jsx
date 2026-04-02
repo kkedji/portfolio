@@ -1,90 +1,168 @@
 import React from 'react';
-import { Mail, Linkedin, Twitter, Github } from 'lucide-react';
+import {
+  Linkedin,
+  Github,
+  Mail,
+  MapPin,
+  Phone,
+  Twitter,
+} from 'lucide-react';
+import { Link } from 'react-router-dom';
 
-const Footer = () => {
+const data = {
+  twitterLink: 'https://twitter.com/senameskk',
+  githubLink: 'https://github.com/kkedji',
+  linkedinLink: 'https://www.linkedin.com/in/sename-kudjo-kedji-bb849035/',
+  services: {
+    apps: '/applications',
+    projets: '/projets',
+    consulting: '/#services',
+  },
+  about: {
+    home: '/',
+    profil: '/about',
+  },
+  contact: {
+    email: 'contact@skkanalytics.com', // Placeholder, adjust as needed
+    phone: '', 
+    address: 'Paris, France & Lome, Togo',
+  },
+  company: {
+    name: 'SKK Analytics',
+    description:
+      'Consultant Data Indépendant spécialisé en analyse de données, gestion des risques et reporting stratégique. Transformez vos données en leviers de performance.',
+  },
+};
+
+const socialLinks = [
+  { icon: Linkedin, label: 'LinkedIn', href: data.linkedinLink },
+  { icon: Twitter, label: 'Twitter', href: data.twitterLink },
+  { icon: Github, label: 'GitHub', href: data.githubLink },
+];
+
+const aboutLinks = [
+  { text: 'Accueil', href: data.about.home },
+  { text: 'Mon Profil', href: data.about.profil },
+];
+
+const serviceLinks = [
+  { text: 'Applications Démo', href: data.services.apps },
+  { text: 'Projets Data', href: data.services.projets },
+  { text: 'Consulting', href: data.services.consulting },
+];
+
+const contactInfo = [
+  { icon: Mail, text: data.contact.email },
+  { icon: MapPin, text: data.contact.address, isAddress: true },
+];
+
+export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-gray-900 text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* About Section */}
+    <footer className="bg-secondary/10 dark:bg-secondary/20 mt-16 w-full place-self-end rounded-t-3xl border-t border-border">
+      <div className="mx-auto max-w-7xl px-4 pt-16 pb-6 sm:px-6 lg:px-8 lg:pt-24">
+        <div className="grid grid-cols-1 gap-12 lg:grid-cols-3">
           <div>
-            <h3 className="text-xl font-bold mb-4">SKK Analytics</h3>
-            <p className="text-gray-400">
-              Consultant Data Indépendant spécialisé en analyse de données, 
-              gestion des risques et reporting stratégique.
-            </p>
-          </div>
+            <div className="text-primary flex justify-center gap-3 sm:justify-start items-center">
+              <div className="w-10 h-10 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center shadow-sm">
+                <span className="text-white font-bold text-lg">SKK</span>
+              </div>
+              <span className="text-2xl font-bold text-foreground">
+                {data.company.name}
+              </span>
+            </div>
 
-          {/* Quick Links */}
-          <div>
-            <h3 className="text-xl font-bold mb-4">Liens rapides</h3>
-            <ul className="space-y-2">
-              <li>
-                <a href="/" className="text-gray-400 hover:text-white transition-colors">
-                  Accueil
-                </a>
-              </li>
-              <li>
-                <a href="/applications" className="text-gray-400 hover:text-white transition-colors">
-                  Applications
-                </a>
-              </li>
-              <li>
-                <a href="/projets" className="text-gray-400 hover:text-white transition-colors">
-                  Projets
-                </a>
-              </li>
-              <li>
-                <a href="/about" className="text-gray-400 hover:text-white transition-colors">
-                  À propos
-                </a>
-              </li>
+            <p className="text-muted-foreground mt-6 max-w-md text-center leading-relaxed sm:max-w-xs sm:text-left text-sm">
+              {data.company.description}
+            </p>
+
+            <ul className="mt-8 flex justify-center gap-6 sm:justify-start md:gap-8">
+              {socialLinks.map(({ icon: Icon, label, href }) => (
+                <li key={label}>
+                  <a
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-primary hover:text-accent transition-colors"
+                  >
+                    <span className="sr-only">{label}</span>
+                    <Icon className="size-6" />
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Contact & Social */}
-          <div>
-            <h3 className="text-xl font-bold mb-4">Contact</h3>
-            <div className="flex space-x-4 mb-4">
-              <a
-                href="https://www.linkedin.com/in/sename-kudjo-kedji-bb849035/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white transition-colors"
-              >
-                <Linkedin size={24} />
-              </a>
-              <a
-                href="https://twitter.com/senameskk"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white transition-colors"
-              >
-                <Twitter size={24} />
-              </a>
-              <a
-                href="https://github.com/kkedji"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white transition-colors"
-              >
-                <Github size={24} />
-              </a>
+          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:col-span-2">
+            <div className="text-center sm:text-left">
+              <p className="text-lg font-bold text-foreground">À Propos</p>
+              <ul className="mt-8 space-y-4 text-sm font-medium">
+                {aboutLinks.map(({ text, href }) => (
+                  <li key={text}>
+                    <Link
+                      className="text-muted-foreground hover:text-primary transition-colors"
+                      to={href}
+                    >
+                      {text}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </div>
-            <p className="text-gray-400 text-sm">
-              Transformez vos données en leviers de performance
-            </p>
+
+            <div className="text-center sm:text-left">
+              <p className="text-lg font-bold text-foreground">Mes Solutions</p>
+              <ul className="mt-8 space-y-4 text-sm font-medium">
+                {serviceLinks.map(({ text, href }) => (
+                  <li key={text}>
+                    <Link
+                      className="text-muted-foreground hover:text-primary transition-colors"
+                      to={href}
+                    >
+                      {text}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="text-center sm:text-left">
+              <p className="text-lg font-bold text-foreground">Contact</p>
+              <ul className="mt-8 space-y-4 text-sm font-medium">
+                {contactInfo.map(({ icon: Icon, text, isAddress }, idx) => (
+                  <li key={idx}>
+                    <div className="flex items-center justify-center gap-2 sm:justify-start">
+                      <Icon className="text-primary size-5 shrink-0" />
+                      {isAddress ? (
+                        <address className="text-muted-foreground -mt-0.5 flex-1 not-italic transition">
+                          {text}
+                        </address>
+                      ) : (
+                        <span className="text-muted-foreground flex-1 transition">
+                          {text}
+                        </span>
+                      )}
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
 
-        <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-          <p>&copy; {currentYear} SKK Analytics. Tous droits réservés.</p>
+        <div className="mt-16 border-t border-border pt-8">
+          <div className="text-center sm:flex sm:justify-between sm:text-left">
+            <p className="text-sm font-medium text-muted-foreground">
+               Conçu avec passion 💡
+            </p>
+
+            <p className="text-muted-foreground font-medium mt-4 text-sm transition sm:order-first sm:mt-0">
+              &copy; {currentYear} {data.company.name}. Tous droits réservés.
+            </p>
+          </div>
         </div>
       </div>
     </footer>
   );
-};
-
-export default Footer;
+}

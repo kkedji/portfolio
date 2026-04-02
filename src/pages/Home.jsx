@@ -4,6 +4,7 @@ import { ArrowRight, BarChart3, Database, TrendingUp } from 'lucide-react';
 import { servicesData, skillsData } from '../data/services';
 import AnimatedTextCycle from '../components/ui/AnimatedTextCycle';
 import { Timeline } from '../components/ui/Timeline';
+import { Casestudy5 } from '../components/ui/Casestudy5';
 
 const timelineItems = [
   {
@@ -109,32 +110,7 @@ const Home = () => {
       </section>
 
       {/* Services Section */}
-      <section className="py-20 bg-gray-50" id="services">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-              Mes Services
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Transformez vos données en leviers de performance et de réduction des risques
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {servicesData.map((service) => (
-              <div key={service.id} className="card p-8 hover:scale-105 transition-transform duration-300">
-                <div className="text-4xl mb-4">{service.icon}</div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                  {service.title}
-                </h3>
-                <p className="text-gray-600 leading-relaxed">
-                  {service.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <Casestudy5 />
 
       {/* Parcours / Timeline Section */}
       <section className="py-20 bg-white border-t border-gray-100">
