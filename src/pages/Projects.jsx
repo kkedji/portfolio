@@ -9,17 +9,16 @@ import { useTranslation } from 'react-i18next';
 const Projects = () => {
   const { t } = useTranslation();
   
-  // Map categories to translated versions
-  const translatedCategories = [
-    t('projects.tab_all'),
-    "Power BI",
-    "Python",
-    "SQL"
+  const categoryOptions = [
+    { id: 'all', label: t('projects.tab_all') },
+    { id: 'Power BI', label: 'Power BI' },
+    { id: 'Python', label: 'Python' },
+    { id: 'SQL', label: 'SQL' }
   ];
 
-  const [selectedCategory, setSelectedCategory] = useState(t('projects.tab_all'));
+  const [selectedCategory, setSelectedCategory] = useState('all');
 
-  const filteredProjects = selectedCategory === t('projects.tab_all')
+  const filteredProjects = selectedCategory === 'all'
     ? projectsData
     : projectsData.filter((project) => project.category === selectedCategory);
 
@@ -42,7 +41,7 @@ const Projects = () => {
               {t('projects.filter_by', 'Filtrer par :')}
             </div>
             <Tabs 
-              tabs={translatedCategories.map(c => ({ id: c, label: c }))}
+              tabs={categoryOptions}
               activeTab={selectedCategory}
               onTabChange={(id) => setSelectedCategory(id)}
             />
@@ -55,7 +54,7 @@ const Projects = () => {
 
       {/* Projects Carousel */}
       <GalleryHoverCarousel 
-        heading={selectedCategory === t('projects.tab_all') ? t('projects.recent_heading', 'Projets Récents') : `${t('projects.category_heading', 'Projets')} ${selectedCategory}`}
+        heading={selectedCategory === 'all' ? t('projects.recent_heading', 'Projets Récents') : `${t('projects.category_heading', 'Projets')} ${selectedCategory}`}
         items={filteredProjects.map((p) => ({
           id: p.id.toString(),
           title: t(`projects.items.${p.id}.title`),
