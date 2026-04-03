@@ -20,10 +20,10 @@ export const transformVariants = (direction) => ({
 
 export const GRADIENT_COLORS = {
   blue: [
-    { color: "rgb(180, 176, 254)", start: "0%" },
-    { color: "rgb(54, 50, 133)", start: "22.92%" },
-    { color: "rgb(17, 13, 91)", start: "42.71%" },
-    { color: "rgb(5, 3, 39)", start: "88.54%" },
+    { color: "#E0F2FE", start: "0%" },
+    { color: "#7DD3FC", start: "22.92%" },
+    { color: "#3A5BA0", start: "42.71%" },
+    { color: "#6EA3C1", start: "88.54%" },
   ],
   black: [
     { color: "#333333", start: "0%" },
