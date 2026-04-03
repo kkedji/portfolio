@@ -1,19 +1,22 @@
-import React from 'react';
-import { ArrowRight, MoveRight } from 'lucide-react';
-import { servicesData, skillsData } from '../data/services';
+import React, { useRef } from 'react';
+import { ArrowRight, MoveRight, ExternalLink } from 'lucide-react';
+import { projectsData } from '../data/projects';
 import { Timeline } from '../components/ui/Timeline';
-import { Casestudy5 } from '../components/ui/Casestudy5';
 import { ShapeLandingHero } from '../components/ui/ShapeLandingHero';
-import { Hero, BgGradient, TextStagger, AnimatedContainer } from '../components/ui/HeroAnimated';
+import { TextStagger, AnimatedContainer } from '../components/ui/HeroAnimated';
 import { Button } from '../components/ui/Button';
 import { useTranslation } from 'react-i18next';
 import { PositioningSection } from '../components/home/PositioningSection';
 import { HowItWorks } from '../components/home/HowItWorks';
 import { AssessmentOffer } from '../components/home/AssessmentOffer';
 import { UNHCRHighlight } from '../components/home/UNHCRHighlight';
+import { TimelineContent } from '../components/ui/TimelineContent';
+import { ProgressiveBlur } from '../components/ui/ProgressiveBlur';
+import { cn } from '../lib/utils';
 
 const Home = () => {
   const { t } = useTranslation();
+  const timelineRef = useRef(null);
 
   const timelineItems = [
     {
@@ -53,9 +56,26 @@ const Home = () => {
     }
   ];
 
+  const revealVariants = {
+    visible: (i) => ({
+      y: 0,
+      opacity: 1,
+      filter: "blur(0px)",
+      transition: {
+        delay: i * 0.1,
+        duration: 0.5,
+      },
+    }),
+    hidden: {
+      filter: "blur(10px)",
+      y: -20,
+      opacity: 0,
+    },
+  };
+
   return (
-    <div className="bg-transparent min-h-screen text-foreground relative z-10">
-      {/* Unified Hero Section */}
+    <div className="bg-transparent min-h-screen text-foreground relative z-10" ref={timelineRef}>
+      {/* Unified Hero Section - Keeps Blue Style */}
       <ShapeLandingHero 
         badge={t('home.welcome')}
         title1={t('home.intro_title').split('&')[0] + '&'}
@@ -86,69 +106,154 @@ const Home = () => {
         </div>
       </ShapeLandingHero>
 
-      {/* Positioning Section - From Left */}
-      <AnimatedContainer transformDirection="left" transition={{ delay: 0.2 }}>
-        <PositioningSection />
-      </AnimatedContainer>
-
-      {/* Services/Core Offers & Microfinance Case Study - From Right */}
-      <AnimatedContainer transformDirection="right" transition={{ delay: 0.2 }}>
-        <Casestudy5 />
-      </AnimatedContainer>
-
-      {/* UNHCR Highlight Case Study - From Left */}
-      <AnimatedContainer transformDirection="left" transition={{ delay: 0.2 }}>
-        <UNHCRHighlight />
-      </AnimatedContainer>
-
-      {/* How I Work Section - From Right */}
-      <AnimatedContainer transformDirection="right" transition={{ delay: 0.2 }}>
-        <HowItWorks />
-      </AnimatedContainer>
-
-      {/* Assessment Offer Section - From Left */}
-      <AnimatedContainer transformDirection="left" transition={{ delay: 0.2 }}>
-        <AssessmentOffer />
-      </AnimatedContainer>
-
-      {/* Timeline Section - From Right */}
-      <AnimatedContainer transformDirection="right" transition={{ delay: 0.2 }}>
-        <section className="py-24 bg-transparent border-t border-white/5">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl lg:text-5xl font-bold text-foreground mb-4 gradient-text">
-                {t('home.timelineTitle')}
-              </h2>
-              <p className="text-muted-foreground text-lg font-light max-w-2xl mx-auto">
-                {t('home.timelineDesc')}
+      {/* NEW CONTENT AREA - WHITE BACKGROUND */}
+      <main className="bg-white text-black py-20 relative z-20 shadow-[0_-20px_50px_rgba(0,0,0,0.05)] rounded-t-[3rem] -mt-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          {/* Header Typography Section */}
+          <article className="w-fit mx-auto max-w-4xl text-center space-y-8 mb-20">
+            <TimelineContent
+              as="div"
+              animationNum={1}
+              timelineRef={timelineRef}
+              customVariants={revealVariants}
+              className="flex w-fit mx-auto items-center gap-1 rounded-full bg-blue-600 border-4 border-blue-100 py-0.5 pl-0.5 pr-3 text-xs"
+            >
+              <div className="rounded-full bg-white px-2 py-1 text-xs font-bold text-blue-600">
+                Data Specialist
+              </div>
+              <p className="text-white sm:text-base text-xs inline-block ml-1">
+                ✨ {t('home.trust_boost')}
               </p>
-            </div>
-            <div className="glass-card p-8 md:p-12 border-white/5">
-              <Timeline items={timelineItems} />
-            </div>
-          </div>
-        </section>
-      </AnimatedContainer>
+            </TimelineContent>
 
-      {/* Final CTA Section */}
-      <section className="py-32 bg-transparent relative overflow-hidden">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="glass-card p-16 text-center border-white/10 relative overflow-hidden group">
-            <div className="absolute inset-0 bg-primary/20 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-1000 -z-10" />
-            <h2 className="text-3xl lg:text-5xl font-bold mb-10 leading-tight gradient-text">
-              {t('home.final_cta_text')}
-            </h2>
-            <Button size="lg" className="glass-button px-12 h-16 text-xl font-bold shadow-2xl hover:scale-105 transition-transform text-white border-white/20" asChild>
-              <a href="https://www.linkedin.com/in/sename-kudjo-kedji-bb849035/" target="_blank" rel="noopener noreferrer" className="flex items-center">
-                {t('home.final_cta_btn')}
-                <MoveRight className="ml-3 h-7 w-7" />
-              </a>
-            </Button>
+            <TimelineContent
+              as="h1"
+              animationNum={2}
+              timelineRef={timelineRef}
+              customVariants={revealVariants}
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[110%] tracking-tight text-gray-900"
+            >
+              <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+                Expertise
+              </span>{" "}
+              {t('home.intro_title').split('&')[0]} &{" "}
+              <span className="bg-gradient-to-r from-cyan-500 to-blue-500 bg-clip-text text-transparent">
+                Solutions
+              </span>
+            </TimelineContent>
+
+            <TimelineContent
+              as="p"
+              animationNum={3}
+              timelineRef={timelineRef}
+              customVariants={revealVariants}
+              className="text-lg sm:text-xl md:text-2xl text-gray-600 max-w-2xl mx-auto font-light leading-relaxed"
+            >
+              {t('home.intro_subtitle')}
+            </TimelineContent>
+          </article>
+
+          {/* Project Grid Section */}
+          <section id="services" className="pt-10 pb-20">
+            <TimelineContent
+              as="h2"
+              animationNum={4}
+              timelineRef={timelineRef}
+              className="text-3xl font-bold mb-12 text-center"
+            >
+              {t('casestudies.sectionTitle')}
+            </TimelineContent>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {projectsData.slice(0, 6).map((project, index) => (
+                <TimelineContent
+                  key={project.id}
+                  as="a"
+                  animationNum={index + 5}
+                  timelineRef={timelineRef}
+                  target="_blank"
+                  href={project.link}
+                  className="group relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl transition-all duration-500 hover:scale-[1.02] bg-gray-100"
+                  rel="noreferrer"
+                >
+                  <figure className="h-full w-full">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    />
+                  </figure>
+                  <ProgressiveBlur
+                    className="pointer-events-none absolute bottom-0 left-0 h-[40%] w-full"
+                    blurIntensity={1.2}
+                  />
+                  <div className="absolute bottom-5 left-6 right-6">
+                    <span className="text-[10px] font-bold uppercase tracking-widest text-white/70 mb-1 block">
+                      {project.category}
+                    </span>
+                    <h3 className="text-xl font-bold text-white leading-tight">
+                      {project.title}
+                    </h3>
+                    <div className="mt-3 flex items-center gap-2 opacity-0 -translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                      <ExternalLink className="size-4 text-white" />
+                      <span className="text-xs font-semibold text-white">Voir le projet</span>
+                    </div>
+                  </div>
+                </TimelineContent>
+              ))}
+            </div>
+          </section>
+
+          {/* Other Unified Sections */}
+          <div className="space-y-32 py-20">
+            <PositioningSection lightMode={true} />
+            <UNHCRHighlight lightMode={true} />
+            <HowItWorks lightMode={true} />
+            <AssessmentOffer lightMode={true} />
+            
+            {/* Timeline Section */}
+            <section className="py-20 border-t border-gray-100">
+              <div className="max-w-7xl mx-auto">
+                <div className="text-center mb-16">
+                  <h2 className="text-3xl lg:text-5xl font-bold text-gray-900 mb-4">
+                    {t('home.timelineTitle')}
+                  </h2>
+                  <p className="text-gray-500 text-lg font-light max-w-2xl mx-auto">
+                    {t('home.timelineDesc')}
+                  </p>
+                </div>
+                <div className="bg-gray-50 p-8 md:p-12 rounded-3xl border border-gray-100 shadow-sm">
+                  <Timeline items={timelineItems} dark={false} />
+                </div>
+              </div>
+            </section>
+
+            {/* Final CTA Section */}
+            <section className="pb-20">
+              <div className="max-w-5xl mx-auto">
+                <div className="bg-blue-600 rounded-[3rem] p-12 md:p-20 text-center text-white relative overflow-hidden shadow-2xl">
+                  <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-96 h-96 bg-white/10 blur-[100px] rounded-full" />
+                  <div className="relative z-10">
+                    <h2 className="text-3xl lg:text-5xl font-bold mb-10 leading-tight">
+                      {t('home.final_cta_text')}
+                    </h2>
+                    <Button size="lg" className="bg-white text-blue-600 hover:bg-blue-50 px-12 h-16 text-xl font-bold shadow-xl rounded-2xl" asChild>
+                      <a href="https://www.linkedin.com/in/sename-kudjo-kedji-bb849035/" target="_blank" rel="noopener noreferrer" className="flex items-center">
+                        {t('home.final_cta_btn')}
+                        <MoveRight className="ml-3 h-7 w-7" />
+                      </a>
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            </section>
           </div>
         </div>
-      </section>
+      </main>
     </div>
   );
 };
 
 export default Home;
+

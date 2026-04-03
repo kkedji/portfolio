@@ -6,25 +6,25 @@ import { Badge } from "./Badge"
 import { CheckCircle, Clock, Circle } from "lucide-react"
 import { useTranslation } from "react-i18next"
 
-const getStatusConfig = (status) => {
+const getStatusConfig = (status, dark = true) => {
   const configs = {
     completed: {
       progressColor: "bg-emerald-500",
       borderColor: "border-emerald-500/20",
-      badgeBg: "bg-emerald-500/10",
-      badgeText: "text-emerald-400"
+      badgeBg: dark ? "bg-emerald-500/10" : "bg-emerald-50",
+      badgeText: dark ? "text-emerald-400" : "text-emerald-600"
     },
     current: {
       progressColor: "bg-blue-500",
       borderColor: "border-blue-500/20",
-      badgeBg: "bg-blue-500/10",
-      badgeText: "text-blue-400"
+      badgeBg: dark ? "bg-blue-500/10" : "bg-blue-50",
+      badgeText: dark ? "text-blue-400" : "text-blue-600"
     },
     upcoming: {
       progressColor: "bg-slate-500",
-      borderColor: "border-white/10",
-      badgeBg: "bg-white/5",
-      badgeText: "text-slate-400"
+      borderColor: dark ? "border-white/10" : "border-gray-200",
+      badgeBg: dark ? "bg-white/5" : "bg-gray-100",
+      badgeText: dark ? "text-slate-400" : "text-gray-500"
     }
   }
   
@@ -42,12 +42,12 @@ const getStatusIcon = (status) => {
   }
 }
 
-export function Timeline({ items, className }) {
+export function Timeline({ items, className, dark = true }) {
   const { t } = useTranslation()
   if (!items || items.length === 0) {
     return (
       <div className={cn("w-full max-w-4xl mx-auto px-4 sm:px-6 py-8", className)}>
-        <p className="text-center text-slate-500">{t('timeline.empty', 'Aucun événement à afficher')}</p>
+        <p className={cn("text-center", dark ? "text-slate-500" : "text-gray-400")}>{t('timeline.empty', 'Aucun événement à afficher')}</p>
       </div>
     )
   }
@@ -60,7 +60,7 @@ export function Timeline({ items, className }) {
     >
       <div className="relative">
         <div 
-          className="absolute left-4 sm:left-6 top-0 bottom-0 w-px bg-white/10" 
+          className={cn("absolute left-4 sm:left-6 top-0 bottom-0 w-px", dark ? "bg-white/10" : "bg-gray-200")} 
           aria-hidden="true"
         />
         
@@ -81,7 +81,7 @@ export function Timeline({ items, className }) {
 
         <div className="space-y-8 sm:space-y-12 relative">
           {items.map((item, index) => {
-            const config = getStatusConfig(item.status)
+            const config = getStatusConfig(item.status, dark)
             const IconComponent = getStatusIcon(item.status)
             
             return (
@@ -113,7 +113,10 @@ export function Timeline({ items, className }) {
                       role="img"
                       aria-label={`Icon for ${item.title}`}
                     >
-                      <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-white/20 bg-slate-900 shadow-xl relative z-10">
+                      <div className={cn(
+                        "w-12 h-12 rounded-full overflow-hidden border-2 shadow-xl relative z-10",
+                        dark ? "border-white/20 bg-slate-900" : "border-gray-100 bg-white"
+                      )}>
                         {item.image ? (
                           <img
                             src={item.image}
@@ -122,7 +125,7 @@ export function Timeline({ items, className }) {
                             loading="lazy"
                           />
                         ) : (
-                          <div className="w-full h-full bg-white/5 flex items-center justify-center">
+                          <div className={cn("w-full h-full flex items-center justify-center", dark ? "bg-white/5" : "bg-gray-50")}>
                             <IconComponent 
                               className={cn("w-6 h-6", config.badgeText)} 
                               aria-hidden="true"
@@ -139,24 +142,30 @@ export function Timeline({ items, className }) {
                     transition={{ duration: 0.2 }}
                   >
                     <Card className={cn(
-                      "glass-card border-white/10 transition-all duration-300 hover:bg-white/10 group-hover:border-blue-400/30 shadow-2xl"
+                      "transition-all duration-300 shadow-2xl rounded-2xl border",
+                      dark 
+                        ? "glass-card border-white/10 hover:bg-white/10 group-hover:border-blue-400/30" 
+                        : "bg-white border-gray-100 hover:border-blue-200 group-hover:shadow-blue-500/5"
                     )}>
                       <CardContent className="p-5 sm:p-6">
                         <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 sm:gap-4 mb-3">
                           <div className="flex-1 min-w-0">
                             <motion.h3 
-                              className="text-xl sm:text-2xl font-bold text-white mb-1 group-hover:text-blue-400 transition-colors duration-300"
+                              className={cn(
+                                "text-xl sm:text-2xl font-bold mb-1 transition-colors duration-300",
+                                dark ? "text-white group-hover:text-blue-400" : "text-gray-900 group-hover:text-blue-600"
+                              )}
                               layoutId={`title-${index}`}
                             >
                               {item.title}
                             </motion.h3>
                             
-                            <div className="flex flex-wrap items-center gap-2 text-sm text-slate-400 font-medium">
+                            <div className={cn("flex flex-wrap items-center gap-2 text-sm font-medium", dark ? "text-slate-400" : "text-gray-500")}>
                               {item.category && (
                                 <span className={cn(config.badgeText)}>{item.category}</span>
                               )}
                               {item.category && item.date && (
-                                <span className="w-1 h-1 bg-white/20 rounded-full" aria-hidden="true" />
+                                <span className={cn("w-1 h-1 rounded-full", dark ? "bg-white/20" : "bg-gray-300")} aria-hidden="true" />
                               )}
                               {item.date && (
                                 <time dateTime={item.date}>{item.date}</time>
@@ -179,14 +188,17 @@ export function Timeline({ items, className }) {
                         </div>
 
                         <motion.p 
-                          className="text-base sm:text-lg text-slate-300 font-light leading-relaxed mb-6"
+                          className={cn(
+                            "text-base sm:text-lg font-light leading-relaxed mb-6",
+                            dark ? "text-slate-300" : "text-gray-600"
+                          )}
                           initial={{ opacity: 0.9 }}
                         >
                           {item.description}
                         </motion.p>
 
                         <div 
-                          className="h-1.5 bg-white/5 rounded-full overflow-hidden"
+                          className={cn("h-1.5 rounded-full overflow-hidden", dark ? "bg-white/5" : "bg-gray-100")}
                           role="progressbar"
                           aria-valuenow={item.status === "completed" ? 100 : item.status === "current" ? 65 : 25}
                           aria-valuemin={0}
@@ -232,9 +244,9 @@ export function Timeline({ items, className }) {
           viewport={{ once: true }}
           aria-hidden="true"
         >
-          <div className="w-3 h-3 bg-primary-600 rounded-full shadow-sm" />
+          <div className="w-3 h-3 bg-blue-600 rounded-full shadow-sm" />
         </motion.div>
       </div>
     </section>
   )
-} 
+}
