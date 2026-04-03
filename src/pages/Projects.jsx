@@ -27,10 +27,10 @@ const Projects = () => {
     <div className="bg-transparent min-h-screen text-foreground">
       {/* Header Section */}
       <ShapeLandingHero 
-        badge={t('projects.badge', 'Data Analytics Portfolio')}
-        title1={t('projects.title')}
+        badge={t('projects.badge', 'Portfolio')}
+        title1={t('header.projects')}
         title2={t('projects.title2')}
-        description={t('projects.desc')}
+        description=""
       />
 
       {/* Filter Section */}

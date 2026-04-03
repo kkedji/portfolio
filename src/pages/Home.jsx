@@ -54,29 +54,31 @@ const Home = () => {
   ];
 
   return (
-    <div className="bg-transparent min-h-screen text-foreground">
+    <div className="bg-transparent min-h-screen text-foreground relative z-10">
       {/* Unified Hero Section */}
       <ShapeLandingHero 
         badge={t('home.welcome')}
-        title1={t('home.intro_title').split(' ').slice(0, 3).join(' ')}
-        title2={t('home.intro_title').split(' ').slice(3).join(' ')}
+        title1={t('home.intro_title').split('&')[0] + '&'}
+        title2={t('home.intro_title').split('&')[1]}
         customDescription={
-          <TextStagger 
-            className="text-base sm:text-lg md:text-xl text-white/80 mb-8 max-w-2xl mx-auto px-4"
-            text={t('home.intro_subtitle')}
-            stagger={0.03}
-          />
+          <div className="float-animation">
+            <TextStagger 
+              className="text-base sm:text-lg md:text-xl text-white/80 mb-8 max-w-2xl mx-auto px-4 font-light"
+              text={t('home.intro_subtitle')}
+              stagger={0.02}
+            />
+          </div>
         }
         trustText={t('home.trust_boost')}
       >
         <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
-          <Button size="lg" className="rounded-full px-8 h-12 shadow-lg" asChild>
+          <Button size="lg" className="rounded-lg px-8 h-12 shadow-lg bg-primary hover:opacity-90" asChild>
             <a href="https://www.linkedin.com/in/sename-kudjo-kedji-bb849035/" target="_blank" rel="noopener noreferrer" className="flex items-center">
               {t('home.cta_book')}
               <ArrowRight className="ml-2 h-5 w-5" />
             </a>
           </Button>
-          <Button size="lg" variant="outline" className="rounded-full px-8 h-12 bg-white/20 backdrop-blur-sm border-white/30 text-white hover:bg-white/30 transition-all shadow-sm" asChild>
+          <Button size="lg" variant="outline" className="glass-button rounded-lg px-8 h-12 text-white shadow-sm" asChild>
             <a href="#services">
               {t('home.cta_cases')}
             </a>
@@ -111,31 +113,38 @@ const Home = () => {
 
       {/* Timeline Section - From Right */}
       <AnimatedContainer transformDirection="right" transition={{ delay: 0.2 }}>
-        <section className="py-20 bg-white/50 border-t border-gray-100">
+        <section className="py-24 bg-transparent border-t border-white/5">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-8">
-              <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl lg:text-5xl font-bold text-foreground mb-4 gradient-text">
                 {t('home.timelineTitle')}
               </h2>
+              <p className="text-muted-foreground text-lg font-light max-w-2xl mx-auto">
+                {t('home.timelineDesc')}
+              </p>
             </div>
-            <Timeline items={timelineItems} />
+            <div className="glass-card p-8 md:p-12 border-white/5">
+              <Timeline items={timelineItems} />
+            </div>
           </div>
         </section>
       </AnimatedContainer>
 
       {/* Final CTA Section */}
-      <section className="py-24 bg-gradient-to-br from-primary to-primary-800 text-white overflow-hidden relative">
-        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10" />
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <h2 className="text-3xl lg:text-4xl font-bold mb-8 leading-tight">
-            {t('home.final_cta_text')}
-          </h2>
-          <Button size="lg" className="bg-white text-primary hover:bg-primary-50 rounded-full px-12 h-16 text-xl font-bold shadow-2xl transition-transform hover:scale-105" asChild>
-            <a href="https://www.linkedin.com/in/sename-kudjo-kedji-bb849035/" target="_blank" rel="noopener noreferrer" className="flex items-center">
-              {t('home.final_cta_btn')}
-              <MoveRight className="ml-3 h-6 w-6" />
-            </a>
-          </Button>
+      <section className="py-32 bg-transparent relative overflow-hidden">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="glass-card p-16 text-center border-white/10 relative overflow-hidden group">
+            <div className="absolute inset-0 bg-primary/20 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-1000 -z-10" />
+            <h2 className="text-3xl lg:text-5xl font-bold mb-10 leading-tight gradient-text">
+              {t('home.final_cta_text')}
+            </h2>
+            <Button size="lg" className="glass-button px-12 h-16 text-xl font-bold shadow-2xl hover:scale-105 transition-transform text-white border-white/20" asChild>
+              <a href="https://www.linkedin.com/in/sename-kudjo-kedji-bb849035/" target="_blank" rel="noopener noreferrer" className="flex items-center">
+                {t('home.final_cta_btn')}
+                <MoveRight className="ml-3 h-7 w-7" />
+              </a>
+            </Button>
+          </div>
         </div>
       </section>
     </div>

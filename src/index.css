@@ -2,26 +2,54 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  .float-animation {
+    animation: float 6s ease-in-out infinite;
+  }
+  .glass-button {
+    @apply backdrop-blur-md bg-white/5 border border-white/10 hover:bg-white/20 transition-all duration-300;
+  }
+  .skill-badge {
+    @apply bg-white/5 border border-white/10 backdrop-blur-sm px-2 py-1 rounded text-xs text-muted-foreground;
+  }
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-sky-300 to-indigo-400;
+  }
+  .glass-card {
+    @apply backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl shadow-2xl;
+  }
+}
+
 @layer base {
   :root {
-    --card: #e3eaf2;
-    --ring: #f7c873;
-    --input: #6ea3c1;
-    --muted: #e5e5df;
-    --accent: #6ea3c1;
-    --border: #b0b8c1;
-    --radius: 0.5rem;
+    --background: #050510;
+    --foreground: #fcfcfc;
+    --card: #0c0c1e;
+    --card-foreground: #fcfcfc;
+    --popover: #0c0c1e;
+    --popover-foreground: #fcfcfc;
     --primary: #3a5ba0;
-    --background: #fdfdfd;
-    --foreground: #09090b;
-    --card: #ffffff;
-    --card-foreground: #09090b;
-    --muted: #f4f4f5;
-    --muted-foreground: #71717a;
-    --border: #e4e4e7;
+    --primary-foreground: #ffffff;
+    --secondary: #1e1e3b;
+    --secondary-foreground: #ffffff;
+    --muted: #1e1e3b;
+    --muted-foreground: #a0aec0;
+    --accent: #1e1e3b;
+    --accent-foreground: #ffffff;
     --destructive: #ef4444;
-    --secondary: #3a5ba0;
-    --radius: 0.5rem;
+    --destructive-foreground: #ffffff;
+    --border: rgba(255, 255, 255, 0.1);
+    --input: rgba(255, 255, 255, 0.1);
+    --ring: #3a5ba0;
+    --radius: 0.75rem;
   }
 
   .dark {

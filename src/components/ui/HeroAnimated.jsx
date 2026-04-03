@@ -5,9 +5,9 @@ import { cn } from "../../lib/utils"
 
 export const transformVariants = (direction) => ({
   hidden: {
-    x: direction === "left" ? "-100%" : direction === "right" ? "100%" : 0,
-    y: direction === "top" ? "-100%" : direction === "bottom" ? "100%" : 0,
-    scale: direction === "z" ? 0 : 1,
+    x: direction === "left" ? -40 : direction === "right" ? 40 : 0,
+    y: direction === "top" ? -40 : direction === "bottom" ? 40 : 0,
+    scale: direction === "z" ? 0.95 : 1,
     opacity: 0,
   },
   visible: {
@@ -71,7 +71,7 @@ const GRADIENT_POSITIONS = {
   right: { x: "110%", y: "0%" },
 }
 
-const TRANSITION_CONFIG = { ease: [0.25, 0.1, 0.25, 1], duration: 0.5 }
+const TRANSITION_CONFIG = { ease: [0.25, 0.1, 0.25, 1], duration: 0.8 }
 
 const heroVariants = cva(
   "relative min-h-[500px] w-full overflow-hidden flex flex-col items-center text-center justify-center text-center place-content-center",
@@ -196,9 +196,9 @@ export const AnimatedContainer = React.forwardRef(({ children, className, transf
       whileInView={"visible"}
       viewport={{ once: true, ...props.viewport }}
       transition={{
-        duration: 0.5,
+        duration: 0.8,
         ease: "easeOut",
-        delay: 0.4,
+        delay: 0.2,
         ...props.transition,
       }}
       {...props}

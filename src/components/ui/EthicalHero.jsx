@@ -1,9 +1,8 @@
 import * as React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, ExternalLink } from 'lucide-react';
 import { cn } from '../../lib/utils';
 import { Button } from './Button';
-import { Card } from './Card';
 
 const FADE_UP_VARIANTS = {
   hidden: { opacity: 0, y: 10 },
@@ -25,7 +24,7 @@ export function EthicalHero({
   subtitle,
   ctaLabel,
   ctaHref,
-  features,
+  features = [],
   className
 }) {
   return (
@@ -66,46 +65,46 @@ export function EthicalHero({
         variants={STAGGER_CONTAINER_VARIANTS}
         className="mt-16 grid grid-cols-1 gap-6 sm:mt-24 md:grid-cols-3"
       >
-        {features.map((feature) => (
-          <motion.a
-            key={feature.id}
-            href={feature.href}
-            target={feature.href.startsWith('http') ? "_blank" : undefined}
-            rel={feature.href.startsWith('http') ? "noopener noreferrer" : undefined}
-            aria-label={feature.title}
+        {features.map((feature, idx) => (
+          <motion.div
+            key={feature.id || idx}
             variants={FADE_UP_VARIANTS}
-            whileHover={{ scale: 1.03 }}
-            transition={{ type: 'spring', stiffness: 300 }}
             className="block h-full"
           >
-            <Card className="group h-full overflow-hidden rounded-xl shadow-sm transition-shadow duration-300 ease-in-out hover:shadow-md border-border/50">
-              {/* Card Image */}
-              <div className="overflow-hidden aspect-video relative">
-                <img
-                  src={feature.imageUrl}
-                  alt={feature.title}
-                  className="w-full h-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105"
-                />
+            <div className="glass-card group relative p-6 transition-all duration-500 hover:scale-[1.02] flex flex-col h-full">
+              {/* Icon area */}
+              <div className="mb-6 flex h-14 w-14 float-animation items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-white">
+                {feature.icon || <ExternalLink className="h-6 w-6" />}
               </div>
 
-              {/* Card Content */}
-              <div className="p-6">
-                <div className="flex items-center justify-between gap-4">
-                  <h3 className="text-lg font-semibold text-foreground line-clamp-2">
-                    {feature.title}
-                  </h3>
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-muted/50 transition-colors duration-300 group-hover:bg-muted">
-                    <ArrowRight className="h-5 w-5 text-muted-foreground transition-transform duration-300 group-hover:translate-x-1" />
+              <div className="flex flex-col flex-grow">
+                <h3 className="mb-3 text-xl font-bold text-foreground">
+                  {feature.title}
+                </h3>
+                <p className="mb-6 text-sm text-muted-foreground leading-relaxed flex-grow line-clamp-3">
+                  {feature.description}
+                </p>
+
+                <div className="mt-auto">
+                  <div className="mb-6 flex flex-wrap gap-2">
+                    {feature.tags?.map((tag) => (
+                      <span key={tag} className="skill-badge">
+                        {tag}
+                      </span>
+                    ))}
                   </div>
+
+                  <a
+                    href={feature.href || "#"}
+                    className="inline-flex items-center text-sm font-bold text-primary transition-all hover:gap-2 group-hover:text-primary-400"
+                  >
+                    {feature.ctaText || 'Explorer'}
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </a>
                 </div>
-                {feature.description && (
-                  <p className="mt-2 text-sm text-muted-foreground line-clamp-2">
-                    {feature.description}
-                  </p>
-                )}
               </div>
-            </Card>
-          </motion.a>
+            </div>
+          </motion.div>
         ))}
       </motion.div>
     </motion.section>

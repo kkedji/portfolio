@@ -8,14 +8,14 @@ export default function FeaturedAppDemo({ app }) {
   const [isPlaying, setIsPlaying] = useState(false);
 
   return (
-    <div className="w-full bg-white text-gray-900 py-16 border-b border-gray-100 last:border-0 relative">
+    <div className="w-full bg-transparent text-foreground py-16 relative border-t border-white/5 first:border-0 last:border-b-0">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <header className="text-left mb-12">
-          <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">
+          <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4 gradient-text">
             {app.title}
           </h2>
-          <p className="text-lg md:text-xl text-gray-600 max-w-4xl">
+          <p className="text-lg md:text-xl text-muted-foreground max-w-4xl font-light">
             {app.description}
           </p>
         </header>
@@ -60,17 +60,17 @@ export default function FeaturedAppDemo({ app }) {
             {app.features.map((feature, i) => (
               <div
                 key={i}
-                className="flex flex-col border border-gray-200 bg-white rounded-xl p-4 hover:shadow-md transition-shadow"
+                className="flex flex-col glass-card p-4 hover:bg-white/10 transition-all border-white/10"
               >
                 <div className="flex items-center gap-3 mb-2">
-                  <div className="w-8 h-8 rounded-full bg-primary-100 flex items-center justify-center text-primary-600 font-bold text-sm shrink-0">
+                  <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold text-sm shrink-0 border border-primary/30">
                     {i + 1}
                   </div>
-                  <h3 className="text-base font-semibold text-gray-900 line-clamp-1">
+                  <h3 className="text-base font-semibold text-foreground line-clamp-1">
                     {t('apps.features')}
                   </h3>
                 </div>
-                <p className="text-sm text-gray-600 leading-relaxed pl-11">
+                <p className="text-sm text-muted-foreground font-light leading-relaxed pl-11">
                   {feature}
                 </p>
               </div>
@@ -83,14 +83,14 @@ export default function FeaturedAppDemo({ app }) {
           {app.tags.map((tag, idx) => (
             <div
               key={idx}
-              className="p-3 flex items-center gap-3 bg-gray-50 hover:bg-gray-100 rounded-xl transition border border-gray-100"
+              className="p-3 flex items-center gap-3 glass-card hover:bg-white/10 transition-all border-white/10"
             >
-              <div className="w-10 h-10 shrink-0 rounded-xl bg-white border border-gray-200 shadow-sm flex items-center justify-center text-primary-600 font-bold text-[10px] uppercase text-center p-1 leading-none break-all overflow-hidden">
+              <div className="w-10 h-10 shrink-0 rounded-xl bg-white/10 border border-white/20 shadow-sm flex items-center justify-center text-primary font-bold text-[10px] uppercase text-center p-1 leading-none break-all overflow-hidden">
                 {tag.substring(0, 3)}
               </div>
               <div>
-                <div className="font-semibold text-gray-900">{t('apps.tech_label', 'Tech')}</div>
-                <div className="text-xs text-gray-500 line-clamp-1">{tag}</div>
+                <div className="font-semibold text-foreground">{t('apps.tech_label', 'Tech')}</div>
+                <div className="text-xs text-muted-foreground line-clamp-1">{tag}</div>
               </div>
             </div>
           ))}
