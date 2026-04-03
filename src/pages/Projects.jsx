@@ -82,7 +82,7 @@ const Projects = () => {
           </TimelineContent>
 
           {/* Project Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             {filteredProjects.map((project, index) => (
               <TimelineContent 
                 key={project.id} 
@@ -94,29 +94,35 @@ const Projects = () => {
                   href={project.link || "#"} 
                   target={project.link ? "_blank" : undefined}
                   rel="noopener noreferrer"
-                  className="block h-full"
+                  className="flex flex-col h-full bg-white rounded-[2.5rem] overflow-hidden shadow-xl border border-gray-100 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2"
                 >
-                  <div className="relative aspect-[4/3] rounded-[2rem] overflow-hidden shadow-xl border border-gray-100 transition-all duration-500 group-hover:shadow-2xl group-hover:-translate-y-2">
+                  {/* Image Container */}
+                  <div className="relative aspect-[16/10] overflow-hidden bg-gray-100">
                     <img 
                       src={project.image} 
                       alt={t(`projects.items.${project.id}.title`)} 
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     />
-                    <ProgressiveBlur className="absolute inset-0 flex flex-col justify-end p-8">
-                      <div className="relative z-10">
-                        <div className="flex items-center gap-2 mb-3">
-                          <span className="px-3 py-1 rounded-full bg-blue-600/90 backdrop-blur-md text-[10px] font-black text-white uppercase tracking-widest">
-                            {project.category}
-                          </span>
-                        </div>
-                        <h3 className="text-2xl font-bold leading-tight mb-2 text-blue-600 drop-shadow-sm group-hover:text-blue-700 transition-colors">
-                          {t(`projects.items.${project.id}.title`)}
-                        </h3>
-                        <p className="text-sm text-gray-200 line-clamp-2 font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                          {t(`projects.items.${project.id}.desc`)}
-                        </p>
-                      </div>
-                    </ProgressiveBlur>
+                    <div className="absolute top-4 left-4">
+                      <span className="px-3 py-1 rounded-full bg-blue-600/90 backdrop-blur-md text-[10px] font-black text-white uppercase tracking-widest shadow-lg">
+                        {project.category}
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Content Container */}
+                  <div className="p-8 flex-grow flex flex-col">
+                    <h3 className="text-xl md:text-2xl font-bold leading-tight mb-4 text-gray-900 group-hover:text-blue-600 transition-colors duration-300">
+                      {t(`projects.items.${project.id}.title`)}
+                    </h3>
+                    <p className="text-gray-600 text-sm md:text-base font-light leading-relaxed line-clamp-3">
+                      {t(`projects.items.${project.id}.desc`)}
+                    </p>
+                    
+                    <div className="mt-auto pt-6 flex items-center text-blue-600 font-bold text-sm tracking-tight opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-[-10px] group-hover:translate-x-0">
+                      <span>{t('casestudies.viewMore')}</span>
+                      <MoveRight size={18} className="ml-2" />
+                    </div>
                   </div>
                 </a>
               </TimelineContent>

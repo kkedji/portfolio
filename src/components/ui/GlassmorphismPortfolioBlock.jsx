@@ -8,6 +8,7 @@ import {
   Mail
 } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import { cn } from "../../lib/utils";
 
 // For UI Badge substitution since we don't have shadcn badge installed by default in the project, I will inline a simple badge or create a basic Badge component layout inline
 const inlineBadge = "inline-flex items-center gap-2 rounded-full border border-border/50 bg-background/55 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-primary backdrop-blur transition-colors hover:bg-background/70";

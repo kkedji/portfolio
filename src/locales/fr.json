@@ -259,6 +259,11 @@
         "f2": "Suivi automatisé des cotisations mensuelles avec calendrier visuel",
         "f3": "Génération de rapports financiers professionnels imprimables (PDF)"
       }
-    }
+    },
+    "custom_cta_title": "Vous avez un projet d'application ?",
+    "custom_cta_desc": "Je peux vous aider à développer des applications personnalisées pour répondre à vos besoins spécifiques en analyse de données."
+  },
+  "profile": {
+    "title": "Mon Profil"
   }
 }

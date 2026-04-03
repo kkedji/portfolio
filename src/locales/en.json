@@ -259,6 +259,11 @@
         "f2": "Automated tracking of monthly dues with a visual calendar",
         "f3": "Generation of professional printable financial reports (PDF)"
       }
-    }
+    },
+    "custom_cta_title": "Have an application project?",
+    "custom_cta_desc": "I can help you develop custom applications to meet your specific data analysis needs."
+  },
+  "profile": {
+    "title": "My Profile"
   }
 }
