@@ -30,35 +30,38 @@ const Applications = () => {
         description=""
       />
 
-      {/* Applications Showcase */}
-      <div>
-        {translatedApps.map((app) => (
-          <FeaturedAppDemo key={app.id} app={app} />
-        ))}
-      </div>
-
-      {/* Info Section */}
-      <section className="py-24 bg-transparent relative z-10">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="glass-card p-12 text-center border-white/10 group hover:bg-white/10 transition-all">
-            <h2 className="text-3xl font-bold text-foreground mb-4 gradient-text">
-              {t('apps.custom_cta_title', "Vous avez un projet d'application ?")}
-            </h2>
-            <p className="text-xl text-muted-foreground mb-10 font-light">
-              {t('apps.custom_cta_desc', "Je peux vous aider à développer des applications personnalisées pour répondre à vos besoins spécifiques en analyse de données.")}
-            </p>
-            <a
-              href="https://www.linkedin.com/in/sename-kudjo-kedji-bb849035/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="glass-button px-8 py-4 rounded-xl text-white inline-flex items-center text-lg font-medium shadow-2xl hover:scale-105 transition-transform"
-            >
-              {t('footer.contact')}
-              <ExternalLink size={20} className="ml-3" />
-            </a>
-          </div>
+      {/* NEW CONTENT AREA - WHITE BACKGROUND */}
+      <main className="bg-white text-black py-20 relative z-20 shadow-[0_-20px_50px_rgba(0,0,0,0.05)] rounded-t-[3rem] -mt-12">
+        {/* Applications Showcase */}
+        <div className="space-y-0">
+          {translatedApps.map((app) => (
+            <FeaturedAppDemo key={app.id} app={app} lightMode={true} />
+          ))}
         </div>
-      </section>
+
+        {/* Info Section - Adapted for Light Mode */}
+        <section className="py-24 relative z-10 px-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="bg-gray-50 p-12 md:p-16 text-center border border-gray-100 rounded-[3rem] group hover:bg-white hover:shadow-2xl transition-all duration-500">
+              <h2 className="text-3xl md:text-5xl font-black text-gray-900 mb-6 leading-tight">
+                {t('apps.custom_cta_title')}
+              </h2>
+              <p className="text-xl text-gray-600 mb-10 font-light leading-relaxed max-w-2xl mx-auto">
+                {t('apps.custom_cta_desc')}
+              </p>
+              <a
+                href="https://www.linkedin.com/in/sename-kudjo-kedji-bb849035/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center px-10 py-5 bg-blue-600 text-white font-black rounded-full hover:bg-blue-700 transition-all shadow-2xl hover:scale-105 active:scale-95"
+              >
+                {t('footer.contact')}
+                <ExternalLink size={24} className="ml-3" />
+              </a>
+            </div>
+          </div>
+        </section>
+      </main>
     </div>
   );
 };

@@ -24,8 +24,8 @@ const data = {
     profil: '/about',
   },
   contact: {
-    email: 'contact@skkanalytics.com', // Placeholder, adjust as needed
-    phone: '', 
+    email: 'skksean28@gmail.com',
+    phone: '(228) 90151369', 
     address: 'Lome, Togo',
   },
   company: {
@@ -54,6 +54,7 @@ const getServiceLinks = (t) => [
 
 const getContactInfo = (data) => [
   { icon: Mail, text: data.contact.email },
+  { icon: Phone, text: data.contact.phone },
   { icon: MapPin, text: data.contact.address, isAddress: true },
 ];
 

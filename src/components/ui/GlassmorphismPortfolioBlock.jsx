@@ -58,7 +58,7 @@ const itemVariants = {
   },
 };
 
-export function GlassmorphismPortfolioBlock() {
+export function GlassmorphismPortfolioBlock({ lightMode = false }) {
   const { t } = useTranslation();
 
   const highlights = [
@@ -77,22 +77,34 @@ export function GlassmorphismPortfolioBlock() {
   ];
 
   return (
-    <section className="relative min-h-[85vh] flex items-center overflow-hidden px-4 md:px-6 py-10 lg:py-16 bg-background">
-      <div className="mx-auto max-w-6xl">
+    <section className={cn(
+      "relative min-h-[85vh] flex items-center overflow-hidden px-4 md:px-6 py-10 lg:py-16 transition-colors duration-500",
+      lightMode ? "bg-white" : "bg-background"
+    )}>
+      <div className="mx-auto max-w-6xl w-full">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.1 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 p-6 md:p-8 shadow-2xl backdrop-blur-3xl"
+          className={cn(
+            "relative overflow-hidden rounded-[2rem] border p-6 md:p-8 shadow-2xl transition-all duration-500",
+            lightMode ? "border-gray-100 bg-gray-50/50" : "border-white/10 bg-white/5 backdrop-blur-3xl"
+          )}
         >
           {/* Glass gradient overlay */}
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-transparent pointer-events-none" />
+          <div className={cn(
+            "absolute inset-0 pointer-events-none",
+            lightMode ? "bg-gradient-to-br from-blue-50 via-transparent to-transparent" : "bg-gradient-to-br from-primary/10 via-transparent to-transparent"
+          )} />
 
           <div className="relative grid gap-8 lg:grid-cols-2">
             {/* Left column - Main content */}
             <div className="space-y-6">
-              <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-blue-400 backdrop-blur transition-colors hover:bg-white/10">
+              <div className={cn(
+                "inline-flex items-center gap-2 rounded-full border px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] backdrop-blur transition-colors",
+                lightMode ? "border-blue-100 bg-blue-50 text-blue-600" : "border-white/10 bg-white/5 text-blue-400 hover:bg-white/10"
+              )}>
                 {t('glassmorphism.badge')}
               </div>
 
@@ -102,17 +114,23 @@ export function GlassmorphismPortfolioBlock() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: 0.1 }}
-                  className="text-2xl font-bold tracking-tight text-white md:text-4xl leading-tight"
+                  className={cn(
+                    "text-2xl font-bold tracking-tight md:text-4xl leading-tight",
+                    lightMode ? "text-gray-900" : "text-white"
+                  )}
                 >
                   Sename Kudjo Kedji, <br />
-                  <span className="text-blue-400 font-extrabold">{t('glassmorphism.subtitle')}</span>
+                  <span className="text-blue-600 font-extrabold">{t('glassmorphism.subtitle')}</span>
                 </motion.h2>
                 <motion.p
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: 0.2 }}
-                  className="max-w-xl text-base leading-relaxed text-slate-300 font-light"
+                  className={cn(
+                    "max-w-xl text-base leading-relaxed font-light",
+                    lightMode ? "text-gray-600" : "text-slate-300"
+                  )}
                 >
                   {t('glassmorphism.desc1')}
                 </motion.p>
@@ -128,14 +146,22 @@ export function GlassmorphismPortfolioBlock() {
                     viewport={{ once: true }}
                     transition={{ duration: 0.4, delay: 0.1 * index }}
                     whileHover={{ y: -4 }}
-                    className="group relative overflow-hidden rounded-2xl border border-white/5 bg-white/5 p-4 backdrop-blur transition-all hover:border-blue-400/30 hover:bg-white/10 hover:shadow-lg hover:shadow-blue-400/5"
+                    className={cn(
+                      "group relative overflow-hidden rounded-2xl border p-4 backdrop-blur transition-all",
+                      lightMode 
+                        ? "border-gray-100 bg-white hover:border-blue-200 hover:shadow-lg hover:shadow-blue-500/5" 
+                        : "border-white/5 bg-white/5 hover:border-blue-400/30 hover:bg-white/10 hover:shadow-lg hover:shadow-blue-400/5"
+                    )}
                   >
                     <div className="absolute inset-0 bg-gradient-to-br from-blue-400/5 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100 -z-10" />
                     <div className="relative space-y-2">
-                      <p className="text-xs font-bold uppercase tracking-[0.25em] text-blue-400">
+                      <p className="text-xs font-bold uppercase tracking-[0.25em] text-blue-600">
                         {item.title}
                       </p>
-                      <p className="text-sm font-medium leading-relaxed text-white">
+                      <p className={cn(
+                        "text-sm font-medium leading-relaxed",
+                        lightMode ? "text-gray-800" : "text-white"
+                      )}>
                         {item.description}
                       </p>
                     </div>
@@ -146,8 +172,11 @@ export function GlassmorphismPortfolioBlock() {
 
             {/* Right column - Profile card */}
             <div className="relative">
-              <div className="absolute inset-0 rounded-[32px] bg-gradient-to-b from-blue-400/10 via-transparent to-transparent blur-3xl" />
-              <div className="relative flex h-full flex-col justify-between overflow-hidden rounded-[28px] border border-white/10 bg-white/5 p-6 backdrop-blur-xl shadow-xl">
+              <div className="absolute inset-0 rounded-[32px] bg-gradient-to-b from-blue-400/10 via-transparent to-transparent blur-3xl opacity-50" />
+              <div className={cn(
+                "relative flex h-full flex-col justify-between overflow-hidden rounded-[28px] border p-6 backdrop-blur-xl shadow-xl transition-all duration-500",
+                lightMode ? "border-gray-100 bg-white" : "border-white/10 bg-white/5"
+              )}>
                 <div className="flex flex-col items-center text-center">
                   {/* Avatar with glow */}
                   <motion.div
@@ -172,10 +201,13 @@ export function GlassmorphismPortfolioBlock() {
                     transition={{ duration: 0.5, delay: 0.2 }}
                     className="space-y-2"
                   >
-                    <h3 className="text-2xl font-bold tracking-tight text-white">
+                    <h3 className={cn(
+                      "text-2xl font-bold tracking-tight",
+                      lightMode ? "text-gray-900" : "text-white"
+                    )}>
                       Sename Kudjo Kedji
                     </h3>
-                    <p className="text-xs font-bold uppercase tracking-[0.25em] text-blue-400">
+                    <p className="text-xs font-bold uppercase tracking-[0.25em] text-blue-600">
                       {t('glassmorphism.cardSubtitle')}
                     </p>
                   </motion.div>
@@ -185,7 +217,10 @@ export function GlassmorphismPortfolioBlock() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: 0.3 }}
-                    className="mt-4 max-w-sm text-sm font-light leading-relaxed text-slate-300"
+                    className={cn(
+                      "mt-4 max-w-sm text-sm font-light leading-relaxed",
+                      lightMode ? "text-gray-600" : "text-slate-300"
+                    )}
                   >
                     {t('glassmorphism.cardDesc')}
                   </motion.p>
@@ -208,24 +243,41 @@ export function GlassmorphismPortfolioBlock() {
                         href={social.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="group flex items-center justify-between rounded-xl border border-white/5 bg-white/5 px-4 py-2.5 text-left transition-all hover:border-blue-400/30 hover:bg-white/10"
+                        className={cn(
+                          "group flex items-center justify-between rounded-xl border px-4 py-2.5 text-left transition-all",
+                          lightMode 
+                            ? "border-gray-100 bg-gray-50 hover:border-blue-200 hover:bg-blue-50" 
+                            : "border-white/5 bg-white/5 hover:border-blue-400/30 hover:bg-white/10"
+                        )}
                         whileHover={{ scale: 1.01 }}
                         whileTap={{ scale: 0.985 }}
                       >
                         <div className="flex items-center gap-3">
-                          <span className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-blue-400 transition-all group-hover:scale-110">
+                          <span className={cn(
+                            "flex h-10 w-10 items-center justify-center rounded-full border text-blue-600 transition-all group-hover:scale-110",
+                            lightMode ? "border-blue-100 bg-white" : "border-white/10 bg-white/5"
+                          )}>
                             <Icon className="h-5 w-5" />
                           </span>
                           <div>
-                            <p className="text-sm font-bold text-white">
+                            <p className={cn(
+                              "text-sm font-bold",
+                              lightMode ? "text-gray-900" : "text-white"
+                            )}>
                               {social.label}
                             </p>
-                            <p className="text-xs font-medium text-slate-400">
+                            <p className={cn(
+                              "text-xs font-medium",
+                              lightMode ? "text-gray-500" : "text-slate-400"
+                            )}>
                               {social.handle}
                             </p>
                           </div>
                         </div>
-                        <ArrowUpRight className="h-5 w-5 text-slate-500 transition-all group-hover:text-blue-400" />
+                        <ArrowUpRight className={cn(
+                          "h-5 w-5 transition-all",
+                          lightMode ? "text-gray-400 group-hover:text-blue-600" : "text-slate-500 group-hover:text-blue-400"
+                        )} />
                       </motion.a>
                     );
                   })}

@@ -15,9 +15,13 @@ const About = () => {
         title2="Data Analyst & Developer"
         description={t('home.intro_subtitle')}
       />
-      <div className="relative z-10 -mt-20 pb-20">
-        <GlassmorphismPortfolioBlock />
-      </div>
+      
+      {/* NEW CONTENT AREA - WHITE BACKGROUND */}
+      <main className="bg-white text-black py-20 relative z-20 shadow-[0_-20px_50px_rgba(0,0,0,0.05)] rounded-t-[3rem] -mt-12 min-h-[60vh]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <GlassmorphismPortfolioBlock lightMode={true} />
+        </div>
+      </main>
     </div>
   );
 };

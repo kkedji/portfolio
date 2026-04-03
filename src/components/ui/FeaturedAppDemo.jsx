@@ -3,31 +3,45 @@ import { PlayCircle } from "lucide-react";
 import { Card, CardContent } from "./Card";
 import { useTranslation } from "react-i18next";
 
-export default function FeaturedAppDemo({ app }) {
+import { cn } from "../../lib/utils";
+
+export default function FeaturedAppDemo({ app, lightMode = false }) {
   const { t } = useTranslation();
   const [isPlaying, setIsPlaying] = useState(false);
 
   return (
-    <div className="w-full bg-transparent text-foreground py-16 relative border-t border-white/5 first:border-0 last:border-b-0">
+    <div className={cn(
+      "w-full py-16 relative border-t transition-colors duration-500 first:border-0 last:border-b-0",
+      lightMode ? "bg-white border-gray-100" : "bg-transparent text-foreground border-white/5"
+    )}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <header className="text-left mb-12">
-          <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4 gradient-text">
+          <h2 className={cn(
+            "text-3xl md:text-5xl font-bold tracking-tight mb-4",
+            lightMode ? "text-gray-900" : "gradient-text"
+          )}>
             {app.title}
           </h2>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-4xl font-light">
+          <p className={cn(
+            "text-lg md:text-xl max-w-4xl font-light",
+            lightMode ? "text-gray-600" : "text-muted-foreground"
+          )}>
             {app.description}
           </p>
         </header>
 
         {/* Templates Grid */}
-        <section className="grid grid-cols-1 lg:grid-cols-3 gap-4 h-full relative z-10">
+        <section className="grid grid-cols-1 lg:grid-cols-3 gap-6 h-full relative z-10">
           {/* Main video/image card */}
-          <Card className="lg:col-span-2 bg-gray-100 p-2 overflow-hidden relative mb-4 lg:mb-0 flex flex-col min-h-[300px] md:min-h-[400px] lg:min-h-[500px] rounded-2xl border-0 shadow-lg">
-            <CardContent className="p-0 relative flex-grow group rounded-xl overflow-hidden">
+          <Card className={cn(
+            "lg:col-span-2 p-2 overflow-hidden relative mb-4 lg:mb-0 flex flex-col min-h-[300px] md:min-h-[400px] lg:min-h-[500px] rounded-[2rem] border-0 shadow-xl",
+            lightMode ? "bg-gray-50" : "bg-gray-100"
+          )}>
+            <CardContent className="p-0 relative flex-grow group rounded-3xl overflow-hidden">
               {isPlaying && app.videoUrl ? (
                 <iframe
-                  className="w-full h-full absolute inset-0 object-cover rounded-xl"
+                  className="w-full h-full absolute inset-0 object-cover rounded-3xl"
                   src={`${app.videoUrl.replace("watch?v=", "embed/")}?autoplay=1`}
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
@@ -37,17 +51,19 @@ export default function FeaturedAppDemo({ app }) {
                   <img
                     src={app.thumbnail || "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop"}
                     alt={app.title}
-                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
-                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors" />
+                  <div className="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors" />
 
                   {/* Play button overlay */}
                   {app.videoUrl && (
                     <button
                       onClick={() => setIsPlaying(true)}
-                      className="absolute inset-0 flex items-center justify-center transition-transform hover:scale-110"
+                      className="absolute inset-0 flex items-center justify-center transition-transform hover:scale-110 z-20"
                     >
-                      <PlayCircle className="w-16 h-16 sm:w-20 sm:h-20 text-white drop-shadow-xl" strokeWidth={1.5} />
+                      <div className="w-16 h-16 sm:w-20 sm:h-20 bg-blue-600/90 rounded-full flex items-center justify-center text-white shadow-2xl backdrop-blur-sm">
+                        <PlayCircle className="w-10 h-10 sm:w-12 sm:h-12" strokeWidth={1.5} />
+                      </div>
                     </button>
                   )}
                 </>
@@ -60,17 +76,28 @@ export default function FeaturedAppDemo({ app }) {
             {app.features.map((feature, i) => (
               <div
                 key={i}
-                className="flex flex-col glass-card p-4 hover:bg-white/10 transition-all border-white/10"
+                className={cn(
+                  "flex flex-col p-6 transition-all border rounded-[2rem]",
+                  lightMode 
+                    ? "bg-gray-50 border-gray-100 hover:bg-white hover:shadow-xl hover:-translate-y-1" 
+                    : "glass-card border-white/10 hover:bg-white/10"
+                )}
               >
-                <div className="flex items-center gap-3 mb-2">
-                  <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold text-sm shrink-0 border border-primary/30">
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-bold text-sm shrink-0 border border-blue-200">
                     {i + 1}
                   </div>
-                  <h3 className="text-base font-semibold text-foreground line-clamp-1">
+                  <h3 className={cn(
+                    "text-lg font-bold",
+                    lightMode ? "text-gray-900" : "text-foreground"
+                  )}>
                     {t('apps.features')}
                   </h3>
                 </div>
-                <p className="text-sm text-muted-foreground font-light leading-relaxed pl-11">
+                <p className={cn(
+                  "text-base font-light leading-relaxed",
+                  lightMode ? "text-gray-600" : "text-muted-foreground"
+                )}>
                   {feature}
                 </p>
               </div>
@@ -79,18 +106,32 @@ export default function FeaturedAppDemo({ app }) {
         </section>
 
         {/* Tech Stack / Integrations */}
-        <section className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4 text-sm relative z-10">
+        <section className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4 text-sm relative z-10">
           {app.tags.map((tag, idx) => (
             <div
               key={idx}
-              className="p-3 flex items-center gap-3 glass-card hover:bg-white/10 transition-all border-white/10"
+              className={cn(
+                "p-4 flex items-center gap-4 transition-all border rounded-2xl",
+                lightMode 
+                  ? "bg-white border-gray-100 hover:shadow-md" 
+                  : "glass-card border-white/10 hover:bg-white/10"
+              )}
             >
-              <div className="w-10 h-10 shrink-0 rounded-xl bg-white/10 border border-white/20 shadow-sm flex items-center justify-center text-primary font-bold text-[10px] uppercase text-center p-1 leading-none break-all overflow-hidden">
+              <div className={cn(
+                "w-12 h-12 shrink-0 rounded-xl border shadow-sm flex items-center justify-center font-bold text-[10px] uppercase text-center p-1 leading-none break-all overflow-hidden",
+                lightMode ? "bg-blue-50 border-blue-100 text-blue-600" : "bg-white/10 border-white/20 text-primary"
+              )}>
                 {tag.substring(0, 3)}
               </div>
               <div>
-                <div className="font-semibold text-foreground">{t('apps.tech_label', 'Tech')}</div>
-                <div className="text-xs text-muted-foreground line-clamp-1">{tag}</div>
+                <div className={cn(
+                  "font-bold",
+                  lightMode ? "text-gray-900" : "text-foreground"
+                )}>{t('apps.tech_label', 'Tech')}</div>
+                <div className={cn(
+                  "text-xs font-medium",
+                  lightMode ? "text-gray-500" : "text-muted-foreground"
+                )}>{tag}</div>
               </div>
             </div>
           ))}

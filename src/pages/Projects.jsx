@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import { ExternalLink, Filter } from 'lucide-react';
-import { projectsData, categories } from '../data/projects';
+import { Filter, MoveRight } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
+import { projectsData } from '../data/projects';
 import { Tabs } from '../components/ui/VercelTabs';
 import { ShapeLandingHero } from '../components/ui/ShapeLandingHero';
-import { Hero, BgGradient, TextStagger, AnimatedContainer } from '../components/ui/HeroAnimated';
-import { EthicalHero } from '../components/ui/EthicalHero';
-import { useTranslation } from 'react-i18next';
+import { TimelineContent } from '../components/ui/TimelineContent';
+import { ProgressiveBlur } from '../components/ui/ProgressiveBlur';
+import { cn } from '../lib/utils';
 
 const Projects = () => {
   const { t } = useTranslation();
@@ -24,7 +25,7 @@ const Projects = () => {
     : projectsData.filter((project) => project.category === selectedCategory);
 
   return (
-    <div className="bg-transparent min-h-screen text-foreground">
+    <div className="bg-transparent min-h-screen">
       {/* Header Section */}
       <ShapeLandingHero 
         badge={t('projects.badge', 'Portfolio')}
@@ -33,92 +34,157 @@ const Projects = () => {
         description=""
       />
 
-      {/* Filter Section */}
-      <section className="py-12 bg-white/5 border-y border-white/5 backdrop-blur-xl">
+      {/* NEW CONTENT AREA - WHITE BACKGROUND */}
+      <main className="bg-white text-black py-20 relative z-20 shadow-[0_-20px_50px_rgba(0,0,0,0.05)] rounded-t-[3rem] -mt-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-6 flex-wrap">
-            <div className="flex items-center text-white font-bold tracking-wide">
-              <Filter size={22} className="mr-3 text-blue-400" />
-              {t('projects.filter_by', 'Filtrer par :')}
-            </div>
-            <Tabs 
-              tabs={categoryOptions}
-              activeTab={selectedCategory}
-              onTabChange={(id) => setSelectedCategory(id)}
-            />
-          </div>
-          <div className="mt-6 text-slate-400 font-light text-sm">
-            {filteredProjects.length} {t('projects.count_text', 'projet(s) trouvé(s)')}
-          </div>
-        </div>
-      </section>
-
-      {/* Projects Carousel */}
-      <EthicalHero
-        title={selectedCategory === 'all' ? t('projects.recent_heading', 'Projets Récents') : `${t('projects.category_heading', 'Projets')} ${selectedCategory}`}
-        subtitle={t('projects.desc_short')}
-        features={filteredProjects.map((p) => ({
-          id: p.id.toString(),
-          title: t(`projects.items.${p.id}.title`),
-          description: t(`projects.items.${p.id}.desc`),
-          href: p.link || "#",
-          imageUrl: p.image
-        }))}
-      />
-
-      {/* Stats Section */}
-      <section className="py-20 relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-            <div className="glass-card p-10 border-white/10 group hover:bg-white/10 transition-all text-center">
-              <div className="text-5xl font-black text-blue-400 mb-4 group-hover:scale-110 transition-transform">
-                {projectsData.filter(p => p.category === 'Power BI').length}+
+          
+          {/* Header Typography Section */}
+          <TimelineContent animation="fade-up" delay={0.2}>
+            <div className="text-center mb-16">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 mb-6">
+                <div className="h-2 w-2 rounded-full bg-blue-600 animate-pulse" />
+                <span className="text-xs font-bold text-blue-700 uppercase tracking-wider">
+                  {t('projects.featured_badge', 'Réalisations')}
+                </span>
               </div>
-              <div className="text-white font-bold uppercase tracking-widest text-xs">
-                {t('projects.stats_powerbi')}
-              </div>
+              
+              <h2 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">
+                <span className="block text-gray-900">{t('projects.recent_heading')}</span>
+                <span className="block bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-blue-500 to-blue-400">
+                  {selectedCategory === 'all' ? t('projects.featured_sub', 'Expertise & Impact') : selectedCategory}
+                </span>
+              </h2>
+              
+              <p className="max-w-2xl mx-auto text-lg text-gray-600 font-light leading-relaxed">
+                {t('projects.desc_short')}
+              </p>
+              
+              <div className="h-1.5 w-24 bg-blue-600 mx-auto rounded-full mt-10" />
             </div>
-            <div className="glass-card p-10 border-white/10 group hover:bg-white/10 transition-all text-center">
-              <div className="text-5xl font-black text-emerald-400 mb-4 group-hover:scale-110 transition-transform">
+          </TimelineContent>
+
+          {/* Filter Section */}
+          <TimelineContent animation="fade-up" delay={0.3}>
+            <div className="mb-16 flex flex-col md:flex-row items-center justify-between gap-8 p-6 bg-gray-50 rounded-3xl border border-gray-100">
+              <div className="flex items-center gap-3 text-gray-900 font-bold">
+                <Filter size={20} className="text-blue-600" />
+                <span>{t('projects.filter_by')}</span>
+                <span className="ml-2 px-2.5 py-0.5 bg-blue-100 text-blue-700 text-xs rounded-full">
+                  {filteredProjects.length}
+                </span>
+              </div>
+              <Tabs 
+                tabs={categoryOptions}
+                activeTab={selectedCategory}
+                onTabChange={(id) => setSelectedCategory(id)}
+              />
+            </div>
+          </TimelineContent>
+
+          {/* Project Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {filteredProjects.map((project, index) => (
+              <TimelineContent 
+                key={project.id} 
+                animation="fade-up" 
+                delay={index * 0.1}
+                className="group"
+              >
+                <a 
+                  href={project.link || "#"} 
+                  target={project.link ? "_blank" : undefined}
+                  rel="noopener noreferrer"
+                  className="block h-full"
+                >
+                  <div className="relative aspect-[4/3] rounded-[2rem] overflow-hidden shadow-xl border border-gray-100 transition-all duration-500 group-hover:shadow-2xl group-hover:-translate-y-2">
+                    <img 
+                      src={project.image} 
+                      alt={t(`projects.items.${project.id}.title`)} 
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    />
+                    <ProgressiveBlur className="absolute inset-0 flex flex-col justify-end p-8">
+                      <div className="relative z-10">
+                        <div className="flex items-center gap-2 mb-3">
+                          <span className="px-3 py-1 rounded-full bg-blue-600/90 backdrop-blur-md text-[10px] font-black text-white uppercase tracking-widest">
+                            {project.category}
+                          </span>
+                        </div>
+                        <h3 className="text-2xl font-bold leading-tight mb-2 text-blue-600 drop-shadow-sm group-hover:text-blue-700 transition-colors">
+                          {t(`projects.items.${project.id}.title`)}
+                        </h3>
+                        <p className="text-sm text-gray-200 line-clamp-2 font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                          {t(`projects.items.${project.id}.desc`)}
+                        </p>
+                      </div>
+                    </ProgressiveBlur>
+                  </div>
+                </a>
+              </TimelineContent>
+            ))}
+          </div>
+
+          {/* Stats Section - Adapted for Light Mode */}
+          <div className="mt-32 grid grid-cols-1 md:grid-cols-3 gap-10">
+            <TimelineContent animation="fade-up" delay={0.1}>
+              <div className="bg-gray-50 p-10 rounded-[2.5rem] border border-gray-100 group transition-all duration-500 hover:bg-blue-50 text-center">
+                <div className="text-6xl font-black text-blue-600 mb-4 group-hover:scale-110 transition-transform">
+                  {projectsData.filter(p => p.category === 'Power BI').length}+
+                </div>
+                <div className="text-gray-500 font-bold uppercase tracking-[0.2em] text-xs">
+                  {t('projects.stats_powerbi')}
+                </div>
+              </div>
+            </TimelineContent>
+            <TimelineContent animation="fade-up" delay={0.2}>
+              <div className="bg-gray-50 p-10 rounded-[2.5rem] border border-gray-100 group transition-all duration-500 hover:bg-blue-50 text-center">
+                <div className="text-6xl font-black text-blue-600 mb-4 group-hover:scale-110 transition-transform">
                 {projectsData.filter(p => p.category === 'Python').length}+
+                </div>
+                <div className="text-gray-500 font-bold uppercase tracking-[0.2em] text-xs">
+                  {t('projects.stats_python')}
+                </div>
               </div>
-              <div className="text-white font-bold uppercase tracking-widest text-xs">
-                {t('projects.stats_python')}
-              </div>
-            </div>
-            <div className="glass-card p-10 border-white/10 group hover:bg-white/10 transition-all text-center">
-              <div className="text-5xl font-black text-indigo-400 mb-4 group-hover:scale-110 transition-transform">
+            </TimelineContent>
+            <TimelineContent animation="fade-up" delay={0.3}>
+              <div className="bg-gray-50 p-10 rounded-[2.5rem] border border-gray-100 group transition-all duration-500 hover:bg-blue-50 text-center">
+                <div className="text-6xl font-black text-blue-600 mb-4 group-hover:scale-110 transition-transform">
                 {projectsData.filter(p => p.category === 'SQL').length}+
+                </div>
+                <div className="text-gray-500 font-bold uppercase tracking-[0.2em] text-xs">
+                  {t('projects.stats_sql')}
+                </div>
               </div>
-              <div className="text-white font-bold uppercase tracking-widest text-xs">
-                {t('projects.stats_sql')}
+            </TimelineContent>
+          </div>
+
+          {/* Final CTA Section */}
+          <TimelineContent animation="fade-up" delay={0.4}>
+            <div className="mt-32 relative py-24 text-center px-4 overflow-hidden rounded-[4rem] bg-gray-900 shadow-3xl">
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.2),transparent_70%)]" />
+              <div className="relative z-10 max-w-3xl mx-auto">
+                <h2 className="text-4xl md:text-6xl font-black text-white mb-8 tracking-tight leading-tight">
+                  {t('projects.cta_title')}
+                </h2>
+                <p className="text-xl text-slate-300 font-light mb-12 max-w-2xl mx-auto leading-relaxed">
+                  {t('projects.cta_desc')}
+                </p>
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+                  <a
+                    href="https://www.linkedin.com/in/sename-kudjo-kedji-bb849035/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center px-10 py-5 bg-blue-600 text-white font-black rounded-full hover:bg-blue-700 transition-all shadow-2xl hover:scale-105 active:scale-95"
+                  >
+                    {t('footer.contact')}
+                    <MoveRight size={24} className="ml-3" />
+                  </a>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
+          </TimelineContent>
 
-      {/* CTA Section */}
-      <section className="py-24 relative overflow-hidden text-center px-4 overflow-hidden">
-        <div className="absolute inset-0 bg-blue-600/10 blur-3xl rounded-full scale-50 -z-10" />
-        <div className="max-w-4xl mx-auto glass-card border-white/10 p-12 md:p-16">
-          <h2 className="text-3xl md:text-5xl font-black text-white mb-6 leading-tight">
-            {t('projects.cta_title', 'Vous avez un projet similaire ?')}
-          </h2>
-          <p className="text-xl mb-10 text-slate-300 font-light leading-relaxed">
-            {t('projects.cta_desc', "Je peux vous aider à réaliser vos projets d'analyse de données et de visualisation")}
-          </p>
-          <a
-            href="https://www.linkedin.com/in/sename-kudjo-kedji-bb849035/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center px-10 py-5 bg-white text-blue-900 font-black rounded-full hover:bg-blue-50 transition-all shadow-2xl hover:scale-105"
-          >
-            {t('footer.contact')}
-            <ExternalLink size={22} className="ml-3" />
-          </a>
         </div>
-      </section>
+      </main>
     </div>
   );
 };
