@@ -30,15 +30,15 @@
 
 @layer base {
   :root {
-    --background: #050510;
+    --background: #0b1120;
     --foreground: #fcfcfc;
-    --card: #0c0c1e;
+    --card: #111b33;
     --card-foreground: #fcfcfc;
-    --popover: #0c0c1e;
+    --popover: #111b33;
     --popover-foreground: #fcfcfc;
     --primary: #3a5ba0;
     --primary-foreground: #ffffff;
-    --secondary: #1e1e3b;
+    --secondary: #1a2b4b;
     --secondary-foreground: #ffffff;
     --muted: #1e1e3b;
     --muted-foreground: #cbd5e1;

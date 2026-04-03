@@ -190,7 +190,7 @@ function ShapeLandingHero({
         </div>
       </div>
 
-      <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-t from-background via-primary/20 to-transparent pointer-events-none" />
     </div>
   );
 }

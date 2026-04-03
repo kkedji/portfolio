@@ -6,7 +6,7 @@ import { AuroraBackground } from './ui/StarfallPortfolio';
 
 const Layout = ({ children }) => {
   return (
-    <div className="flex flex-col min-h-screen relative bg-[#0a0a1a]">
+    <div className="flex flex-col min-h-screen relative bg-background transition-colors duration-500">
       <AuroraBackground />
       <div className="relative z-10 flex flex-col min-h-screen">
         <Header />
