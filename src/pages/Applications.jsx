@@ -2,6 +2,7 @@ import React from 'react';
 import { ExternalLink } from 'lucide-react';
 import { applicationsData } from '../data/applications';
 import FeaturedAppDemo from '../components/ui/FeaturedAppDemo';
+import { ShapeLandingHero } from '../components/ui/ShapeLandingHero';
 import { Hero, BgGradient, TextStagger, AnimatedContainer } from '../components/ui/HeroAnimated';
 import { useTranslation } from 'react-i18next';
 
@@ -22,19 +23,12 @@ const Applications = () => {
   return (
     <div className="bg-transparent min-h-screen">
       {/* Header Section */}
-      <Hero className="px-6 py-24 text-white">
-        <BgGradient
-          gradientColors="blue"
-          gradientSize="lg"
-        />
-        <TextStagger
-          className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight mb-4"
-          text={t('apps.title')}
-        />
-        <AnimatedContainer className="max-w-2xl mx-auto text-white/80 text-lg md:text-xl">
-          <p>{t('apps.desc')}</p>
-        </AnimatedContainer>
-      </Hero>
+      <ShapeLandingHero 
+        badge={t('apps.badge', 'Business Systems')}
+        title1={t('apps.title')}
+        title2={t('apps.title2', 'Automated Solutions')}
+        description={t('apps.desc')}
+      />
 
       {/* Applications Showcase */}
       <div>

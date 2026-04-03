@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { ExternalLink, Filter } from 'lucide-react';
 import { projectsData, categories } from '../data/projects';
 import { Tabs } from '../components/ui/VercelTabs';
+import { ShapeLandingHero } from '../components/ui/ShapeLandingHero';
 import { Hero, BgGradient, TextStagger, AnimatedContainer } from '../components/ui/HeroAnimated';
 import { EthicalHero } from '../components/ui/EthicalHero';
 import { useTranslation } from 'react-i18next';
@@ -25,19 +26,12 @@ const Projects = () => {
   return (
     <div className="bg-transparent min-h-screen text-foreground">
       {/* Header Section */}
-      <Hero className="px-6 py-24 text-white">
-        <BgGradient
-          gradientColors="purple"
-          gradientSize="lg"
-        />
-        <TextStagger
-          className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight mb-4"
-          text={t('projects.title')}
-        />
-        <AnimatedContainer className="max-w-2xl mx-auto text-white/80 text-lg md:text-xl">
-          <p>{t('projects.desc')}</p>
-        </AnimatedContainer>
-      </Hero>
+      <ShapeLandingHero 
+        badge={t('projects.badge', 'Data Analytics Portfolio')}
+        title1={t('projects.title')}
+        title2={t('projects.title2')}
+        description={t('projects.desc')}
+      />
 
       {/* Filter Section */}
       <section className="py-8 bg-white/80 border-b border-gray-100 shadow-sm backdrop-blur-md">
