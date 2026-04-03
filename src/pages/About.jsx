@@ -11,8 +11,8 @@ const About = () => {
     <div className="bg-transparent min-h-screen">
       <ShapeLandingHero 
         badge={t('header.about')}
-        title1={t('profile.title', 'Mon Profil')}
-        title2="Data Analyst & Developer"
+        title1="Business Data Analyst &"
+        title2="Automation Solution Developer"
         description={t('home.intro_subtitle')}
       />
       

@@ -109,24 +109,8 @@ const Home = () => {
       {/* NEW CONTENT AREA - WHITE BACKGROUND */}
       <main className="bg-white text-black py-20 relative z-20 shadow-[0_-20px_50px_rgba(0,0,0,0.05)] rounded-t-[3rem] -mt-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
           {/* Header Typography Section */}
           <article className="w-fit mx-auto max-w-4xl text-center space-y-8 mb-20">
-            <TimelineContent
-              as="div"
-              animationNum={1}
-              timelineRef={timelineRef}
-              customVariants={revealVariants}
-              className="flex w-fit mx-auto items-center gap-1 rounded-full bg-blue-600 border-4 border-blue-100 py-0.5 pl-0.5 pr-3 text-xs"
-            >
-              <div className="rounded-full bg-white px-2 py-1 text-xs font-bold text-blue-600">
-                Data Specialist
-              </div>
-              <p className="text-white sm:text-base text-xs inline-block ml-1">
-                ✨ {t('home.trust_boost')}
-              </p>
-            </TimelineContent>
-
             <TimelineContent
               as="h1"
               animationNum={2}
@@ -135,11 +119,11 @@ const Home = () => {
               className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[110%] tracking-tight text-gray-900"
             >
               <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
-                Expertise
+                {t('home.intro_title').split('&')[0]}
               </span>{" "}
-              {t('home.intro_title').split('&')[0]} &{" "}
+              &{" "}
               <span className="bg-gradient-to-r from-cyan-500 to-blue-500 bg-clip-text text-transparent">
-                Solutions
+                {t('home.intro_title').split('&')[1]}
               </span>
             </TimelineContent>
 
