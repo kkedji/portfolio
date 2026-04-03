@@ -3,7 +3,7 @@ import { ArrowRight, MoveRight } from 'lucide-react';
 import { servicesData, skillsData } from '../data/services';
 import { Timeline } from '../components/ui/Timeline';
 import { Casestudy5 } from '../components/ui/Casestudy5';
-import { ShapeLandingHero } from '../components/ui/ShapeLandingHero';
+import { Hero, BgGradient, TextStagger, AnimatedContainer } from '../components/ui/HeroAnimated';
 import { Button } from '../components/ui/Button';
 import { useTranslation } from 'react-i18next';
 import { PositioningSection } from '../components/home/PositioningSection';
@@ -55,14 +55,20 @@ const Home = () => {
   return (
     <div className="bg-transparent min-h-screen text-foreground">
       {/* Unified Hero Section */}
-      <ShapeLandingHero 
-        badge={t('home.welcome')}
-        title1={t('home.intro_title').split(' ').slice(0, 3).join(' ')}
-        title2={t('home.intro_title').split(' ').slice(3).join(' ')}
-        description={t('home.intro_subtitle')}
-        trustText={t('home.trust_boost')}
-      >
-        <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
+      <Hero className="px-6 py-32 text-white min-h-[600px]">
+        <BgGradient
+          gradientColors="blue"
+          gradientSize="lg"
+        />
+        <TextStagger
+          className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight mb-6 max-w-4xl mx-auto"
+          text={t('home.intro_title')}
+        />
+        <AnimatedContainer className="max-w-2xl mx-auto text-white/80 text-lg md:text-xl mb-10">
+          <p>{t('home.intro_subtitle')}</p>
+        </AnimatedContainer>
+
+        <AnimatedContainer className="flex flex-wrap items-center justify-center gap-4" transition={{ delay: 0.6 }}>
           <Button size="lg" className="rounded-full px-8 h-12 shadow-lg" asChild>
             <a href="https://www.linkedin.com/in/sename-kudjo-kedji-bb849035/" target="_blank" rel="noopener noreferrer" className="flex items-center">
               {t('home.cta_book')}
@@ -74,8 +80,16 @@ const Home = () => {
               {t('home.cta_cases')}
             </a>
           </Button>
-        </div>
-      </ShapeLandingHero>
+        </AnimatedContainer>
+        
+        {t('home.trust_boost') && (
+          <AnimatedContainer className="mt-12 flex items-center justify-center gap-4 text-white/40 uppercase tracking-[0.2em] text-xs font-bold" transition={{ delay: 0.8 }}>
+            <div className="h-px w-8 bg-white/20" />
+            <span className="px-4 text-center">{t('home.trust_boost')}</span>
+            <div className="h-px w-8 bg-white/20" />
+          </AnimatedContainer>
+        )}
+      </Hero>
 
       {/* Positioning Section */}
       <PositioningSection />
