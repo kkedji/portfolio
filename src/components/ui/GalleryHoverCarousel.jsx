@@ -28,7 +28,7 @@ export default function GalleryHoverCarousel({
               Aucun projet trouvé pour cette catégorie.
             </div>
           ) : (
-            <Carousel className="w-full">
+            <Carousel key={heading} className="w-full">
               <CarouselContent>
                 {items.map((item) => (
                   <CarouselItem key={item.id} className="basis-full md:basis-1/2 lg:basis-1/3 pl-4">
