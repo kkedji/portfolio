@@ -60,7 +60,13 @@ const Home = () => {
         badge={t('home.welcome')}
         title1={t('home.intro_title').split(' ').slice(0, 3).join(' ')}
         title2={t('home.intro_title').split(' ').slice(3).join(' ')}
-        description={t('home.intro_subtitle')}
+        customDescription={
+          <TextStagger 
+            className="text-base sm:text-lg md:text-xl text-white/80 mb-8 max-w-2xl mx-auto px-4"
+            text={t('home.intro_subtitle')}
+            stagger={0.03}
+          />
+        }
         trustText={t('home.trust_boost')}
       >
         <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
@@ -78,32 +84,44 @@ const Home = () => {
         </div>
       </ShapeLandingHero>
 
-      {/* Positioning Section */}
-      <PositioningSection />
+      {/* Positioning Section - From Left */}
+      <AnimatedContainer transformDirection="left" transition={{ delay: 0.2 }}>
+        <PositioningSection />
+      </AnimatedContainer>
 
-      {/* Services/Core Offers & Microfinance Case Study */}
-      <Casestudy5 />
+      {/* Services/Core Offers & Microfinance Case Study - From Right */}
+      <AnimatedContainer transformDirection="right" transition={{ delay: 0.2 }}>
+        <Casestudy5 />
+      </AnimatedContainer>
 
-      {/* UNHCR Highlight Case Study */}
-      <UNHCRHighlight />
+      {/* UNHCR Highlight Case Study - From Left */}
+      <AnimatedContainer transformDirection="left" transition={{ delay: 0.2 }}>
+        <UNHCRHighlight />
+      </AnimatedContainer>
 
-      {/* How I Work Section */}
-      <HowItWorks />
+      {/* How I Work Section - From Right */}
+      <AnimatedContainer transformDirection="right" transition={{ delay: 0.2 }}>
+        <HowItWorks />
+      </AnimatedContainer>
 
-      {/* Assessment Offer Section */}
-      <AssessmentOffer />
+      {/* Assessment Offer Section - From Left */}
+      <AnimatedContainer transformDirection="left" transition={{ delay: 0.2 }}>
+        <AssessmentOffer />
+      </AnimatedContainer>
 
-      {/* Timeline Section */}
-      <section className="py-20 bg-white/50 border-t border-gray-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-8">
-            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
-              {t('home.timelineTitle')}
-            </h2>
+      {/* Timeline Section - From Right */}
+      <AnimatedContainer transformDirection="right" transition={{ delay: 0.2 }}>
+        <section className="py-20 bg-white/50 border-t border-gray-100">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-8">
+              <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
+                {t('home.timelineTitle')}
+              </h2>
+            </div>
+            <Timeline items={timelineItems} />
           </div>
-          <Timeline items={timelineItems} />
-        </div>
-      </section>
+        </section>
+      </AnimatedContainer>
 
       {/* Final CTA Section */}
       <section className="py-24 bg-gradient-to-br from-primary to-primary-800 text-white overflow-hidden relative">

@@ -68,6 +68,7 @@ function ShapeLandingHero({
   title2 = "Crafting Exceptional Websites",
   description = "Crafting exceptional digital experiences through innovative design and cutting-edge technology.",
   trustText = "",
+  customDescription,
   children
 }) {
   const fadeUpVariants = {
@@ -158,9 +159,13 @@ function ShapeLandingHero({
             initial="hidden"
             animate="visible"
           >
-            <p className="text-base sm:text-lg md:text-xl text-white/60 mb-8 max-w-2xl mx-auto px-4">
-              {description}
-            </p>
+            {customDescription ? (
+              customDescription
+            ) : (
+              <p className="text-base sm:text-lg md:text-xl text-white/60 mb-8 max-w-2xl mx-auto px-4">
+                {description}
+              </p>
+            )}
             {trustText && (
               <div className="flex items-center justify-center gap-2 mb-8 animate-pulse">
                 <div className="h-px w-8 bg-white/20" />
