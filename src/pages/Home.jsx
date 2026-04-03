@@ -81,13 +81,9 @@ const Home = () => {
         title1={t('home.intro_title').split('&')[0] + '&'}
         title2={t('home.intro_title').split('&')[1]}
         customDescription={
-          <div className="float-animation">
-            <TextStagger 
-              className="text-base sm:text-lg md:text-xl text-white/80 mb-8 max-w-2xl mx-auto px-4 font-light"
-              text={t('home.intro_subtitle')}
-              stagger={0.02}
-            />
-          </div>
+          <p className="text-base sm:text-lg md:text-xl text-white/80 mb-8 max-w-2xl mx-auto px-4 font-light">
+            {t('home.intro_subtitle')}
+          </p>
         }
         trustText={t('home.trust_boost')}
       >
@@ -109,35 +105,7 @@ const Home = () => {
       {/* NEW CONTENT AREA - WHITE BACKGROUND */}
       <main className="bg-white text-black py-20 relative z-20 shadow-[0_-20px_50px_rgba(0,0,0,0.05)] rounded-t-[3rem] -mt-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Header Typography Section */}
-          <article className="w-fit mx-auto max-w-4xl text-center space-y-8 mb-20">
-            <TimelineContent
-              as="h1"
-              animationNum={2}
-              timelineRef={timelineRef}
-              customVariants={revealVariants}
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[110%] tracking-tight text-gray-900"
-            >
-              <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
-                {t('home.intro_title').split('&')[0]}
-              </span>{" "}
-              &{" "}
-              <span className="bg-gradient-to-r from-cyan-500 to-blue-500 bg-clip-text text-transparent">
-                {t('home.intro_title').split('&')[1]}
-              </span>
-            </TimelineContent>
-
-            <TimelineContent
-              as="p"
-              animationNum={3}
-              timelineRef={timelineRef}
-              customVariants={revealVariants}
-              className="text-lg sm:text-xl md:text-2xl text-gray-600 max-w-2xl mx-auto font-light leading-relaxed"
-            >
-              {t('home.intro_subtitle')}
-            </TimelineContent>
-          </article>
-
+          
           {/* Content Sections */}
           <div className="space-y-32 py-20">
             <PositioningSection lightMode={true} />
