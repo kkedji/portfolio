@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { CheckCircle, ArrowRight } from 'lucide-react';
 import { Button } from '../ui/Button';
+import { cn } from '../../lib/utils';
 
 export const AssessmentOffer = ({ lightMode = false }) => {
   const { t } = useTranslation();

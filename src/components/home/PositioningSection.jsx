@@ -2,6 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { CheckCircle2 } from 'lucide-react';
+import { cn } from '../../lib/utils';
 
 export const PositioningSection = ({ lightMode = false }) => {
   const { t } = useTranslation();

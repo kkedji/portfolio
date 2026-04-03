@@ -2,6 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { Globe, TrendingDown, Clock } from 'lucide-react';
+import { cn } from '../../lib/utils';
 
 export const UNHCRHighlight = ({ lightMode = false }) => {
   const { t } = useTranslation();
