@@ -34,11 +34,11 @@ const Projects = () => {
       />
 
       {/* Filter Section */}
-      <section className="py-8 bg-white/80 border-b border-gray-100 shadow-sm backdrop-blur-md">
+      <section className="py-12 bg-white/5 border-y border-white/5 backdrop-blur-xl">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-4 flex-wrap">
-            <div className="flex items-center text-gray-700 font-semibold">
-              <Filter size={20} className="mr-2" />
+          <div className="flex items-center gap-6 flex-wrap">
+            <div className="flex items-center text-white font-bold tracking-wide">
+              <Filter size={22} className="mr-3 text-blue-400" />
               {t('projects.filter_by', 'Filtrer par :')}
             </div>
             <Tabs 
@@ -47,7 +47,7 @@ const Projects = () => {
               onTabChange={(id) => setSelectedCategory(id)}
             />
           </div>
-          <div className="mt-4 text-gray-500">
+          <div className="mt-6 text-slate-400 font-light text-sm">
             {filteredProjects.length} {t('projects.count_text', 'projet(s) trouvé(s)')}
           </div>
         </div>
@@ -56,7 +56,7 @@ const Projects = () => {
       {/* Projects Carousel */}
       <EthicalHero
         title={selectedCategory === 'all' ? t('projects.recent_heading', 'Projets Récents') : `${t('projects.category_heading', 'Projets')} ${selectedCategory}`}
-        subtitle={t('projects.desc_short', 'Explorez mes réalisations techniques et analyses stratégiques.')}
+        subtitle={t('projects.desc_short')}
         features={filteredProjects.map((p) => ({
           id: p.id.toString(),
           title: t(`projects.items.${p.id}.title`),
@@ -67,30 +67,30 @@ const Projects = () => {
       />
 
       {/* Stats Section */}
-      <section className="py-16 bg-white/40">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-            <div className="p-6">
-              <div className="text-4xl font-bold text-primary mb-2">
+      <section className="py-20 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+            <div className="glass-card p-10 border-white/10 group hover:bg-white/10 transition-all text-center">
+              <div className="text-5xl font-black text-blue-400 mb-4 group-hover:scale-110 transition-transform">
                 {projectsData.filter(p => p.category === 'Power BI').length}+
               </div>
-              <div className="text-gray-600 font-semibold">
+              <div className="text-white font-bold uppercase tracking-widest text-xs">
                 {t('projects.stats_powerbi')}
               </div>
             </div>
-            <div className="p-6">
-              <div className="text-4xl font-bold text-primary mb-2">
+            <div className="glass-card p-10 border-white/10 group hover:bg-white/10 transition-all text-center">
+              <div className="text-5xl font-black text-emerald-400 mb-4 group-hover:scale-110 transition-transform">
                 {projectsData.filter(p => p.category === 'Python').length}+
               </div>
-              <div className="text-gray-600 font-semibold">
+              <div className="text-white font-bold uppercase tracking-widest text-xs">
                 {t('projects.stats_python')}
               </div>
             </div>
-            <div className="p-6">
-              <div className="text-4xl font-bold text-primary mb-2">
+            <div className="glass-card p-10 border-white/10 group hover:bg-white/10 transition-all text-center">
+              <div className="text-5xl font-black text-indigo-400 mb-4 group-hover:scale-110 transition-transform">
                 {projectsData.filter(p => p.category === 'SQL').length}+
               </div>
-              <div className="text-gray-600 font-semibold">
+              <div className="text-white font-bold uppercase tracking-widest text-xs">
                 {t('projects.stats_sql')}
               </div>
             </div>
@@ -99,22 +99,23 @@ const Projects = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="gradient-bg text-white py-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold mb-4">
+      <section className="py-24 relative overflow-hidden text-center px-4 overflow-hidden">
+        <div className="absolute inset-0 bg-blue-600/10 blur-3xl rounded-full scale-50 -z-10" />
+        <div className="max-w-4xl mx-auto glass-card border-white/10 p-12 md:p-16">
+          <h2 className="text-3xl md:text-5xl font-black text-white mb-6 leading-tight">
             {t('projects.cta_title', 'Vous avez un projet similaire ?')}
           </h2>
-          <p className="text-xl mb-8 text-primary-50">
+          <p className="text-xl mb-10 text-slate-300 font-light leading-relaxed">
             {t('projects.cta_desc', "Je peux vous aider à réaliser vos projets d'analyse de données et de visualisation")}
           </p>
           <a
             href="https://www.linkedin.com/in/sename-kudjo-kedji-bb849035/"
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-primary inline-flex items-center bg-white text-primary-600 hover:bg-primary-50"
+            className="inline-flex items-center px-10 py-5 bg-white text-blue-900 font-black rounded-full hover:bg-blue-50 transition-all shadow-2xl hover:scale-105"
           >
             {t('footer.contact')}
-            <ExternalLink size={18} className="ml-2" />
+            <ExternalLink size={22} className="ml-3" />
           </a>
         </div>
       </section>

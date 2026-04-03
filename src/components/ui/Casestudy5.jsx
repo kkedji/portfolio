@@ -51,17 +51,17 @@ export const Casestudy5 = () => {
           </p>
         </div>
 
-        <div className="border border-border rounded-xl shadow-sm overflow-hidden bg-white/50 backdrop-blur-md">
+        <div className="glass-card border-white/10 overflow-hidden">
           <a
             href={featuredCasestudy.link || "#"}
-            className="group grid gap-4 overflow-hidden px-6 lg:px-12 transition-colors duration-500 ease-out hover:bg-muted/40 lg:grid-cols-2"
+            className="group grid gap-4 overflow-hidden px-6 lg:px-12 transition-colors duration-500 ease-out hover:bg-white/5 lg:grid-cols-2"
           >
             <div className="flex flex-col justify-between gap-4 pt-8 md:pt-16 lg:pb-16">
               <div className="flex items-center text-2xl font-bold text-foreground">
                 {featuredCasestudy.company}
               </div>
               <div className="mb-4 lg:mb-0">
-                <span className="text-xs text-primary font-bold tracking-widest uppercase sm:text-sm">
+                <span className="text-xs text-blue-400 font-bold tracking-widest uppercase sm:text-sm">
                   {featuredCasestudy.tags}
                 </span>
                 <h2 className="mt-4 mb-5 text-3xl font-bold text-balance sm:text-4xl sm:leading-[1.1] text-foreground leading-tight">
@@ -69,27 +69,26 @@ export const Casestudy5 = () => {
                 </h2>
                 <div className="grid gap-6 mb-8">
                   <div>
-                    <span className="text-sm font-bold text-primary uppercase tracking-wider">{t('casestudies.featured.problem_label')}</span>
-                    <p className="text-muted-foreground mt-1">{t('casestudies.featured.problem_desc')}</p>
+                    <span className="text-sm font-bold text-blue-400 uppercase tracking-wider">{t('casestudies.featured.problem_label')}</span>
+                    <p className="text-muted-foreground mt-1 font-light">{t('casestudies.featured.problem_desc')}</p>
                   </div>
                   <div>
-                    <span className="text-sm font-bold text-primary uppercase tracking-wider">{t('casestudies.featured.solution_label')}</span>
-                    <p className="text-muted-foreground mt-1">{t('casestudies.featured.solution_desc')}</p>
+                    <span className="text-sm font-bold text-blue-400 uppercase tracking-wider">{t('casestudies.featured.solution_label')}</span>
+                    <p className="text-muted-foreground mt-1 font-light">{t('casestudies.featured.solution_desc')}</p>
                   </div>
                   <div>
-                    <span className="text-sm font-bold text-primary uppercase tracking-wider">{t('casestudies.featured.impact_label')}</span>
-                    <ul className="list-disc list-inside text-muted-foreground mt-1 space-y-1">
+                    <span className="text-sm font-bold text-blue-400 uppercase tracking-wider">{t('casestudies.featured.impact_label')}</span>
+                    <ul className="list-disc list-inside text-muted-foreground mt-1 space-y-1 font-light">
                       {Object.values(t('casestudies.featured.impact_points', { returnObjects: true })).map((point, idx) => (
                         <li key={idx}>{point}</li>
                       ))}
                     </ul>
                   </div>
                 </div>
-                {/* Removed CTA text as requested */}
               </div>
             </div>
             <div className="relative isolate py-8 lg:py-16">
-              <div className="relative isolate h-full border border-border bg-background p-2 rounded-xl shadow-lg">
+              <div className="relative isolate h-full border border-white/10 bg-white/5 p-2 rounded-xl shadow-lg">
                 <div className="h-full overflow-hidden rounded-lg">
                   <img
                     src={featuredCasestudy.image}
@@ -101,13 +100,13 @@ export const Casestudy5 = () => {
             </div>
           </a>
           
-          <div className="flex border-t border-border">
+          <div className="flex border-t border-white/10">
             <div className="grid lg:grid-cols-3 w-full">
               {casestudies.map((item, idx) => (
                 <a
                   key={item.company}
                   href={item.link || "#"}
-                  className={`group flex flex-col justify-between gap-12 border-border bg-white/30 px-6 lg:px-12 py-8 transition-colors duration-500 ease-out hover:bg-muted/40 md:py-12 lg:pb-12 xl:gap-16 ${
+                  className={`group flex flex-col justify-between gap-12 bg-white/5 border-white/10 px-6 lg:px-12 py-8 transition-colors duration-500 ease-out hover:bg-white/10 md:py-12 lg:pb-12 xl:gap-16 ${
                     idx === 0
                       ? ""
                       : "border-t lg:border-t-0 lg:border-l"
@@ -117,17 +116,16 @@ export const Casestudy5 = () => {
                     {item.company}
                   </div>
                   <div>
-                    <span className="text-xs text-primary font-bold tracking-widest uppercase sm:text-sm">
+                    <span className="text-xs text-blue-400 font-bold tracking-widest uppercase sm:text-sm">
                       {item.tags}
                     </span>
                     <h2 className="mt-4 mb-5 text-2xl font-bold text-balance sm:text-3xl sm:leading-tight text-foreground">
                       {item.title}
-                      <span className="font-medium text-muted-foreground transition-colors duration-500 ease-out group-hover:text-primary/70">
+                      <span className="font-light text-muted-foreground transition-colors duration-500 ease-out group-hover:text-white/80">
                         {" "}
                         {item.subtitle}
                       </span>
                     </h2>
-                    {/* Removed viewMore text as requested */}
                   </div>
                 </a>
               ))}
