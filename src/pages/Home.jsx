@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { MoveRight } from 'lucide-react';
+import { MoveRight, ArrowRight } from 'lucide-react';
 import { ShapeLandingHero } from '../components/ui/ShapeLandingHero';
 import { Button } from '../components/ui/Button';
 import { useTranslation } from 'react-i18next';
