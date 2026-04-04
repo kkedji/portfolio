@@ -17,7 +17,6 @@ const data = {
   services: {
     apps: '/applications',
     projets: '/projets',
-    consulting: '/#services',
   },
   about: {
     home: '/',
@@ -42,14 +41,13 @@ const socialLinks = [
 ];
 
 const getAboutLinks = (t) => [
-  { text: t('header.home'), href: '/' },
-  { text: t('header.profile'), href: '/about' },
+  { text: t('header.profile_about'), href: '/about' },
+  { text: t('header.profile_journey'), href: '/parcours' },
 ];
 
 const getServiceLinks = (t) => [
   { text: t('header.apps'), href: '/applications' },
   { text: t('header.projects'), href: '/projets' },
-  { text: t('header.services'), href: '/#services' },
 ];
 
 const getContactInfo = (data) => [

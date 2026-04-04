@@ -5,8 +5,11 @@ import {
   Github,
   Linkedin,
   Twitter,
-  Mail
+  Mail,
+  Map,
+  MoveRight
 } from "lucide-react";
+import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { cn } from "../../lib/utils";
 
@@ -136,39 +139,6 @@ export function GlassmorphismPortfolioBlock({ lightMode = false }) {
                   {t('glassmorphism.desc1')}
                 </motion.p>
               </div>
-
-              {/* Highlights grid */}
-              <div className="grid gap-3 sm:grid-cols-1">
-                {highlights.map((item, index) => (
-                  <motion.div
-                    key={item.title}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.4, delay: 0.1 * index }}
-                    whileHover={{ y: -4 }}
-                    className={cn(
-                      "group relative overflow-hidden rounded-2xl border p-4 backdrop-blur transition-all",
-                      lightMode 
-                        ? "border-gray-100 bg-white hover:border-blue-200 hover:shadow-lg hover:shadow-blue-500/5" 
-                        : "border-white/5 bg-white/5 hover:border-blue-400/30 hover:bg-white/10 hover:shadow-lg hover:shadow-blue-400/5"
-                    )}
-                  >
-                    <div className="absolute inset-0 bg-gradient-to-br from-blue-400/5 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100 -z-10" />
-                    <div className="relative space-y-2">
-                      <p className="text-xs font-bold uppercase tracking-[0.25em] text-blue-600">
-                        {item.title}
-                      </p>
-                      <p className={cn(
-                        "text-sm font-medium leading-relaxed",
-                        lightMode ? "text-gray-800" : "text-white"
-                      )}>
-                        {item.description}
-                      </p>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
             </div>
 
             {/* Right column - Profile card */}
@@ -233,8 +203,37 @@ export function GlassmorphismPortfolioBlock({ lightMode = false }) {
                   initial="hidden"
                   whileInView="visible"
                   viewport={{ once: true, margin: "-80px" }}
-                  className="mt-6 flex flex-col gap-2"
+                  className="mt-6 flex flex-col gap-3"
                 >
+                  {/* Journey Link */}
+                  <motion.div variants={itemVariants}>
+                    <Link
+                      to="/parcours"
+                      className={cn(
+                        "group flex items-center justify-between rounded-xl border px-4 py-4 text-left transition-all bg-blue-600 border-blue-500 hover:bg-blue-700 shadow-lg shadow-blue-500/20",
+                      )}
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                    >
+                      <div className="flex items-center gap-3">
+                        <span className="flex h-10 w-10 items-center justify-center rounded-full bg-white/20 text-white border border-white/30">
+                          <Map className="h-5 w-5" />
+                        </span>
+                        <div>
+                          <p className="text-sm font-bold text-white">
+                            {t('header.profile_journey')}
+                          </p>
+                          <p className="text-xs font-medium text-blue-100">
+                            {t('header.profile_journey_desc')}
+                          </p>
+                        </div>
+                      </div>
+                      <MoveRight className="h-5 w-5 text-white transition-transform group-hover:translate-x-1" />
+                    </Link>
+                  </motion.div>
+
+                  <div className="h-px bg-gray-100 my-2" />
+
                   {socialLinks.map((social) => {
                     const Icon = social.icon;
                     return (

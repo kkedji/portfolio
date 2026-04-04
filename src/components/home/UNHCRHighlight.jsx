@@ -22,7 +22,7 @@ export const UNHCRHighlight = ({ lightMode = false }) => {
               {t('casestudies.featured_impact_badge')}
             </div>
             <h2 className={cn("text-3xl lg:text-5xl font-bold mb-8 leading-tight", lightMode ? "text-gray-900" : "text-white gradient-text")}>
-              {t('casestudies.featured_2_title', 'UNHCR Financial Reporting Automation')}
+              {t('casestudies.featured_2_title')}
             </h2>
             <div className="space-y-8">
               <div className={cn(
@@ -34,12 +34,14 @@ export const UNHCRHighlight = ({ lightMode = false }) => {
                   <span className="text-4xl font-black italic tracking-tighter">-50%</span>
                 </div>
                 <p className={cn("text-xl font-light leading-relaxed", lightMode ? "text-gray-700" : "text-white/90")}>
-                  {t('casestudies.impact_2', 'Reduced reporting time by 50% across 11 international markets.')}
+                  {t('casestudies.impact_2')}
                 </p>
               </div>
               <div className={cn("flex items-center gap-4 italic font-light", lightMode ? "text-gray-500" : "text-slate-300")}>
                 <Clock size={20} className="text-blue-600" />
-                <span className="text-base">Automated fragmented data collection from spreadsheets into structured reporting systems.</span>
+                <span className="text-base">
+                  {t('casestudies.impact_2_desc')}
+                </span>
               </div>
             </div>
           </motion.div>

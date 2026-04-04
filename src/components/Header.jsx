@@ -16,10 +16,9 @@ import {
   FolderOpen,
   Briefcase,
   User,
-  Star,
-  HelpCircle,
   BarChart,
-  Globe
+  Globe,
+  Map
 } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
@@ -98,24 +97,14 @@ export default function Header() {
                 <NavigationMenuTrigger className="bg-transparent text-gray-700 hover:text-primary-600 hover:bg-primary-50 font-semibold px-4">
                   {t('header.profile')}
                 </NavigationMenuTrigger>
-                <NavigationMenuContent className="p-2 bg-white rounded-xl shadow-xl border border-gray-100">
-                  <div className="grid w-[250px] gap-1 p-2">
-                    <ul className="space-y-1">
-                      {getProfilLinks(t).map((item, i) => (
-                        <li key={i}>
-                          <NavigationMenuLink asChild>
-                            <Link
-                              to={item.href}
-                              className="flex p-3 hover:bg-primary-50 text-gray-700 hover:text-primary-600 flex-row rounded-lg items-center gap-x-3 transition-colors"
-                            >
-                              <item.icon className="size-5" />
-                              <span className="font-semibold">{item.title}</span>
-                            </Link>
-                          </NavigationMenuLink>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                <NavigationMenuContent className="p-2">
+                  <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] bg-white rounded-xl shadow-xl border border-gray-100">
+                    {getProfilLinks(t).map((item, i) => (
+                      <li key={i}>
+                        <ListItem {...item} />
+                      </li>
+                    ))}
+                  </ul>
                 </NavigationMenuContent>
               </NavigationMenuItem>
             </NavigationMenuList>
@@ -184,7 +173,10 @@ export default function Header() {
                     className="flex py-3 px-4 hover:bg-primary-50 text-gray-700 hover:text-primary-600 flex-row rounded-lg items-center gap-x-4 transition-colors"
                   >
                     <item.icon className="size-6 text-primary-600" />
-                    <span className="font-bold text-lg">{item.title}</span>
+                    <div>
+                      <span className="font-bold text-lg block leading-tight">{item.title}</span>
+                      <span className="text-xs text-gray-500 font-medium">{item.description}</span>
+                    </div>
                   </Link>
                 ))}
               </div>
@@ -278,14 +270,16 @@ const getSolutionsLinks = (t) => [
 
 const getProfilLinks = (t) => [
   {
-    title: t('header.about'),
+    title: t('header.profile_about'),
     href: '/about',
+    description: t('header.profile_about_desc'),
     icon: User,
   },
   {
-    title: t('header.services'),
-    href: '/#services',
-    icon: Star,
+    title: t('header.profile_journey'),
+    href: '/parcours',
+    description: t('header.profile_journey_desc'),
+    icon: Map,
   }
 ];
 

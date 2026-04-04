@@ -1,60 +1,17 @@
 import React, { useRef } from 'react';
-import { ArrowRight, MoveRight, ExternalLink } from 'lucide-react';
-import { projectsData } from '../data/projects';
-import { Timeline } from '../components/ui/Timeline';
+import { MoveRight } from 'lucide-react';
 import { ShapeLandingHero } from '../components/ui/ShapeLandingHero';
-import { TextStagger, AnimatedContainer } from '../components/ui/HeroAnimated';
 import { Button } from '../components/ui/Button';
 import { useTranslation } from 'react-i18next';
 import { PositioningSection } from '../components/home/PositioningSection';
 import { HowItWorks } from '../components/home/HowItWorks';
 import { AssessmentOffer } from '../components/home/AssessmentOffer';
 import { UNHCRHighlight } from '../components/home/UNHCRHighlight';
-import { TimelineContent } from '../components/ui/TimelineContent';
-import { ProgressiveBlur } from '../components/ui/ProgressiveBlur';
 import { cn } from '../lib/utils';
 
 const Home = () => {
   const { t } = useTranslation();
   const timelineRef = useRef(null);
-
-  const timelineItems = [
-    {
-      title: t('home.timeline.banque.title'),
-      description: t('home.timeline.banque.desc'),
-      date: "2008 - 2015",
-      category: "Banque",
-      status: "completed"
-    },
-    {
-      title: t('home.timeline.analyse.title'),
-      description: t('home.timeline.analyse.desc'),
-      date: "2015 - 2019",
-      category: "Analyse",
-      status: "completed"
-    },
-    {
-      title: t('home.timeline.bi.title'),
-      description: t('home.timeline.bi.desc'),
-      date: "2019 - 2022",
-      category: "Business Intelligence",
-      status: "completed"
-    },
-    {
-      title: t('home.timeline.software.title'),
-      description: t('home.timeline.software.desc'),
-      date: "2022 - 2024",
-      category: "Ingénierie Logicielle",
-      status: "completed"
-    },
-    {
-      title: t('home.timeline.data.title'),
-      description: t('home.timeline.data.desc'),
-      date: "Aujourd'hui",
-      category: "Data Analytics",
-      status: "current"
-    }
-  ];
 
   const revealVariants = {
     visible: (i) => ({
@@ -113,22 +70,6 @@ const Home = () => {
             <HowItWorks lightMode={true} />
             <AssessmentOffer lightMode={true} />
             
-            {/* Timeline Section */}
-            <section className="py-20 border-t border-gray-100">
-              <div className="max-w-7xl mx-auto">
-                <div className="text-center mb-16">
-                  <h2 className="text-3xl lg:text-5xl font-bold text-gray-900 mb-4">
-                    {t('home.timelineTitle')}
-                  </h2>
-                  <p className="text-gray-500 text-lg font-light max-w-2xl mx-auto">
-                    {t('home.timelineDesc')}
-                  </p>
-                </div>
-                <div className="bg-gray-50 p-8 md:p-12 rounded-3xl border border-gray-100 shadow-sm">
-                  <Timeline items={timelineItems} dark={false} />
-                </div>
-              </div>
-            </section>
 
             {/* Final CTA Section */}
             <section className="pb-20">
