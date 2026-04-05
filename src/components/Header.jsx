@@ -18,7 +18,8 @@ import {
   User,
   BarChart,
   Globe,
-  Map
+  Map,
+  MoveRight
 } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
