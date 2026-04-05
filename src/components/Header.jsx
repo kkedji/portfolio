@@ -92,6 +92,15 @@ export default function Header() {
                 </NavigationMenuContent>
               </NavigationMenuItem>
 
+              {/* Réalisations */}
+              <NavigationMenuItem>
+                <NavigationMenuLink asChild>
+                  <Link to="/realisations" className="hover:bg-primary-50 text-gray-700 hover:text-primary-600 rounded-md py-2 px-4 transition-colors font-semibold text-sm">
+                    {t('header.realisations')}
+                  </Link>
+                </NavigationMenuLink>
+              </NavigationMenuItem>
+
               {/* Mon Profil Dropdown */}
               <NavigationMenuItem>
                 <NavigationMenuTrigger className="bg-transparent text-gray-700 hover:text-primary-600 hover:bg-primary-50 font-semibold px-4">
@@ -161,6 +170,15 @@ export default function Header() {
                 ))}
               </div>
             </div>
+
+            <Link 
+              to="/realisations" 
+              onClick={() => setOpen(false)} 
+              className="font-bold text-lg py-4 border-y border-gray-100 text-gray-900 tracking-tight flex items-center justify-between"
+            >
+              {t('header.realisations')}
+              <MoveRight className="size-5 text-primary-600" />
+            </Link>
 
             <div>
               <span className="text-sm font-bold text-gray-400 uppercase tracking-widest mb-3 block mt-2">{t('header.profile')}</span>

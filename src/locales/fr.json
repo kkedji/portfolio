@@ -12,7 +12,15 @@
     "profile_about": "À Propos",
     "profile_about_desc": "En savoir plus sur mes compétences et ma vision",
     "about": "À Propos",
+    "realisations": "Réalisations",
     "services": "Services"
+  },
+  "realisationsPage": {
+    "badge": "Réalisations d'Expertise",
+    "title": "Automatisation &",
+    "title2": "Impact Data",
+    "description": "Transformez l'efficacité opérationnelle par des solutions sur mesure.",
+    "microfinance_badge": "Automatisation Processus"
   },
   "footer": {
     "desc": "Spécialiste en reporting stratégique, gestion des risques et automatisation de processus via Power BI et Python.",
@@ -25,53 +33,59 @@
   },
   "home": {
     "welcome": "Bienvenue sur mon portfolio",
-    "intro_title": "Business Data Analyst & Automation Solution Developer",
-    "intro_subtitle": "Je transforme vos processus manuels en systèmes automatisés, fiables et évolutifs.",
+    "intro_title": "Data Analyst spécialisé en Finance & Performance Business",
+    "intro_subtitle": "J’aide les organisations à transformer leurs données en décisions concrètes, mesurables et rentables",
+    "hero_metrics": {
+      "1": "+30% optimisation des revenus (analyse financière)",
+      "2": "100K$ récupérés (chargebacks & contrôle)",
+      "3": "-50% temps de reporting (automatisation)"
+    },
     "trust_boost": "",
     "cta_book": "Réserver une consultation",
     "cta_cases": "Voir les études de cas",
-    "what_i_do_title": "Ce que je fais",
-    "what_i_do_desc": "Je conçois et mets en œuvre des systèmes pratiques qui combinent :",
+    "what_i_do_title": "Transformer la donnée en avantage stratégique",
+    "what_i_do_desc": "J’analyse les données pour répondre à des problématiques concrètes :",
     "what_i_do_items": {
-      "1": "Opérations financières",
-      "2": "Flux de données",
-      "3": "Automatisation"
+      "1": "Où perdez-vous de l’argent ?",
+      "2": "Quels clients risquez-vous de perdre ?",
+      "3": "Quels processus réduisent votre performance ?"
     },
-    "what_i_do_goal": "L'objectif est simple : rendre vos opérations plus rapides, plus fiables et plus faciles à gérer.",
+    "what_i_do_goal": "Mon objectif : fournir des insights exploitables pour améliorer revenus, efficacité et gestion des risques",
     "offers_title": "3 Offres Claires",
     "how_it_works_title": "Ma méthode de travail",
     "how_it_works_steps": {
       "1": {
-        "title": "Étape 1 – Comprendre et Cartographier",
-        "desc": "J'analyse vos flux de travail actuels et identifie les inefficacités."
+        "title": "Étape 1 – Comprendre",
+        "desc": "Analyse approfondie du problème et des enjeux métier."
       },
       "2": {
-        "title": "Étape 2 – Concevoir",
-        "desc": "Je structure un système adapté à vos opérations."
+        "title": "Étape 2 – Analyser",
+        "desc": "Exploitation et transformation des données pour extraire la vérité."
       },
       "3": {
-        "title": "Étape 3 – Construire et Déployer",
-        "desc": "Je déploie des outils pratiques (pas de systèmes sur-ingénierie)."
+        "title": "Étape 3 – Recommander",
+        "desc": "Présentation d'insights clairs et de préconisations stratégiques."
       },
       "4": {
-        "title": "Étape 4 – Former et Accompagner",
-        "desc": "Je m'assure que votre équipe peut utiliser et maintenir le système."
+        "title": "Étape 4 – Impacter",
+        "desc": "Mise en œuvre et suivi des résultats pour un impact mesurable."
       }
     },
-    "assessment_title": "Commencez par une évaluation du système financier",
-    "assessment_desc": "J'offre une évaluation rapide de vos processus financiers et opérationnels actuels pour identifier les lacunes, les risques et les opportunités d'amélioration.",
-    "assessment_receive": "Vous recevez :",
+    "assessment_title": "Diagnostic Performance & Risques",
+    "assessment_desc": "J’aide les organisations à transformer leurs données en leviers de performance mesurables.",
+    "assessment_receive": "Approche :",
     "assessment_items": {
-      "1": "Un diagnostic clair",
-      "2": "Des recommandations pratiques",
-      "3": "Une feuille de route pour la mise en œuvre"
+      "1": "Comprendre le problème",
+      "2": "Analyser la donnée",
+      "3": "Recommander des actions",
+      "4": "Impacter les résultats"
     },
-    "final_cta_text": "Si votre organisation repose encore sur des feuilles de calcul ou des processus fragmentés, il est temps de passer à un système structuré.",
+    "final_cta_text": "Transformer vos données en décisions concrètes dès aujourd'hui.",
     "final_cta_btn": "Discutons de vos besoins",
-    "timelineTitle": "Mon Parcours Professionnel",
-    "timelineDesc": "De l'expertise bancaire spécialisée vers l'analyse de données de pointe",
-    "skillsTitle": "Compétences & Technologies",
-    "skillsDesc": "Outils et technologies que je maîtrise",
+    "timelineTitle": "10+ ans d'Expertise",
+    "timelineDesc": "Double compétence Finance + Data",
+    "skillsTitle": "Outils & Stack Technique",
+    "skillsDesc": "Une maîtrise technique au service du business",
     "ctaTitle": "Prêt à transformer vos données ?",
     "ctaDesc": "Découvrez mes projets et applications pour voir comment je peux vous aider à exploiter la puissance de vos données.",
     "ctaBtn1": "Voir les projets",
@@ -146,25 +160,32 @@
     }
   },
   "glassmorphism": {
-    "badge": "Profil & Vision",
-    "subtitle": "Consultant Data Indépendant",
-    "desc1": "Avec plus de quinze ans d'expérience dans l'industrie bancaire, j'aide aujourd'hui les organisations à transformer leurs données en leviers de performance. Mon approche combine rigueur analytique, vision technologique et ingénierie logicielle.",
+    "badge": "Profil Hybride : Finance + Data",
+    "subtitle": "Data Analyst spécialisé en Finance & Performance Business",
+    "desc1": "Je suis Data Analyst avec plus de 10 ans d’expérience en banque, opérations et conformité. Ce double profil me permet de comprendre rapidement les enjeux métier, d'identifier les risques et opportunités, et de transformer les données en décisions concrètes.",
     "highlights": {
       "1": {
-        "title": "15+ années d'expertise",
-        "desc": "Industrie bancaire, analyse de données avancée, modélisation des risques et présentations en comités de direction."
+        "title": "Compréhension Métier",
+        "desc": "Saisir rapidement les enjeux business complexes."
       },
       "2": {
-        "title": "Domaines d'intervention",
-        "desc": "Business Intelligence, structuration de base de données SQL, reporting Power BI et web-apps fullstack."
+        "title": "Analyse de Risque",
+        "desc": "Identifier les risques et opportunités stratégiques."
       },
       "3": {
-        "title": "Stratégie d'Accompagnement",
-        "desc": "Conseil personnalisé pour les PME et institutions cherchant à transformer leurs données en réel levier décisionnel."
+        "title": "Décision Concrète",
+        "desc": "Transformer la donnée brute en action mesurable."
       }
     },
-    "cardSubtitle": "Expertise Bancaire · Développement Data",
-    "cardDesc": "Allier la rigueur institutionnelle à l'agilité des outils modernes pour créer des interfaces et tableaux de bord qui transforment la donnée complexe en évidence."
+    "approach": "Comprendre le problème → Analyser → Recommander → Impacter",
+    "tools_stack": {
+      "powerbi": "Power BI (visualisation & dashboards décisionnels)",
+      "sql": "SQL (extraction & transformation des données)",
+      "python": "Python (analyse & automatisation)",
+      "excel": "Excel avancé (modélisation & reporting)"
+    },
+    "cardSubtitle": "Finance + Data Strategy",
+    "cardDesc": "Identifier les risques, optimiser les revenus et automatiser le reporting pour un impact business immédiat."
   },
   "projects": {
     "title": "Mes Projets",

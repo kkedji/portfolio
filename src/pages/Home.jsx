@@ -1,12 +1,11 @@
 import React, { useRef } from 'react';
-import { MoveRight, ArrowRight } from 'lucide-react';
+import { MoveRight, ArrowRight, CheckCircle2 } from 'lucide-react';
 import { ShapeLandingHero } from '../components/ui/ShapeLandingHero';
 import { Button } from '../components/ui/Button';
 import { useTranslation } from 'react-i18next';
 import { PositioningSection } from '../components/home/PositioningSection';
 import { HowItWorks } from '../components/home/HowItWorks';
 import { AssessmentOffer } from '../components/home/AssessmentOffer';
-import { UNHCRHighlight } from '../components/home/UNHCRHighlight';
 import { cn } from '../lib/utils';
 
 const Home = () => {
@@ -35,12 +34,23 @@ const Home = () => {
       {/* Unified Hero Section - Keeps Blue Style */}
       <ShapeLandingHero 
         badge={t('home.welcome')}
-        title1={t('home.intro_title').split('&')[0] + '&'}
-        title2={t('home.intro_title').split('&')[1]}
+        title1={t('home.intro_title').includes('&') ? t('home.intro_title').split('&')[0] + '&' : t('home.intro_title')}
+        title2={t('home.intro_title').includes('&') ? t('home.intro_title').split('&')[1] : ''}
         customDescription={
-          <p className="text-base sm:text-lg md:text-xl text-white/80 mb-8 max-w-2xl mx-auto px-4 font-light">
-            {t('home.intro_subtitle')}
-          </p>
+          <div className="max-w-3xl mx-auto px-4">
+            <p className="text-lg sm:text-xl text-white/90 mb-6 font-light leading-relaxed">
+              {t('home.intro_subtitle')}
+            </p>
+            {/* Discrete Metrics List */}
+            <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 mb-8 text-sm font-medium text-white/60">
+              {Object.values(t('home.hero_metrics', { returnObjects: true })).map((metric, idx) => (
+                <div key={idx} className="flex items-center gap-2">
+                  <CheckCircle2 className="h-4 w-4 text-blue-400" />
+                  <span>{metric}</span>
+                </div>
+              ))}
+            </div>
+          </div>
         }
         trustText={t('home.trust_boost')}
       >
@@ -66,7 +76,6 @@ const Home = () => {
           {/* Content Sections */}
           <div className="space-y-32 py-20">
             <PositioningSection lightMode={true} />
-            <UNHCRHighlight lightMode={true} />
             <HowItWorks lightMode={true} />
             <AssessmentOffer lightMode={true} />
             

@@ -153,12 +153,7 @@ function ShapeLandingHero({
             </h1>
           </motion.div>
 
-          <motion.div
-            custom={2}
-            variants={fadeUpVariants}
-            initial="hidden"
-            animate="visible"
-          >
+          <div className="relative">
             {customDescription ? (
               customDescription
             ) : (
@@ -175,7 +170,7 @@ function ShapeLandingHero({
                 <div className="h-px w-8 bg-white/20" />
               </div>
             )}
-          </motion.div>
+          </div>
 
           {children && (
             <motion.div

@@ -7,7 +7,12 @@ import {
   Twitter,
   Mail,
   Map,
-  MoveRight
+  MoveRight,
+  Database,
+  Terminal,
+  BarChart3,
+  FileSpreadsheet,
+  Activity
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
@@ -138,6 +143,52 @@ export function GlassmorphismPortfolioBlock({ lightMode = false }) {
                 >
                   {t('glassmorphism.desc1')}
                 </motion.p>
+
+                {/* Approach Section */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 0.3 }}
+                  className={cn(
+                    "p-6 rounded-2xl border",
+                    lightMode ? "bg-blue-50/50 border-blue-100" : "bg-white/5 border-white/10"
+                  )}
+                >
+                  <p className="text-xs font-bold uppercase tracking-widest text-blue-600 mb-4">Ma Méthode</p>
+                  <div className="flex flex-wrap items-center gap-2 text-sm font-bold text-gray-900 group">
+                    <span className={cn(lightMode ? "text-gray-900" : "text-white")}>{t('glassmorphism.approach')}</span>
+                  </div>
+                </motion.div>
+
+                {/* Tools & Stack Section */}
+                <div className="pt-4 grid grid-cols-2 gap-4">
+                  <div className="space-y-4">
+                    <p className="text-xs font-bold uppercase tracking-widest text-blue-600">Outils & Stack</p>
+                    <div className="grid gap-3">
+                      <div className="flex items-center gap-3">
+                        <BarChart3 className="h-4 w-4 text-blue-500" />
+                        <span className={cn("text-xs font-medium", lightMode ? "text-gray-700" : "text-slate-300")}>{t('glassmorphism.tools_stack.powerbi')}</span>
+                      </div>
+                      <div className="flex items-center gap-3">
+                        <Database className="h-4 w-4 text-blue-500" />
+                        <span className={cn("text-xs font-medium", lightMode ? "text-gray-700" : "text-slate-300")}>{t('glassmorphism.tools_stack.sql')}</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="space-y-4 pt-8">
+                    <div className="grid gap-3">
+                      <div className="flex items-center gap-3">
+                        <Terminal className="h-4 w-4 text-blue-500" />
+                        <span className={cn("text-xs font-medium", lightMode ? "text-gray-700" : "text-slate-300")}>{t('glassmorphism.tools_stack.python')}</span>
+                      </div>
+                      <div className="flex items-center gap-3">
+                        <FileSpreadsheet className="h-4 w-4 text-blue-500" />
+                        <span className={cn("text-xs font-medium", lightMode ? "text-gray-700" : "text-slate-300")}>{t('glassmorphism.tools_stack.excel')}</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
 
