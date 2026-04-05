@@ -129,7 +129,7 @@ export function GlassmorphismPortfolioBlock({ lightMode = false }) {
                   )}
                 >
                   Sename Kudjo Kedji, <br />
-                  <span className="text-white font-extrabold">{t('glassmorphism.subtitle').split('&')[0] + '&'}</span>
+                  <span className={cn("font-extrabold", lightMode ? "text-gray-900" : "text-white")}>{t('glassmorphism.subtitle').split('&')[0] + '&'}</span>
                   <br />
                   <span className="bg-clip-text text-transparent bg-gradient-to-r from-rose-400 to-pink-500 font-extrabold">
                     {t('glassmorphism.subtitle').split('&')[1]}
