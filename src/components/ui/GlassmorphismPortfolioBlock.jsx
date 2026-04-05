@@ -129,7 +129,11 @@ export function GlassmorphismPortfolioBlock({ lightMode = false }) {
                   )}
                 >
                   Sename Kudjo Kedji, <br />
-                  <span className="text-blue-600 font-extrabold">{t('glassmorphism.subtitle')}</span>
+                  <span className="text-white font-extrabold">{t('glassmorphism.subtitle').split('&')[0] + '&'}</span>
+                  <br />
+                  <span className="bg-clip-text text-transparent bg-gradient-to-r from-rose-400 to-pink-500 font-extrabold">
+                    {t('glassmorphism.subtitle').split('&')[1]}
+                  </span>
                 </motion.h2>
                 <motion.p
                   initial={{ opacity: 0, y: 20 }}
@@ -144,22 +148,6 @@ export function GlassmorphismPortfolioBlock({ lightMode = false }) {
                   {t('glassmorphism.desc1')}
                 </motion.p>
 
-                {/* Approach Section */}
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: 0.3 }}
-                  className={cn(
-                    "p-6 rounded-2xl border",
-                    lightMode ? "bg-blue-50/50 border-blue-100" : "bg-white/5 border-white/10"
-                  )}
-                >
-                  <p className="text-xs font-bold uppercase tracking-widest text-blue-600 mb-4">Ma Méthode</p>
-                  <div className="flex flex-wrap items-center gap-2 text-sm font-bold text-gray-900 group">
-                    <span className={cn(lightMode ? "text-gray-900" : "text-white")}>{t('glassmorphism.approach')}</span>
-                  </div>
-                </motion.div>
 
                 {/* Tools & Stack Section */}
                 <div className="pt-4 grid grid-cols-2 gap-4">

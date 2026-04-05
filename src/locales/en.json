@@ -33,8 +33,8 @@
   },
   "home": {
     "welcome": "Welcome to my portfolio",
-    "intro_title": "Data Analyst specialized in Finance & Business Performance",
-    "intro_subtitle": "I help organizations transform their data into concrete, measurable, and profitable decisions",
+    "intro_title": "Data Analyst & Automation Solution Developer",
+    "intro_subtitle": "I help organizations transform their data into concrete decisions and automate their critical business processes.",
     "hero_metrics": {
       "1": "+30% revenue optimization (financial analysis)",
       "2": "$100K recovered (chargebacks & control)",
@@ -93,23 +93,23 @@
     "timeline": {
       "banque": {
         "title": "Beginnings in Banking",
+        "category": "Banking",
         "desc": "Early experiences in credit management. Acquired fundamentals of financial analysis and counterparty risk."
       },
       "analyse": {
         "title": "Risk & Committee Expertise",
+        "category": "Analysis",
         "desc": "In-depth analysis of credit portfolios, financial modeling, and market risk management. Presented institutional cases in global decision committees."
       },
       "bi": {
         "title": "Data & BI Transition",
+        "category": "Business Intelligence",
         "desc": "Integrated modern analytical tools to automate management dashboards. Utilized SQL pipelines and created Power BI solvency reports."
       },
-      "software": {
-        "title": "Web App & Python Development",
-        "desc": "Built Fullstack Web Apps with React (CreditFlow), advanced automation using Python scripts (Pandas/Scikit-Learn), and integrated AI for business diagnostics."
-      },
-      "data": {
-        "title": "Independent Data Consultant",
-        "desc": "Supporting SMEs, associations, and institutions in adding value to their data, modeling KPIs, and completely digitalizing their financial tools."
+      "solutions": {
+        "title": "Data Analyst & Automation Solution Developer",
+        "category": "Custom Solutions",
+        "desc": "Built Fullstack Web Apps with React, Automated manual reporting processes with advanced Excel/Power Bi, and integrated AI for business diagnostics. Supporting SMEs, associations, and institutions in adding value to their data, modeling KPIs, and completely digitalizing their financial tools."
       }
     }
   },
@@ -120,8 +120,21 @@
     "cta": "View my work",
     "viewMore": "Learn more",
     "featured_2_title": "UNHCR Financial Reporting Automation",
-    "impact_2": "Reduced reporting time by 50% across 11 international markets.",
-    "impact_2_desc": "Automated fragmented data collection from spreadsheets into structured reporting systems.",
+    "unhcr": {
+      "title": "UNHCR Financial Reporting Automation",
+      "company": "UNHCR",
+      "tags": "POWER QUERY / FINANCIAL AUTOMATION",
+      "problem_label": "Problem:",
+      "problem_desc": "Manual, slow, and multi-currency data retrieval process, leading to financial errors during consolidation.",
+      "solution_label": "Solution:",
+      "solution_desc": "Full automation system built with Power Query, centralizing fragmented data streams into a structured reporting workflow.",
+      "impact_label": "Impact:",
+      "impact_points": [
+        "50% time reduction for report producers and finance teams",
+        "Drastic reduction in consolidation errors",
+        "Synchronized international reporting across 11 markets"
+      ]
+    },
     "featured": {
       "company": "Microfinance",
       "tags": "WORKFLOW AUTOMATION / WEB APP",
@@ -161,8 +174,8 @@
   },
   "glassmorphism": {
     "badge": "Hybrid Profile: Finance + Data",
-    "subtitle": "Data Analyst specialized in Finance & Business Performance",
-    "desc1": "I am a Data Analyst with over 10 years of experience in banking, operations, and compliance. This hybrid profile allows me to quickly understand business challenges, identify risks and opportunities, and transform data into concrete decisions.",
+    "subtitle": "Data Analyst & Automation Solution Developer",
+    "desc1": "Data transformation specialist with over 10 years of experience. I combine financial expertise with custom solution development to automate your critical business processes.",
     "highlights": {
       "1": {
         "title": "Business Insight",

@@ -14,35 +14,28 @@ const Journey = () => {
       title: t('home.timeline.banque.title'),
       description: t('home.timeline.banque.desc'),
       date: "2008 - 2015",
-      category: "Banque",
+      category: t('home.timeline.banque.category'),
       status: "completed"
     },
     {
       title: t('home.timeline.analyse.title'),
       description: t('home.timeline.analyse.desc'),
       date: "2015 - 2019",
-      category: "Analyse",
+      category: t('home.timeline.analyse.category'),
       status: "completed"
     },
     {
       title: t('home.timeline.bi.title'),
       description: t('home.timeline.bi.desc'),
       date: "2019 - 2022",
-      category: "Business Intelligence",
+      category: t('home.timeline.bi.category'),
       status: "completed"
     },
     {
-      title: t('home.timeline.software.title'),
-      description: t('home.timeline.software.desc'),
-      date: "2022 - 2024",
-      category: "Ingénierie Logicielle",
-      status: "completed"
-    },
-    {
-      title: t('home.timeline.data.title'),
-      description: t('home.timeline.data.desc'),
-      date: "Aujourd'hui",
-      category: "Data Analytics",
+      title: t('home.timeline.solutions.title'),
+      description: t('home.timeline.solutions.desc'),
+      date: "2022 - Aujourd'hui",
+      category: t('home.timeline.solutions.category'),
       status: "current"
     }
   ];

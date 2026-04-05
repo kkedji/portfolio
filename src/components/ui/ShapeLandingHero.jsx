@@ -69,6 +69,7 @@ function ShapeLandingHero({
   description = "Crafting exceptional digital experiences through innovative design and cutting-edge technology.",
   trustText = "",
   customDescription,
+  title2ClassName,
   children
 }) {
   const fadeUpVariants = {
@@ -145,7 +146,8 @@ function ShapeLandingHero({
               <br />
               <span
                 className={cn(
-                  "bg-clip-text text-transparent bg-gradient-to-r from-white via-white/90 to-white/80"
+                  "bg-clip-text text-transparent",
+                  title2ClassName || "bg-gradient-to-r from-white via-white/90 to-white/80"
                 )}
               >
                 {title2}

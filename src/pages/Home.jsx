@@ -36,6 +36,7 @@ const Home = () => {
         badge={t('home.welcome')}
         title1={t('home.intro_title').includes('&') ? t('home.intro_title').split('&')[0] + '&' : t('home.intro_title')}
         title2={t('home.intro_title').includes('&') ? t('home.intro_title').split('&')[1] : ''}
+        title2ClassName="bg-gradient-to-r from-rose-400 via-pink-500 to-orange-400"
         customDescription={
           <div className="max-w-3xl mx-auto px-4">
             <p className="text-lg sm:text-xl text-white/90 mb-6 font-light leading-relaxed">

@@ -33,8 +33,8 @@
   },
   "home": {
     "welcome": "Bienvenue sur mon portfolio",
-    "intro_title": "Data Analyst spécialisé en Finance & Performance Business",
-    "intro_subtitle": "J’aide les organisations à transformer leurs données en décisions concrètes, mesurables et rentables",
+    "intro_title": "Data Analyst & Developpeur de Solution d'Automatisation",
+    "intro_subtitle": "J’aide les organisations à transformer leurs données en décisions concrètes, mesurables et à automatiser leurs processus critiques.",
     "hero_metrics": {
       "1": "+30% optimisation des revenus (analyse financière)",
       "2": "100K$ récupérés (chargebacks & contrôle)",
@@ -93,23 +93,23 @@
     "timeline": {
       "banque": {
         "title": "Début dans le Secteur Bancaire",
+        "category": "Banque",
         "desc": "Premières expériences en gestion des crédits. Acquisition des fondamentaux de l'analyse financière et du risque de contrepartie."
       },
       "analyse": {
         "title": "Expertise Risque & Comités",
+        "category": "Analyse",
         "desc": "Analyse approfondie de portefeuilles de crédits, modélisation financière et gestion des risques de marché. Présentation des dossiers institutionnels en comités de décision globaux."
       },
       "bi": {
         "title": "Transition Data & BI",
+        "category": "Business Intelligence",
         "desc": "Intégration d'outils analytiques modernes pour l'automatisation des tableaux de bord de gestion. Exploitation de pipelines SQL et création de rapports de solvabilité Power BI."
       },
-      "software": {
-        "title": "Développement Application & Python",
-        "desc": "Création d'applications Web via React (CreditFlow), automatisation avancée via scripts Python (Pandas/Scikit-Learn), et intégration de l'Intelligence Artificielle pour le diagnostic d'entreprise."
-      },
-      "data": {
-        "title": "Consultant Data Indépendant",
-        "desc": "Accompagnement de PME, associations et institutions dans la valorisation de leurs données, la modélisation de leurs KPIs et la digitalisation complète de leurs outils financiers."
+      "solutions": {
+        "title": "Data Analyst & Developpeur de Solution d'Automatisation",
+        "category": "Solutions sur Mesure",
+        "desc": "Conception d'applications Web Fullstack (React), automatisation de processus de reporting (Excel/Power BI) et intégration d'IA pour le diagnostic d'entreprise. Accompagnement de PME et institutions dans la digitalisation de leurs outils financiers et la modélisation de KPIs."
       }
     }
   },
@@ -120,8 +120,21 @@
     "cta": "Voir mes réalisations",
     "viewMore": "En savoir plus",
     "featured_2_title": "Automatisation du Reporting Financier UNHCR",
-    "impact_2": "Réduction de 50% du temps de reporting sur 11 marchés internationaux.",
-    "impact_2_desc": "Collecte automatisée de données fragmentées provenant de feuilles de calcul vers des systèmes de reporting structurés.",
+    "unhcr": {
+      "title": "Automatisation du Reporting Financier UNHCR",
+      "company": "UNHCR",
+      "tags": "POWER QUERY / AUTOMATISATION FINANCIÈRE",
+      "problem_label": "Problème :",
+      "problem_desc": "Processus manuel lent, multi-sources et multi-devises, avec des risques d'erreurs financières lors de la consolidation.",
+      "solution_label": "Solution :",
+      "solution_desc": "Conception d'un système d'automatisation complète via Power Query, centralisant les flux de données fragmentés en un reporting structuré.",
+      "impact_label": "Impact :",
+      "impact_points": [
+        "Gain de temps de 50% pour les opérateurs et les finances",
+        "Réduction drastique des erreurs de consolidation",
+        "Reporting international synchronisé sur 11 marchés"
+      ]
+    },
     "featured": {
       "company": "Microfinance",
       "tags": "AUTOMATISATION DES FLUX / WEB APP",
@@ -161,8 +174,8 @@
   },
   "glassmorphism": {
     "badge": "Profil Hybride : Finance + Data",
-    "subtitle": "Data Analyst spécialisé en Finance & Performance Business",
-    "desc1": "Je suis Data Analyst avec plus de 10 ans d’expérience en banque, opérations et conformité. Ce double profil me permet de comprendre rapidement les enjeux métier, d'identifier les risques et opportunités, et de transformer les données en décisions concrètes.",
+    "subtitle": "Data Analyst & Developpeur de Solution d'Automatisation",
+    "desc1": "Spécialiste de la transformation de données avec plus de 10 ans d'expérience. Je combine expertise financière et développement de solutions sur mesure pour automatiser vos processus business critiques.",
     "highlights": {
       "1": {
         "title": "Compréhension Métier",

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
-import { Globe, TrendingDown, Clock } from 'lucide-react';
+import { Globe, TrendingDown, Clock, Zap, Target, CheckCircle2 } from 'lucide-react';
 import { cn } from '../../lib/utils';
 
 export const UNHCRHighlight = ({ lightMode = false }) => {
@@ -22,26 +22,60 @@ export const UNHCRHighlight = ({ lightMode = false }) => {
               {t('casestudies.featured_impact_badge')}
             </div>
             <h2 className={cn("text-3xl lg:text-5xl font-bold mb-8 leading-tight", lightMode ? "text-gray-900" : "text-white gradient-text")}>
-              {t('casestudies.featured_2_title')}
+              {t('casestudies.unhcr.title')}
             </h2>
-            <div className="space-y-8">
+            
+            <div className="space-y-10">
+              {/* Problem & Solution */}
+              <div className="grid gap-8">
+                <div className="flex gap-4">
+                  <div className="mt-1 bg-red-500/10 p-2 rounded-lg shrink-0">
+                    <Target className="text-red-500 w-5 h-5" />
+                  </div>
+                  <div>
+                    <h4 className={cn("text-sm font-bold uppercase tracking-wider mb-2", lightMode ? "text-gray-900" : "text-white")}>
+                      {t('casestudies.unhcr.problem_label')}
+                    </h4>
+                    <p className={cn("text-lg font-light", lightMode ? "text-gray-600" : "text-slate-300")}>
+                      {t('casestudies.unhcr.problem_desc')}
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex gap-4">
+                  <div className="mt-1 bg-blue-500/10 p-2 rounded-lg shrink-0">
+                    <Zap className="text-blue-500 w-5 h-5" />
+                  </div>
+                  <div>
+                    <h4 className={cn("text-sm font-bold uppercase tracking-wider mb-2", lightMode ? "text-gray-900" : "text-white")}>
+                      {t('casestudies.unhcr.solution_label')}
+                    </h4>
+                    <p className={cn("text-lg font-light leading-relaxed", lightMode ? "text-gray-600" : "text-slate-300")}>
+                      {t('casestudies.unhcr.solution_desc')}
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Impact Card */}
               <div className={cn(
                 "p-8 rounded-3xl border transition-all duration-500 group",
-                lightMode ? "bg-gray-50 border-gray-100 hover:bg-gray-100/50" : "glass-card border-white/10 hover:bg-white/10"
+                lightMode ? "bg-gray-50 border-gray-100 shadow-sm" : "glass-card border-white/10"
               )}>
-                <div className="flex items-center gap-5 text-emerald-600 mb-3">
+                <div className="flex items-center gap-5 text-emerald-600 mb-6">
                   <TrendingDown size={28} />
                   <span className="text-4xl font-black italic tracking-tighter">-50%</span>
+                  <span className="text-xl font-bold uppercase tracking-widest">{t('casestudies.unhcr.impact_label')}</span>
                 </div>
-                <p className={cn("text-xl font-light leading-relaxed", lightMode ? "text-gray-700" : "text-white/90")}>
-                  {t('casestudies.impact_2')}
-                </p>
-              </div>
-              <div className={cn("flex items-center gap-4 italic font-light", lightMode ? "text-gray-500" : "text-slate-300")}>
-                <Clock size={20} className="text-blue-600" />
-                <span className="text-base">
-                  {t('casestudies.impact_2_desc')}
-                </span>
+                
+                <ul className="grid gap-4">
+                  {Object.values(t('casestudies.unhcr.impact_points', { returnObjects: true })).map((point, idx) => (
+                    <li key={idx} className={cn("flex items-center gap-3 text-lg font-light", lightMode ? "text-gray-700" : "text-white/90")}>
+                      <CheckCircle2 className="text-emerald-500 h-5 w-5 shrink-0" />
+                      {point}
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
           </motion.div>
