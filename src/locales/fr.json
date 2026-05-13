@@ -4,7 +4,7 @@
     "solutions": "Mes Solutions",
     "profile": "Mon Profil",
     "projects": "Mes Projets",
-    "projects_desc": "Explorer Mon Portfolio de projets data",
+    "projects_desc": "Explorer les realisations data de SKK Analytics",
     "apps": "Mes Applications",
     "apps_desc": "Découvrez des solutions applicatives interactives",
     "profile_journey": "Mon Parcours",
@@ -23,7 +23,7 @@
     "microfinance_badge": "Automatisation Processus"
   },
   "footer": {
-    "desc": "Spécialiste en reporting stratégique, gestion des risques et automatisation de processus via Power BI et Python.",
+    "desc": "Vitrine de SKK Analytics, de son savoir-faire data et de ses solutions digitales pour la performance des organisations.",
     "links": "Liens Utiles",
     "contact": "Contact",
     "projects": "Projets",
@@ -32,9 +32,9 @@
     "allRights": "Tous droits réservés."
   },
   "home": {
-    "welcome": "Bienvenue sur mon portfolio",
-    "intro_title": "Data Analyst & Developpeur de Solution d'Automatisation",
-    "intro_subtitle": "J’aide les organisations à transformer leurs données en décisions concrètes, mesurables et à automatiser leurs processus critiques.",
+    "welcome": "Bienvenue chez SKK Analytics",
+    "intro_title": "SKK Analytics",
+    "intro_subtitle": "La vitrine de l'entreprise SKK Analytics, de son savoir-faire data et de ses solutions digitales pour transformer les donnees en decisions, automatiser les processus et renforcer la performance.",
     "hero_metrics": {
       "1": "+30% optimisation des revenus (analyse financière)",
       "2": "100K$ récupérés (chargebacks & contrôle)",
@@ -201,6 +201,9 @@
     "cardDesc": "Identifier les risques, optimiser les revenus et automatiser le reporting pour un impact business immédiat."
   },
   "projects": {
+    "badge": "Realisations Data",
+    "featured_badge": "Realisations",
+    "featured_sub": "Expertise & Impact",
     "title": "Mes Projets",
     "title2": "Insights & Visualisations",
     "desc": "Découvrez une sélection de mes réalisations en analyse de données et Business Intelligence",

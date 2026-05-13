@@ -61,11 +61,12 @@ export default function Header() {
     >
       <nav className="mx-auto flex h-16 w-full max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <div className="flex items-center gap-8">
-          <Link to="/" className="flex items-center space-x-2 mr-4 group">
-            <div className="w-10 h-10 bg-gradient-to-br from-primary-600 to-primary-900 rounded-lg flex items-center justify-center shadow-md group-hover:scale-105 transition-transform">
-              <span className="text-white font-bold text-lg">SKK</span>
-            </div>
-            <span className="text-xl font-bold text-gray-900 hidden sm:block tracking-tight">SKK Analytics</span>
+          <Link to="/" className="flex items-center mr-4 group" aria-label="SKK Analytics">
+            <img
+              src="/images/logo-skk-analytics.png"
+              alt="SKK Analytics"
+              className="h-12 w-auto max-w-[190px] object-contain transition-transform group-hover:scale-105"
+            />
           </Link>
 
           <NavigationMenu className="hidden md:flex">

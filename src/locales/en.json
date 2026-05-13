@@ -4,7 +4,7 @@
     "solutions": "My Solutions",
     "profile": "My Profile",
     "projects": "My Projects",
-    "projects_desc": "Explore my Data Projects Portfolio",
+    "projects_desc": "Explore SKK Analytics data achievements",
     "apps": "My Web Apps",
     "apps_desc": "Discover interactive web application solutions",
     "profile_journey": "My Journey",
@@ -23,7 +23,7 @@
     "microfinance_badge": "Process Automation"
   },
   "footer": {
-    "desc": "Specialized in strategic reporting, risk management, and process automation through Power BI and Python.",
+    "desc": "The showcase of SKK Analytics, its data expertise, and its digital solutions for organizational performance.",
     "links": "Useful Links",
     "contact": "Contact",
     "projects": "Projects",
@@ -32,9 +32,9 @@
     "allRights": "All rights reserved."
   },
   "home": {
-    "welcome": "Welcome to my portfolio",
-    "intro_title": "Data Analyst & Automation Solution Developer",
-    "intro_subtitle": "I help organizations transform their data into concrete decisions and automate their critical business processes.",
+    "welcome": "Welcome to SKK Analytics",
+    "intro_title": "SKK Analytics",
+    "intro_subtitle": "The company showcase for SKK Analytics, its data expertise, and its digital solutions to turn data into decisions, automate processes, and strengthen performance.",
     "hero_metrics": {
       "1": "+30% revenue optimization (financial analysis)",
       "2": "$100K recovered (chargebacks & control)",
@@ -201,6 +201,9 @@
     "cardDesc": "Identify risks, optimize revenue, and automate reporting for immediate business impact."
   },
   "projects": {
+    "badge": "Data Achievements",
+    "featured_badge": "Achievements",
+    "featured_sub": "Expertise & Impact",
     "title": "My Projects",
     "title2": "Insights & Visualisations",
     "desc": "Discover a selection of my accomplishments in data analysis and Business Intelligence",

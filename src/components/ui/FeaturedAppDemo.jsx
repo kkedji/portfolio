@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { PlayCircle } from "lucide-react";
+import { ExternalLink, PlayCircle } from "lucide-react";
 import { Card, CardContent } from "./Card";
 import { useTranslation } from "react-i18next";
 
@@ -17,14 +17,32 @@ export default function FeaturedAppDemo({ app, lightMode = false }) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <header className="text-left mb-12">
-          <h2 className={cn(
-            "text-3xl md:text-5xl font-bold tracking-tight mb-4",
-            lightMode ? "text-gray-900" : "gradient-text"
-          )}>
-            {app.title}
-          </h2>
+          <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
+            <h2 className={cn(
+              "text-3xl md:text-5xl font-bold tracking-tight",
+              lightMode ? "text-gray-900" : "gradient-text"
+            )}>
+              {app.title}
+            </h2>
+            {app.demoLink && app.demoLink !== "#" && (
+              <a
+                href={app.demoLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={cn(
+                  "inline-flex shrink-0 items-center gap-2 rounded-lg border px-4 py-3 text-sm font-bold transition-colors",
+                  lightMode
+                    ? "border-blue-100 bg-blue-50 text-blue-700 hover:bg-blue-100"
+                    : "border-white/10 bg-white/10 text-white hover:bg-white/20"
+                )}
+              >
+                {app.siteLabel || app.demoLink.replace(/^https?:\/\//, "")}
+                <ExternalLink className="size-4" />
+              </a>
+            )}
+          </div>
           <p className={cn(
-            "text-lg md:text-xl max-w-4xl font-light",
+            "text-lg md:text-xl max-w-4xl font-light mt-4",
             lightMode ? "text-gray-600" : "text-muted-foreground"
           )}>
             {app.description}

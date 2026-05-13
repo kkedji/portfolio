@@ -10,7 +10,8 @@ export const applicationsData = [
     ],
     videoUrl: "https://www.youtube.com/embed/edwbuN4VqSE", // URL de la vidéo YouTube ou autre
     thumbnail: "/images/creditflow-thumb.jpg",
-    demoLink: "#",
+    demoLink: "https://credit.skk-analytics.com",
+    siteLabel: "credit.skk-analytics.com",
     githubLink: "#",
     tags: ["React 18 + TypeScript + Vite", "Firebase", "Tailwind CSS"]
   },
@@ -25,7 +26,8 @@ export const applicationsData = [
     ],
     videoUrl: "https://www.youtube.com/embed/35EAJ_HtsM0", // URL de la vidéo YouTube ou autre
     thumbnail: "/images/boutique-thumb.jpg",
-    demoLink: "#",
+    demoLink: "https://boutique.skk-analytics.com",
+    siteLabel: "boutique.skk-analytics.com",
     githubLink: "#",
     tags: ["React", "TypeScript", "Firebase", "Tailwind CSS", "Netlify"]
   },
@@ -40,7 +42,8 @@ export const applicationsData = [
     ],
     videoUrl: "https://www.youtube.com/embed/3an1o7WwG-U", // URL de la vidéo YouTube ou autre
     thumbnail: "/images/association-thumb.jpg",
-    demoLink: "#",
+    demoLink: "https://association.skk-analytics.com",
+    siteLabel: "association.skk-analytics.com",
     githubLink: "#",
     tags: ["React", "TypeScript", "Firebase", "Tailwind CSS", "Netlify"]
   }

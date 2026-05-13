@@ -30,7 +30,7 @@ const data = {
   company: {
     name: 'SKK Analytics',
     description:
-      'Consultant Data Indépendant spécialisé en analyse de données, gestion des risques et reporting stratégique. Transformez vos données en leviers de performance.',
+      "Vitrine de SKK Analytics, de son savoir-faire data et de ses solutions digitales pour la performance des organisations.",
   },
 };
 
@@ -65,13 +65,12 @@ export default function Footer() {
       <div className="mx-auto max-w-7xl px-4 pt-16 pb-6 sm:px-6 lg:px-8 lg:pt-24">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-3">
           <div>
-            <div className="text-primary flex justify-center gap-3 sm:justify-start items-center">
-              <div className="w-10 h-10 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center shadow-sm">
-                <span className="text-white font-bold text-lg">SKK</span>
-              </div>
-              <span className="text-2xl font-bold text-foreground">
-                {data.company.name}
-              </span>
+            <div className="text-primary flex justify-center sm:justify-start items-center">
+              <img
+                src="/images/logo-skk-analytics.png"
+                alt={data.company.name}
+                className="h-16 w-auto max-w-[240px] object-contain"
+              />
             </div>
 
             <p className="text-muted-foreground mt-6 max-w-md text-center leading-relaxed sm:max-w-xs sm:text-left text-sm">
