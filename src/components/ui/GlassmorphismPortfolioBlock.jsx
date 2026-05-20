@@ -128,7 +128,7 @@ export function GlassmorphismPortfolioBlock({ lightMode = false }) {
                     lightMode ? "text-gray-900" : "text-white"
                   )}
                 >
-                  Sename Kudjo Kedji, <br />
+                  SKK Analytics, <br />
                   <span className={cn("font-extrabold", lightMode ? "text-gray-900" : "text-white")}>{t('glassmorphism.subtitle').split('&')[0] + '&'}</span>
                   <br />
                   <span className="bg-clip-text text-transparent bg-gradient-to-r from-rose-400 to-pink-500 font-extrabold">

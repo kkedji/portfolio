@@ -1,17 +1,17 @@
 {
   "header": {
     "home": "Accueil",
-    "solutions": "Mes Solutions",
-    "profile": "Mon Profil",
-    "projects": "Mes Projets",
+    "solutions": "Nos Solutions",
+    "profile": "Notre Expertise",
+    "projects": "Nos Projets",
     "projects_desc": "Explorer les realisations data de SKK Analytics",
-    "apps": "Mes Applications",
+    "apps": "Nos Applications",
     "apps_desc": "Découvrez des solutions applicatives interactives",
-    "profile_journey": "Mon Parcours",
-    "profile_journey_desc": "Découvrez mon expérience et ma progression professionnelle",
-    "profile_about": "À Propos",
-    "profile_about_desc": "En savoir plus sur mes compétences et ma vision",
-    "about": "À Propos",
+    "profile_journey": "Notre Parcours",
+    "profile_journey_desc": "Découvrez notre expérience et notre progression professionnelle",
+    "profile_about": "Notre Approche",
+    "profile_about_desc": "En savoir plus sur nos compétences et notre vision",
+    "about": "Notre Expertise",
     "realisations": "Réalisations",
     "services": "Services"
   },
@@ -23,18 +23,18 @@
     "microfinance_badge": "Automatisation Processus"
   },
   "footer": {
-    "desc": "Vitrine de SKK Analytics, de son savoir-faire data et de ses solutions digitales pour la performance des organisations.",
+    "desc": "Votre partenaire en transformation digitale, automatisation, Business Intelligence et solutions sur mesure pour la performance des organisations.",
     "links": "Liens Utiles",
     "contact": "Contact",
     "projects": "Projets",
     "apps": "Applications",
-    "about": "À propos",
+    "about": "Notre expertise",
     "allRights": "Tous droits réservés."
   },
   "home": {
     "welcome": "Bienvenue chez SKK Analytics",
-    "intro_title": "SKK Analytics",
-    "intro_subtitle": "La vitrine de l'entreprise SKK Analytics, de son savoir-faire data et de ses solutions digitales pour transformer les donnees en decisions, automatiser les processus et renforcer la performance.",
+    "intro_title": "Votre partenaire en transformation digitale & solutions data",
+    "intro_subtitle": "SKK Analytics accompagne les organisations dans la digitalisation de leurs processus, la valorisation de leurs données et la conception de solutions métier sur mesure.",
     "hero_metrics": {
       "1": "+30% optimisation des revenus (analyse financière)",
       "2": "100K$ récupérés (chargebacks & contrôle)",
@@ -43,51 +43,52 @@
     "trust_boost": "",
     "cta_book": "Réserver une consultation",
     "cta_cases": "Voir les études de cas",
-    "what_i_do_title": "Transformer la donnée en avantage stratégique",
-    "what_i_do_desc": "J’analyse les données pour répondre à des problématiques concrètes :",
+    "what_i_do_title": "Nos expertises",
+    "what_i_do_desc": "Nous accompagnons vos équipes avec des solutions concrètes et mesurables :",
     "what_i_do_items": {
-      "1": "Où perdez-vous de l’argent ?",
-      "2": "Quels clients risquez-vous de perdre ?",
-      "3": "Quels processus réduisent votre performance ?"
+      "1": "Solutions d'automatisation pour réduire les tâches manuelles et fiabiliser les workflows",
+      "2": "Business Intelligence, tableaux de bord et reporting décisionnel",
+      "3": "Solutions web et mobiles sur mesure adaptées à vos processus métier",
+      "4": "Structuration, analyse et valorisation de vos données"
     },
-    "what_i_do_goal": "Mon objectif : fournir des insights exploitables pour améliorer revenus, efficacité et gestion des risques",
+    "what_i_do_goal": "Notre objectif : transformer vos processus et vos données en leviers opérationnels pour gagner en efficacité, visibilité et impact.",
     "offers_title": "3 Offres Claires",
-    "how_it_works_title": "Ma méthode de travail",
+    "how_it_works_title": "Notre méthode de travail",
     "how_it_works_steps": {
       "1": {
-        "title": "Étape 1 – Comprendre",
-        "desc": "Analyse approfondie du problème et des enjeux métier."
+        "title": "Étape 1 - Comprendre",
+        "desc": "Analyse des processus, des données disponibles et des objectifs métier."
       },
       "2": {
-        "title": "Étape 2 – Analyser",
-        "desc": "Exploitation et transformation des données pour extraire la vérité."
+        "title": "Étape 2 - Concevoir",
+        "desc": "Définition de la solution cible : automatisation, dashboard BI ou application sur mesure."
       },
       "3": {
-        "title": "Étape 3 – Recommander",
-        "desc": "Présentation d'insights clairs et de préconisations stratégiques."
+        "title": "Étape 3 - Déployer",
+        "desc": "Mise en place d'outils fiables, simples à utiliser et adaptés aux équipes."
       },
       "4": {
-        "title": "Étape 4 – Impacter",
-        "desc": "Mise en œuvre et suivi des résultats pour un impact mesurable."
+        "title": "Étape 4 - Mesurer",
+        "desc": "Suivi des gains, amélioration continue et accompagnement à l'adoption."
       }
     },
-    "assessment_title": "Diagnostic Performance & Risques",
-    "assessment_desc": "J’aide les organisations à transformer leurs données en leviers de performance mesurables.",
+    "assessment_title": "Diagnostic Transformation Digitale",
+    "assessment_desc": "Nous identifions les opportunités d'automatisation, de pilotage BI et de digitalisation pour construire une feuille de route pragmatique.",
     "assessment_receive": "Approche :",
     "assessment_items": {
-      "1": "Comprendre le problème",
-      "2": "Analyser la donnée",
-      "3": "Recommander des actions",
-      "4": "Impacter les résultats"
+      "1": "Cartographier les processus à automatiser",
+      "2": "Identifier les indicateurs clés et les sources de données",
+      "3": "Prioriser les solutions à fort impact",
+      "4": "Définir une feuille de route de mise en œuvre"
     },
-    "final_cta_text": "Transformer vos données en décisions concrètes dès aujourd'hui.",
-    "final_cta_btn": "Discutons de vos besoins",
+    "final_cta_text": "Faites de SKK Analytics votre partenaire de transformation digitale.",
+    "final_cta_btn": "Parlons de vos besoins",
     "timelineTitle": "15+ ans d'Expertise",
     "timelineDesc": "Compétence Hybride Finance + Data + Développement d'Application",
     "skillsTitle": "Outils & Stack Technique",
     "skillsDesc": "Une maîtrise technique au service du business",
-    "ctaTitle": "Prêt à transformer vos données ?",
-    "ctaDesc": "Découvrez mes projets et applications pour voir comment je peux vous aider à exploiter la puissance de vos données.",
+    "ctaTitle": "Prêt à accélérer votre transformation digitale ?",
+    "ctaDesc": "Découvrez nos projets et applications pour voir comment nous pouvons vous aider à exploiter la puissance de vos données.",
     "ctaBtn1": "Voir les projets",
     "ctaBtn2": "En savoir plus",
     "timeline": {
@@ -115,9 +116,9 @@
   },
   "casestudies": {
     "featured_impact_badge": "Impact Mis en Avant",
-    "sectionTitle": "Mes Solutions d'Expertise",
-    "sectionDesc": "Remplacez les services génériques par des solutions structurées",
-    "cta": "Voir mes réalisations",
+    "sectionTitle": "Nos Solutions d'Expertise",
+    "sectionDesc": "Automatisation, Business Intelligence et applications sur mesure pour digitaliser vos opérations.",
+    "cta": "Voir nos réalisations",
     "viewMore": "En savoir plus",
     "featured_2_title": "Automatisation du Reporting Financier UNHCR",
     "unhcr": {
@@ -173,9 +174,9 @@
     }
   },
   "glassmorphism": {
-    "badge": "Profil Hybride : Finance + Data + Développement d'Application",
-    "subtitle": "Data Analyst & Developpeur de Solution d'Automatisation",
-    "desc1": "Spécialiste de la transformation de données avec plus de 15 ans d'expérience. Je combine expertise financière et développement de solutions sur mesure pour automatiser vos processus business critiques.",
+    "badge": "Partenaire Digital : Finance + Data + Automatisation",
+    "subtitle": "Transformation Digitale & Solutions Data/IA",
+    "desc1": "Nous combinons plus de 15 ans d'expérience métier, une expertise financière solide et le développement de solutions sur mesure pour automatiser vos processus business critiques.",
     "highlights": {
       "1": {
         "title": "Compréhension Métier",
@@ -204,9 +205,9 @@
     "badge": "Realisations Data",
     "featured_badge": "Realisations",
     "featured_sub": "Expertise & Impact",
-    "title": "Mes Projets",
+    "title": "Nos Projets",
     "title2": "Insights & Visualisations",
-    "desc": "Découvrez une sélection de mes réalisations en analyse de données et Business Intelligence",
+    "desc": "Découvrez une sélection de nos réalisations en analyse de données et Business Intelligence",
     "stats_powerbi": "Projets Power BI",
     "stats_python": "Analyses Python",
     "stats_sql": "Projets SQL",
@@ -215,13 +216,13 @@
     "tab_risk": "Risque",
     "tab_hr": "RH",
     "tab_market": "Marché",
-    "desc_short": "Explorez mes réalisations techniques et analyses stratégiques.",
+    "desc_short": "Explorez nos réalisations techniques et analyses stratégiques.",
     "recent_heading": "Projets Récents",
     "category_heading": "Projets",
     "count_text": "projet(s) trouvé(s)",
     "filter_by": "Filtrer par :",
     "cta_title": "Vous avez un projet similaire ?",
-    "cta_desc": "Je peux vous aider à réaliser vos projets d'analyse de données et de visualisation",
+    "cta_desc": "Nous pouvons vous aider à réaliser vos projets d'analyse de données et de visualisation",
     "btn": "Explorer le dashboard",
     "items": {
       "1": {
@@ -275,7 +276,7 @@
     }
   },
   "apps": {
-    "title": "Mes Applications Web",
+    "title": "Nos Applications Web",
     "desc": "Démonstrations des interfaces et solutions fullstack développées pour simplifier l'analyse métier.",
     "featured": "En Vedette",
     "features": "Fonctionnalités",
@@ -305,9 +306,11 @@
       }
     },
     "custom_cta_title": "Vous avez un projet d'application ?",
-    "custom_cta_desc": "Je peux vous aider à développer des applications personnalisées pour répondre à vos besoins spécifiques en analyse de données."
+    "custom_cta_desc": "Nous pouvons vous aider à développer des applications personnalisées pour répondre à vos besoins spécifiques en analyse de données, automatisation et pilotage métier."
   },
   "profile": {
-    "title": "Mon Profil"
+    "title": "Notre Expertise",
+    "hero_title1": "Partenaire transformation digitale &",
+    "hero_title2": "Automatisation, BI et solutions sur mesure"
   }
 }

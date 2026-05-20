@@ -1,6 +1,6 @@
 # SKK Analytics Portfolio
 
-Site vitrine professionnel pour présenter mes projets en Data Analytics et mes applications.
+Site professionnel pour présenter les solutions SKK Analytics en transformation digitale, automatisation, Business Intelligence et applications sur mesure.
 
 ## 🚀 Technologies utilisées
 

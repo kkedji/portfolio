@@ -30,7 +30,7 @@ const data = {
   company: {
     name: 'SKK Analytics',
     description:
-      "Vitrine de SKK Analytics, de son savoir-faire data et de ses solutions digitales pour la performance des organisations.",
+      "Votre partenaire en transformation digitale, automatisation, Business Intelligence et solutions sur mesure pour la performance des organisations.",
   },
 };
 

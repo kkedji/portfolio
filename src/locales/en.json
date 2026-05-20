@@ -1,17 +1,17 @@
 {
   "header": {
     "home": "Home",
-    "solutions": "My Solutions",
-    "profile": "My Profile",
-    "projects": "My Projects",
+    "solutions": "Our Solutions",
+    "profile": "Our Expertise",
+    "projects": "Our Projects",
     "projects_desc": "Explore SKK Analytics data achievements",
-    "apps": "My Web Apps",
+    "apps": "Our Web Apps",
     "apps_desc": "Discover interactive web application solutions",
-    "profile_journey": "My Journey",
-    "profile_journey_desc": "Discover my experience and professional progression",
-    "profile_about": "About Me",
-    "profile_about_desc": "Learn more about my skills and vision",
-    "about": "About Me",
+    "profile_journey": "Our Journey",
+    "profile_journey_desc": "Discover our experience and professional progression",
+    "profile_about": "Our Approach",
+    "profile_about_desc": "Learn more about our skills and vision",
+    "about": "Our Expertise",
     "realisations": "Achievements",
     "services": "Services"
   },
@@ -23,18 +23,18 @@
     "microfinance_badge": "Process Automation"
   },
   "footer": {
-    "desc": "The showcase of SKK Analytics, its data expertise, and its digital solutions for organizational performance.",
+    "desc": "Your partner for digital transformation, automation, Business Intelligence, and custom solutions that improve organizational performance.",
     "links": "Useful Links",
     "contact": "Contact",
     "projects": "Projects",
     "apps": "Applications",
-    "about": "About",
+    "about": "Expertise",
     "allRights": "All rights reserved."
   },
   "home": {
     "welcome": "Welcome to SKK Analytics",
-    "intro_title": "SKK Analytics",
-    "intro_subtitle": "The company showcase for SKK Analytics, its data expertise, and its digital solutions to turn data into decisions, automate processes, and strengthen performance.",
+    "intro_title": "Your digital transformation partner & data solutions",
+    "intro_subtitle": "SKK Analytics helps organizations digitalize processes, unlock the value of their data, and build custom business solutions.",
     "hero_metrics": {
       "1": "+30% revenue optimization (financial analysis)",
       "2": "$100K recovered (chargebacks & control)",
@@ -43,51 +43,52 @@
     "trust_boost": "",
     "cta_book": "Book a Consultation",
     "cta_cases": "View Case Studies",
-    "what_i_do_title": "Transforming Data into Strategic Advantage",
-    "what_i_do_desc": "I analyze data to answer concrete business problems:",
+    "what_i_do_title": "Our Expertise",
+    "what_i_do_desc": "We support your teams with concrete, measurable solutions:",
     "what_i_do_items": {
-      "1": "Where are you losing money?",
-      "2": "Which clients are you at risk of losing?",
-      "3": "Which processes are reducing your performance?"
+      "1": "Automation solutions to reduce manual tasks and secure workflows",
+      "2": "Business Intelligence, dashboards, and decision reporting",
+      "3": "Custom web and mobile solutions tailored to your business processes",
+      "4": "Data structuring, analysis, and value creation"
     },
-    "what_i_do_goal": "My goal: provide actionable insights to improve revenue, efficiency, and risk management",
+    "what_i_do_goal": "Our goal: turn your processes and data into operational levers for efficiency, visibility, and measurable impact.",
     "offers_title": "3 Clear Offers",
-    "how_it_works_title": "My Methodology",
+    "how_it_works_title": "Our Methodology",
     "how_it_works_steps": {
       "1": {
-        "title": "Step 1 – Understand",
-        "desc": "In-depth analysis of the problem and business challenges."
+        "title": "Step 1 - Understand",
+        "desc": "Analyze processes, available data, and business objectives."
       },
       "2": {
-        "title": "Step 2 – Analyze",
-        "desc": "Data exploitation and transformation to extract the truth."
+        "title": "Step 2 - Design",
+        "desc": "Define the target solution: automation, BI dashboard, or custom application."
       },
       "3": {
-        "title": "Step 3 – Recommend",
-        "desc": "Presentation of clear insights and strategic recommendations."
+        "title": "Step 3 - Deploy",
+        "desc": "Implement reliable, easy-to-use tools adapted to your teams."
       },
       "4": {
-        "title": "Step 4 – Impact",
-        "desc": "Implementation and monitoring of results for measurable impact."
+        "title": "Step 4 - Measure",
+        "desc": "Track gains, improve continuously, and support adoption."
       }
     },
-    "assessment_title": "Performance & Risk Diagnostic",
-    "assessment_desc": "I help organizations transform their data into measurable performance levers.",
+    "assessment_title": "Digital Transformation Diagnostic",
+    "assessment_desc": "We identify automation, BI, and digitalization opportunities to build a pragmatic implementation roadmap.",
     "assessment_receive": "Approach:",
     "assessment_items": {
-      "1": "Understand the problem",
-      "2": "Analyze the data",
-      "3": "Recommend actions",
-      "4": "Impact results"
+      "1": "Map processes to automate",
+      "2": "Identify key indicators and data sources",
+      "3": "Prioritize high-impact solutions",
+      "4": "Define an implementation roadmap"
     },
-    "final_cta_text": "Transform your data into concrete decisions today.",
-    "final_cta_btn": "Let’s discuss your needs",
+    "final_cta_text": "Make SKK Analytics your digital transformation partner.",
+    "final_cta_btn": "Let's discuss your needs",
     "timelineTitle": "15+ Years of Expertise",
     "timelineDesc": "Hybrid Finance + Data + App Development Competence",
     "skillsTitle": "Tools & Technical Stack",
     "skillsDesc": "Technical mastery at the service of business",
-    "ctaTitle": "Ready to transform your data?",
-    "ctaDesc": "Discover my projects and applications to see how I can help you leverage the power of your data.",
+    "ctaTitle": "Ready to accelerate your digital transformation?",
+    "ctaDesc": "Discover our projects and applications to see how we can help you leverage the power of your data.",
     "ctaBtn1": "View Projects",
     "ctaBtn2": "Learn More",
     "timeline": {
@@ -115,9 +116,9 @@
   },
   "casestudies": {
     "featured_impact_badge": "Featured Impact",
-    "sectionTitle": "My Expert Solutions",
-    "sectionDesc": "Replace generic services with structured solutions",
-    "cta": "View my work",
+    "sectionTitle": "Our Expert Solutions",
+    "sectionDesc": "Automation, Business Intelligence, and custom applications to digitalize your operations.",
+    "cta": "View our work",
     "viewMore": "Learn more",
     "featured_2_title": "UNHCR Financial Reporting Automation",
     "unhcr": {
@@ -173,9 +174,9 @@
     }
   },
   "glassmorphism": {
-    "badge": "Hybrid Profile: Finance + Data + App Development",
-    "subtitle": "Data Analyst & Automation Solution Developer",
-    "desc1": "Data transformation specialist with over 15 years of experience. I combine financial expertise with custom solution development to automate your critical business processes.",
+    "badge": "Digital Partner: Finance + Data + Automation",
+    "subtitle": "Digital Transformation & Data/AI Solutions",
+    "desc1": "We combine 15+ years of business experience, strong financial expertise, and custom solution development to automate your critical business processes.",
     "highlights": {
       "1": {
         "title": "Business Insight",
@@ -204,9 +205,9 @@
     "badge": "Data Achievements",
     "featured_badge": "Achievements",
     "featured_sub": "Expertise & Impact",
-    "title": "My Projects",
+    "title": "Our Projects",
     "title2": "Insights & Visualisations",
-    "desc": "Discover a selection of my accomplishments in data analysis and Business Intelligence",
+    "desc": "Discover a selection of our achievements in data analysis and Business Intelligence",
     "stats_powerbi": "Power BI Projects",
     "stats_python": "Python Analyses",
     "stats_sql": "SQL Projects",
@@ -215,13 +216,13 @@
     "tab_risk": "Risk",
     "tab_hr": "HR",
     "tab_market": "Market",
-    "desc_short": "Explore my technical achievements and strategic analyses.",
+    "desc_short": "Explore our technical achievements and strategic analyses.",
     "recent_heading": "Recent Projects",
     "category_heading": "Projects",
     "count_text": "project(s) found",
     "filter_by": "Filter by:",
     "cta_title": "Have a similar project?",
-    "cta_desc": "I can help you build your data analysis and visualization projects",
+    "cta_desc": "We can help you build your data analysis and visualization projects",
     "btn": "Explore Dashboard",
     "items": {
       "1": {
@@ -275,7 +276,7 @@
     }
   },
   "apps": {
-    "title": "My Web Applications",
+    "title": "Our Web Applications",
     "desc": "Demonstrations of fullstack interfaces and solutions developed to simplify business analysis.",
     "featured": "Featured",
     "features": "Features",
@@ -305,9 +306,11 @@
       }
     },
     "custom_cta_title": "Have an application project?",
-    "custom_cta_desc": "I can help you develop custom applications to meet your specific data analysis needs."
+    "custom_cta_desc": "We can help you develop custom applications to meet your specific data analysis, automation, and business management needs."
   },
   "profile": {
-    "title": "My Profile"
+    "title": "Our Expertise",
+    "hero_title1": "Digital Transformation Partner &",
+    "hero_title2": "Automation, BI & Custom Solutions"
   }
 }
